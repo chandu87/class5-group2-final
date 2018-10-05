@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  /* animation: App-logo-spin infinite 20s linear; */
   height: 80px;
 }
 
@@ -82,9 +82,9 @@ body {
 header {
   display: block;
   width: 100%;
-  padding: 1.75em 0;
-  border-bottom: 1px solid var(--border-color);
-  background: var(--neutral-color);
+  padding: 0.75em 0;
+  border-bottom: 2px solid #c05558;
+  background: #fafafa;
 }
 
 header #logo {
@@ -258,4 +258,8 @@ main {
   flex-grow: 0;
   flex-basis: calc(100%/7);
   width: calc(100%/7);
+}
+.nav-item{
+  margin-left : 3%;
+  margin-right: 10%;
 }
