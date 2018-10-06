@@ -11,7 +11,7 @@ class Calendar extends React.Component {
     const dateFormat = "MMMM YYYY";
 
     return (
-      <div className="header row flex-middle">
+      <div className="header calender-row flex-middle">
         <div className="col col-start">
           <div className="icon" onClick={this.prevMonth}>
             chevron_left
@@ -40,7 +40,7 @@ class Calendar extends React.Component {
         </div>
       );
     }
-    return <div className="days row">{days}</div>;
+    return <div className="days calender-row">{days}</div>;
   }
 
   renderCells() {
@@ -80,7 +80,7 @@ class Calendar extends React.Component {
         day = dateFns.addDays(day, 1);
       }
       rows.push(
-        <div className="row" key={day}>
+        <div className="calender-row" key={day}>
           {days}
         </div>
       );

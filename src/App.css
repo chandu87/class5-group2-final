@@ -108,7 +108,7 @@ main {
 
 /* GRID */
 
-.row {
+.calender-row {
   margin: 0;
   padding: 0;
   display: flex;
@@ -210,11 +210,11 @@ main {
   border-image-slice: 1;
 }
 
-.calendar .body .row {
+.calendar .body .calender-row {
   border-bottom: 1px solid var(--border-color);
 }
 
-.calendar .body .row:last-child {
+.calendar .body .calender-row:last-child {
   border-bottom: none;
 }
 
