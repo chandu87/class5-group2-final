@@ -263,3 +263,26 @@ main {
   margin-left : 3%;
   margin-right: 10%;
 }
+.calendar .body .cell .event-one {
+  position: absolute;
+  font-size: 82.5%;
+  line-height: 1;
+  bottom: .50em;
+  right: .75em;
+  font-weight: 700;
+  background:rgb(126, 186, 232);
+  width: 80%;
+  color:white;
+ }
+ .calendar .body .cell .event-two {
+  position: absolute;
+  font-size: 82.5%;
+  line-height: 1;
+  bottom: 1.8em;
+  right: .75em;
+  font-weight: 700;
+  background:rgb(77, 121, 175);
+  width: 80%;
+  color:white;
+ }
+ 

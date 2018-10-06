@@ -75,6 +75,7 @@ class Calendar extends React.Component {
           >
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}</span>
+            <span className="event-one">{this.findEvents(formattedDate)}</span>
           </div>
         );
         day = dateFns.addDays(day, 1);
@@ -88,8 +89,20 @@ class Calendar extends React.Component {
     }
     return <div className="body">{rows}</div>;
   }
-
+  findEvents(date){
+    const eventDates = [8, 12, 17, 25];
+    if(eventDates.includes(Number(date))){
+      return `React JS`;
+    }
+  }
+ 
   onDateClick = day => {
+    const formattedDate = dateFns.format(day, "D");
+   const eventName = this.findEvents(formattedDate);
+   if(eventName){
+     alert("Todays event is "  + eventName + ", Location : Copenhagen" + ", Time : 17.00 to 19.00");
+   }
+
     this.setState({
       selectedDate: day
     });
