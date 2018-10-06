@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Calendar from "./components/Calendar";
 import 'bootstrap/dist/css/bootstrap.min.css';
