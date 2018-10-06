@@ -11,7 +11,7 @@ class Calendar extends React.Component {
     const dateFormat = "MMMM YYYY";
 
     return (
-      <div className="header row flex-middle">
+      <div className="header calender-row flex-middle">
         <div className="col col-start">
           <div className="icon" onClick={this.prevMonth}>
             chevron_left
@@ -28,7 +28,7 @@ class Calendar extends React.Component {
   }
 
   renderDays() {
-    const dateFormat = "dddd";
+    const dateFormat = "ddd";
     const days = [];
 
     let startDate = dateFns.startOfWeek(this.state.currentMonth);
@@ -40,7 +40,7 @@ class Calendar extends React.Component {
         </div>
       );
     }
-    return <div className="days row">{days}</div>;
+    return <div className="days calender-row">{days}</div>;
   }
 
   renderCells() {
@@ -75,12 +75,13 @@ class Calendar extends React.Component {
           >
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}</span>
+            <span className="event-one">{this.findEvents(formattedDate)}</span>
           </div>
         );
         day = dateFns.addDays(day, 1);
       }
       rows.push(
-        <div className="row" key={day}>
+        <div className="calender-row" key={day}>
           {days}
         </div>
       );
@@ -88,8 +89,20 @@ class Calendar extends React.Component {
     }
     return <div className="body">{rows}</div>;
   }
-
+  findEvents(date){
+    const eventDates = [8, 12, 17, 25];
+    if(eventDates.includes(Number(date))){
+      return `React JS`;
+    }
+  }
+ 
   onDateClick = day => {
+    const formattedDate = dateFns.format(day, "D");
+   const eventName = this.findEvents(formattedDate);
+   if(eventName){
+     alert("Todays event is "  + eventName + ", Location : Copenhagen" + ", Time : 17.00 to 19.00");
+   }
+
     this.setState({
       selectedDate: day
     });
