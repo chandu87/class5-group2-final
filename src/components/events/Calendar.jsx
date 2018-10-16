@@ -100,7 +100,7 @@ class Calendar extends React.Component {
     const formattedDate = dateFns.format(day, "D");
    const eventName = this.findEvents(formattedDate);
    if(eventName){
-     alert("Todays event is "  + eventName + ", Location : Copenhagen" + ", Time : 17.00 to 19.00");
+     alert("Todays event is "  + eventName + ", Location : Copenhagen, Time : 17.00 to 19.00");
    }
 
     this.setState({
