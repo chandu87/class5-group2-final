@@ -1,14 +1,15 @@
 import React from "react";
 import Calendar from "./Calendar";
-import Navigation from "../Navigation";
+import Header from "../header/Header"
 
 class Events extends React.Component {
   render() {
     return (
       <div>
         <header>
-          <Navigation />
+          <Header />
         </header>
+
         <main>
           <Calendar />
         </main>

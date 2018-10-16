@@ -1,13 +1,14 @@
 import React from "react";
-import Navigation from "../Navigation";
+import Header from "../header/Header"
 
 class Networking extends React.Component {
   render() {
     return (
       <div>
         <header>
-          <Navigation />
+          <Header />
         </header>
+
         <main>
           <li>Networking</li>
         </main>
