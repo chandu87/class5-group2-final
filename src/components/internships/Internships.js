@@ -2,7 +2,24 @@ import React from "react";
 import Navigation from "../Navigation";
 
 class Internships extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {internships : []};
+  }
+  //fetch data using API
+  componentDidMount() {
+    fetch('https://my.api.mockaroo.com/internship.json?key=d38d0f10')
+      .then(response => response.json())
+      .then(data => {
+         this.setState({ internships : data })
+      });
+
+  }
+  //Read data using console
+  //Display data using list
+  //Add style to it or follow List view from Group1
   render() {
+      console.log(this.state.internships);
     return (
       <div>
         <header>
@@ -10,6 +27,8 @@ class Internships extends React.Component {
         </header>
         <main>
           <li>Internships</li>
+          
+
         </main>
       </div>
     );
