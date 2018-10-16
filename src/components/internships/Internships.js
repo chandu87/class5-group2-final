@@ -27,8 +27,6 @@ class Internships extends React.Component {
         </header>
         <main>
           <li>Internships</li>
-          
-
         </main>
       </div>
     );
