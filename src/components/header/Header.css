@@ -1,0 +1,47 @@
+.siteLogo {
+    float: left;
+}
+.menu {
+    text-align: center
+}
+
+.header {
+    display: block;
+    position: relative;
+    margin: 15px;
+}
+
+.menu ul{
+    margin: 0px;
+}
+.menu ul li{
+    list-style: none;
+    display: inline-block;
+    line-height: 2em;
+}
+
+.menu ul li .menuLink,
+.nav-link{
+    text-decoration: none;
+    padding: 0 25px;
+    line-height: 20px;
+    margin-top: 10px;
+    display: block;
+    color: #000000;
+    font-weight: bold;  
+}
+.menu ul li a:hover,
+.menu ul li a:active{
+    color: #b4393e;
+}
+
+.menuLink {
+    border-right: 2px solid black;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-60 { font-size: 60px; }
+.material-icons.md-dark { color: #000000 }
