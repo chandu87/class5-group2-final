@@ -1,0 +1,17 @@
+.mentorsLi {
+    padding: 10px;
+    color: brown;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.email {
+    color: blue;
+}
+
+.availability {
+    font-style: italic;
+    color: blueviolet;
+}
