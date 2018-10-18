@@ -20,16 +20,34 @@ class Internships extends React.Component {
   //Add style to it or follow List view from Group1
   render() {
       console.log(this.state.internships);
+      const {internships} = this.state;
+      if(internships.length <= 0){
+        return ("Loading");
+      }else{
     return (
       <div>
         <header>
           <Header />
         </header>
         <main>
-          <li>Internships</li>
+          {internships.map(item =>(
+            // <li key={item.id}>{item.internship_title}</li>
+            <div class="card">
+            <div class="card-header">
+            <h5>{item.internship_title}</h5>
+            </div>
+            <div class="card-body">
+              {/* <h5 class="card-title">{item.internship_title}</h5> */}
+              <p class="card-text">{item.internship_description}</p>
+              <a href="#" class="btn btn-primary">Click for more</a>
+            </div>
+          </div>
+          
+            ))}
         </main>
       </div>
     );
+  }
   }
 }
 
