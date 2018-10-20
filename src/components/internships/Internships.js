@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../header/Header"
+import Footer from "../footer/Footer";
 
 class Internships extends React.Component {
   constructor(props){
@@ -39,13 +40,17 @@ class Internships extends React.Component {
             <div className="card-body">
               {/* <h5 class="card-title">{item.internship_title}</h5> */}
               <p className="card-text">{item.internship_description}</p>
-              <a href="#" className="btn btn-primary">Click for more</a>
+              <a href="/" className="btn btn-primary">Click for more</a>
             </div>
           </div>
           
             ))}
         </main>
-      </div>
+
+        <footer>
+          <Footer />
+      </footer>
+  </div>
     );
   }
   }

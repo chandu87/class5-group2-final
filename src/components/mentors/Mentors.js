@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../header/Header"
+import Footer from "../footer/Footer";
 import './Mentors.css';
 
 class Mentors extends React.Component {
@@ -46,6 +47,12 @@ class Mentors extends React.Component {
               ))};
                 </ul>
           </main>
+
+          <footer>
+            <Footer />
+          </footer>
+
+
         </div>
       );
     }

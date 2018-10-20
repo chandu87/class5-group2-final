@@ -1,5 +1,6 @@
 import React from "react";
-import Header from "../header/Header"
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";
 
 
@@ -12,10 +13,8 @@ class Networking extends React.Component {
       isLoaded: false,
     }
   }
-
-  componentDidMount() {
-
-    fetch('https://my.api.mockaroo.com/networking.json?key=d38d0f10')
+   componentDidMount() {
+     fetch('https://my.api.mockaroo.com/networking.json?key=d38d0f10')
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -39,18 +38,18 @@ class Networking extends React.Component {
             <Header />
           </header>
           <main id="networking">
-            <h3>Networking</h3>
-            <div class="container"> 
-              <div class="row">
-                <div class="col">
+            <div className="container"> 
+              <div className="row">
+                <div className="col">
+                <h1>Networking</h1> <br />
                 {items.map(item => (
                   <Link to={item.organisation_url} target="_blank" className="networking-item">
-                  <div class="card mb-4 shadow-sm">
-                  <div class="card-header">
-                    <h4 class="my-0 font-weight-normal"><img src={item.organisation_logo} width="100%" alt="Organization Logo"/></h4>
+                  <div className="card mb-4 shadow-sm">
+                  <div className="card-header">
+                    <h4 className="my-0 font-weight-normal"><img src={item.organisation_logo} width="100%" alt="Organization Logo"/></h4>
                   </div>
-                  <div class="card-body">
-                    <h1 class="card-title pricing-card-title"> {item.organisation_name}</h1>
+                  <div className="card-body">
+                    <h2 className="card-title pricing-card-title"> {item.organisation_name}</h2>
                       <div><strong>Org. Address:</strong> {item.organisation_address}</div>
                       <div><strong>Contact Person:</strong> {item.contact_person}</div>
                       <div><strong>Contact Email:</strong> {item.contact_email}</div>
@@ -58,11 +57,15 @@ class Networking extends React.Component {
                   </div>
                   </div>
                   </Link>
-                  ))}                                  
+                ))}                                  
                 </div>
               </div>
             </div>
           </main>
+
+          <footer>
+            <Footer />
+          </footer>
         </div>
       );
     }
