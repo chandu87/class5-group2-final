@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../header/Header"
+import { Link } from "react-router-dom";
 
 class Networking extends React.Component {
 
@@ -42,20 +43,21 @@ class Networking extends React.Component {
               <div class="row">
                 <div class="col">
                 {items.map(item => (
+                  <Link to={item.organisation_url} target="_blank">
                   <div class="card mb-4 shadow-sm">
                   <div class="card-header">
                     <h4 class="my-0 font-weight-normal"><img src={item.organisation_logo} width="100%"/></h4>
                   </div>
                   <div class="card-body">
                     <h1 class="card-title pricing-card-title"> {item.organisation_name}</h1>
-                    <ul class="list-unstyled mt-3 mb-4">
-                      <li>Org. Address: {item.organisation_address}</li>
-                      <li>Contact Person: {item.contact_person}</li>
-                      <li>Contact Email: {item.contact_email}</li>
-                      <li>Contact Number: {item.contact_phone}</li>
-                    </ul>
+                      <div><strong>Org. Address:</strong> {item.organisation_address}</div>
+                      <div><strong>Contact Person:</strong> {item.contact_person}</div>
+                      <div><strong>Contact Email:</strong> {item.contact_email}</div>
+                      <div><strong>Contact Number:</strong> {item.contact_phone}</div>
+
                   </div>
                   </div>
+                  </Link>
                   ))}                                  
                 </div>
               </div>
