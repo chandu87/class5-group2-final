@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../header/Header"
 import { Link } from "react-router-dom";
 
+
 class Networking extends React.Component {
 
   constructor(props) {
@@ -37,16 +38,16 @@ class Networking extends React.Component {
           <header>
             <Header />
           </header>
-          <main>
+          <main id="networking">
             <h3>Networking</h3>
             <div class="container"> 
               <div class="row">
                 <div class="col">
                 {items.map(item => (
-                  <Link to={item.organisation_url} target="_blank">
+                  <Link to={item.organisation_url} target="_blank" className="networking-item">
                   <div class="card mb-4 shadow-sm">
                   <div class="card-header">
-                    <h4 class="my-0 font-weight-normal"><img src={item.organisation_logo} width="100%"/></h4>
+                    <h4 class="my-0 font-weight-normal"><img src={item.organisation_logo} width="100%" alt="Organization Logo"/></h4>
                   </div>
                   <div class="card-body">
                     <h1 class="card-title pricing-card-title"> {item.organisation_name}</h1>

@@ -286,3 +286,7 @@ main {
   color:white;
  }
  
+.networking-item,
+.networking-item:hover {
+   text-decoration: none;
+}
