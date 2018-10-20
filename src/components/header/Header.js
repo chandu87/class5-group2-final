@@ -13,7 +13,7 @@ class Header extends React.Component {
                         <div className="col-12">
                             <div className="header">
                                     <div className="siteLogo">
-                                    <a href="#link"><img src={logo} width="50px" height="60px" /></a>
+                                    <a href="#link"><img src={logo} width="50px" height="60px" alt="Thread Logo" /></a>
                                     </div>
                                     <div className="menu">
                                     <nav>
