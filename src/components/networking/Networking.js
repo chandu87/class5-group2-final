@@ -14,7 +14,7 @@ class Networking extends React.Component {
     }
   }
    componentDidMount() {
-     fetch('https://my.api.mockaroo.com/networking.json?key=d38d0f10')
+     fetch('https://raw.githubusercontent.com/paredesrichard/commandline/master/networking.json')
       .then(res => res.json())
       .then(json => {
         this.setState({

@@ -36,28 +36,28 @@ class Footer extends React.Component {
 
                         <div className="col-12 col-md-6 col-lg-3">
                             <h4>Contact Us</h4>
-                            <pre>
+                            <p>
                                 Jane Malcolm-Davies, Director<br />
                                 Centre for Textile Research<br />
                                 University of Copenhagen<br />
                                 Tel.: +45 26 20 22 09<br />
                                 E-mail: jane@jmdandco.com<br />
-                            </pre>
+                            </p>
 
-                            <pre>
+                            <p>
                                 Egzona Haxha, Co-Director<br />
                                 Centre for Textile Research<br />
                                 University of Copenhagen<br />
                                 Tel.: +45 60 86 32 17<br />
                                 E-mail: egzona@hum.ku.dk
-                            </pre>
-                            <div className="col-12 col-md-6 col-lg-3">
+                            </p>
+
                             <h4>Developed By</h4>
-                            <pre>
+                            <p>
                                 Group # for the Final Project Class at <br />
                                 Hack Your Future - Copenhagen<br />
                                 http://hackyourfuture.dk/<br />
-                            </pre></div>
+                            </p>
                         </div>
                    </div>
                </div>
