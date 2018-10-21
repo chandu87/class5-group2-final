@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap-grid.css";
 class Footer extends React.Component {
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container-fluid mt-3">
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-12 col-lg-9">
@@ -37,19 +37,19 @@ class Footer extends React.Component {
                         <div className="col-12 col-md-6 col-lg-3">
                             <h4>Contact Us</h4>
                             <p>
-                                Jane Malcolm-Davies, Director<br />
+                                <strong>Jane Malcolm-Davies, Director</strong><br />
                                 Centre for Textile Research<br />
                                 University of Copenhagen<br />
-                                Tel.: +45 26 20 22 09<br />
-                                E-mail: jane@jmdandco.com<br />
+                                <strong>Tel.:</strong> +45 26 20 22 09<br />
+                                <strong>E-mail:</strong> jane@jmdandco.com<br />
                             </p>
 
                             <p>
-                                Egzona Haxha, Co-Director<br />
+                            <strong>Egzona Haxha, Co-Director</strong><br />
                                 Centre for Textile Research<br />
                                 University of Copenhagen<br />
-                                Tel.: +45 60 86 32 17<br />
-                                E-mail: egzona@hum.ku.dk
+                                <strong>Tel.:</strong> +45 60 86 32 17<br />
+                                <strong>E-mail:</strong> egzona@hum.ku.dk
                             </p>
 
                             <h4>Developed By</h4>
