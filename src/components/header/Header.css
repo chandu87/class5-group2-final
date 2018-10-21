@@ -45,3 +45,11 @@
 .material-icons.md-48 { font-size: 48px; }
 .material-icons.md-60 { font-size: 60px; }
 .material-icons.md-dark { color: #000000 }
+
+.card-title {
+    color: #b4393e;
+}
+
+.card-body {
+    color: #000000;
+}

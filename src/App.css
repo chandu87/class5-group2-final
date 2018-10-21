@@ -295,3 +295,8 @@ main {
  .card-header{
   background-color: #ccc;
  }
+ 
+.networking-item,
+.networking-item:hover {
+   text-decoration: none;
+}
