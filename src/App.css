@@ -285,4 +285,13 @@ main {
   width: 80%;
   color:white;
  }
- 
+ .card{
+   /* padding : 10px; */
+   margin-bottom: 10px;
+ }
+ .dead-line{
+   float: right;
+ }
+ .card-header{
+  background-color: #ccc;
+ }
