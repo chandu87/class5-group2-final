@@ -1,6 +1,7 @@
 import React from "react";
 import Calendar from "./Calendar";
 import Header from "../header/Header"
+import Footer from "../footer/Footer";
 
 class Events extends React.Component {
   render() {
@@ -13,6 +14,11 @@ class Events extends React.Component {
         <main>
           <Calendar />
         </main>
+
+        <footer>
+          <Footer />
+        </footer>
+
       </div>
     );
   }
