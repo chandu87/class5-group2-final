@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../header/Header"
+import Footer from "../footer/Footer";
 import './Mentors.css';
 
 class Mentors extends React.Component {
@@ -14,7 +15,7 @@ class Mentors extends React.Component {
 
   componentDidMount() {
 
-    fetch('https://my.api.mockaroo.com/mentor.json?key=d38d0f10')
+    fetch('https://raw.githubusercontent.com/paredesrichard/commandline/master/mentors.json')
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -37,15 +38,40 @@ class Mentors extends React.Component {
           <header>
             <Header />
           </header>
-          <main>
-            <ul>
-              {items.map(item => (
-                <li className='mentorsLi' key={item.id}>
-                  Name: <span className='name'> {item.first_name} </span> || Email: <span className='email'> {item.email} </span> || Availability: <span className='availability'> {item.availability} </span>
-                </li>
-              ))};
-                </ul>
+          <main id="mentors">
+          <div className="container"> 
+          <div className="row">
+          <div className="col">
+          <h1>Mentors</h1> <br />
+
+            {/* https://getbootstrap.com/docs/4.1/components/card/#card-columns */}
+            <div className="card-columns">
+
+            {items.map(item => (
+              <div key={item.id} class="card">
+              <img className="card-img-top" src={item.profile_picture} alt={item.first_name + " "+ item.last_name} />
+              <div className="card-body">
+                <h5 className="card-title">{item.first_name + " "+ item.last_name}</h5>
+                <p className="card-text"><strong>Services</strong><br />
+                  <span>{item.offering}</span> <br />
+                  <strong>Availability</strong><br />
+                  <span>{item.availability}</span> <br />
+                  
+                </p>
+              </div>
+              </div>
+              ))}
+            </div>
+          </div>
+          </div>
+          </div>
           </main>
+
+          <footer>
+            <Footer />
+          </footer>
+
+
         </div>
       );
     }
