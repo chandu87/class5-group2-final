@@ -11,14 +11,13 @@ class Events extends React.Component {
           <Header />
         </header>
 
-        <main>
+        <div className="col-md-6">
           <Calendar />
-        </main>
+        </div>
 
         <footer>
           <Footer />
         </footer>
-
       </div>
     );
   }
