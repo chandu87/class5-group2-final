@@ -15,7 +15,7 @@ class Mentors extends React.Component {
 
   componentDidMount() {
 
-    fetch('https://raw.githubusercontent.com/paredesrichard/commandline/master/mentors.json')
+    fetch('/api/mentors')
       .then(res => res.json())
       .then(json => {
         this.setState({
