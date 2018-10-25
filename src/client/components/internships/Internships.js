@@ -8,9 +8,10 @@ class Internships extends React.Component {
   }
   //fetch data using API
   componentDidMount() {
-    fetch("https://raw.githubusercontent.com/paredesrichard/commandline/master/internships.json")
+    fetch("/api/internships")
       .then(response => response.json())
       .then(data => {
+        console.log("------>",data);
         this.setState({ internships: data });
       });
   }
