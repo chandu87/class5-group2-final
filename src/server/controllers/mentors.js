@@ -38,7 +38,7 @@ export function listAllMentors(req, res) {
   export function getMentorById(req, res) {
     const internshipId = req.params.id;
     const sql = SqlString.format(
-      'SELECT * FROM mentors WHERE id = ? AND is_active = ?',
+      'SELECT * FROM mentors WHERE id = ? AND active = ?',
       [internshipId, true],
     );
     console.log(sql);
@@ -90,7 +90,7 @@ export function listAllMentors(req, res) {
     const internshipId = req.params.id;
     const sql = SqlString.format(`UPDATE mentors SET ? WHERE id = ?`, [
       {
-        is_active: false,
+        active: false,
       },
       internshipId,
     ]);

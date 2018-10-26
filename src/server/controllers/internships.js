@@ -38,7 +38,7 @@ export function createInternship(req, res) {
 export function getInternshipById(req, res) {
   const internshipId = req.params.id;
   const sql = SqlString.format(
-    'SELECT * FROM internships WHERE id = ? AND is_active = ?',
+    'SELECT * FROM internships WHERE id = ? AND active = ?',
     [internshipId, true],
   );
   console.log(sql);
@@ -90,7 +90,7 @@ export function deleteInternship(req, res) {
   const internshipId = req.params.id;
   const sql = SqlString.format(`UPDATE internships SET ? WHERE id = ?`, [
     {
-      is_active: false,
+      active: false,
     },
     internshipId,
   ]);
