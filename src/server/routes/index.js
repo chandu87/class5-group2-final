@@ -1,6 +1,7 @@
 import express from "express";
 
 import internshipsRoute from "./internships";
+import mentorsRoute from "./mentors";
 
 const router = express.Router();
 
@@ -10,6 +11,7 @@ router.get("/hello", (req, res) => {
   });
 });
 router.use("/internships", internshipsRoute);
+router.use("/mentors", mentorsRoute);
 
 router.use((req, res, next) => {
   const err = new Error("Not found.");
