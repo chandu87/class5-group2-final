@@ -311,3 +311,9 @@ main {
 .networking-item:hover {
    text-decoration: none;
 }
+.home-page{
+  background-image: url('./components/home/thread-event-lecture.jpg'); 
+}
+.home-page .jumbotron{
+background-color: #eee9efbd; 
+}
