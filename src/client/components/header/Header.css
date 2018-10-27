@@ -20,10 +20,9 @@
     line-height: 2em;
 }
 
-.menu ul li .menuLink,
 .nav-link{
     text-decoration: none;
-    padding: 0 25px;
+    padding: 0 25px !important;
     line-height: 20px;
     margin-top: 10px;
     display: block;
@@ -52,4 +51,26 @@
 
 .card-body {
     color: #000000;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .siteLogo {
+        flex-direction: column;
+        text-align: center;
+        float: none;
+        margin-bottom: 15px;
+    }
+    .menuLink {
+        border-right: none;
+        border-bottom: 2px solid black;
+        margin-bottom: 20px;
+        padding-bottom: 20px !important;
+    }
+    .nav {
+        flex-direction: column;
+    }
 }

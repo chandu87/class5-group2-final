@@ -36,10 +36,10 @@ export function listAllMentors(req, res) {
   }
   
   export function getMentorById(req, res) {
-    const internshipId = req.params.id;
+    const mentorId = req.params.id;
     const sql = SqlString.format(
       'SELECT * FROM mentors WHERE id = ? AND active = ?',
-      [internshipId, true],
+      [mentorId, true],
     );
     console.log(sql);
   
@@ -60,12 +60,12 @@ export function listAllMentors(req, res) {
   }
   
   export function updateMentor(req, res) {
-    const internshipId = req.params.id;
+    const mentorId = req.params.id;
     const jsonData = req.body;
   
     const sql = SqlString.format(`UPDATE mentors SET ? WHERE id = ?`, [
       jsonData,
-      internshipId,
+      mentorId,
     ]);
     
     console.log(sql);
@@ -87,12 +87,12 @@ export function listAllMentors(req, res) {
   }
   
   export function deleteMentor(req, res) {
-    const internshipId = req.params.id;
+    const mentorId = req.params.id;
     const sql = SqlString.format(`UPDATE mentors SET ? WHERE id = ?`, [
       {
         active: false,
       },
-      internshipId,
+      mentorId,
     ]);
   
     console.log(sql);
