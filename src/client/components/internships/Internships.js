@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../header/Header";
+import Footer from "../footer/Footer";
 
 class Internships extends React.Component {
   constructor(props) {
@@ -61,7 +62,9 @@ class Internships extends React.Component {
               </div>
             ))}
           </main>
-          
+          <footer>
+            <Footer />
+          </footer>
         </div>
       );
     }

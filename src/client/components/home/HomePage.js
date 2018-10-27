@@ -1,5 +1,5 @@
 import React from "react";
-
+import Footer from "../footer/Footer";
 import Header from "../header/Header";
 
 class HomePage extends React.Component {
@@ -37,6 +37,9 @@ class HomePage extends React.Component {
             </p>
           </div>
         </main>
+        <footer>
+            <Footer />
+          </footer>
       </div>
     );
   }

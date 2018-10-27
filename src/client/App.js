@@ -9,8 +9,7 @@ import Homepage from "./components/home/HomePage";
 import Events from "./components/events/Events";
 import Mentors from "./components/mentors/Mentors";
 import Networking from "./components/networking/Networking";
-import Company from "./components/networking/Company"
-import FooterPage from "./components/FooterPage/FooterPage";
+import Company from "./components/networking/Company";
 
 class App extends Component {
   render() {
@@ -24,9 +23,6 @@ class App extends Component {
           <Route exact path="/Networking" component={Networking} />
           <Route exact path={`/Networking/company/:id`} component={Company} />
         </Switch>
-        <footer>
-          <FooterPage />
-        </footer>
       </div>
     );
   }
