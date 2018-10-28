@@ -54,6 +54,8 @@ class Networking extends React.Component {
                       <div><strong>Contact Person:</strong> {item.contact_person}</div>
                       <div><strong>Contact Email:</strong> {item.contact_email}</div>
                       <div><strong>Contact Number:</strong> {item.contact_phone}</div>
+                      <br />
+                      <a href="#" class="btn btn-danger">Read more..</a>
                   </div>
                   </div>
                   </Link>
