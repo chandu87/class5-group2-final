@@ -19,16 +19,16 @@ class MentorForm extends Component {
                 mentorData: {
                     "first_name": "",
                     "last_name": "",
-                    "email": "c",
-                    "gender": "d",
-                    "profile_picture": "e",
-                    "mentor_description": "qe",
-                    "languages": "e",
-                    "availability": "df",
-                    "offering": "ere",
-                    "area_location": "e",
-                    "preferred_meeting_place": "w",
-                    "affiliation": "er",
+                    "email": "",
+                    "gender": "",
+                    "profile_picture": "",
+                    "mentor_description": "",
+                    "languages": "",
+                    "availability": "",
+                    "offering": "",
+                    "area_location": "",
+                    "preferred_meeting_place": "",
+                    "affiliation": "",
                     "active": 1
                 }
             }
@@ -58,7 +58,7 @@ class MentorForm extends Component {
             url = `/api/mentors`
             method = 'POST';
         }
-        
+
         fetch(url, {
         method,
         body: JSON.stringify(this.state.mentorData),
