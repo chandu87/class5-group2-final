@@ -13,13 +13,13 @@ class Company extends React.Component {
     else {
       return (
         <div>
-          <header>
+          {/* <header>
             <Header />
-          </header>
-          <main>
+          </header> */}
+          {/* <main> */}
 
             <h2>Company</h2>
-          </main>
+          {/* </main> */}
         </div>
       );
     }

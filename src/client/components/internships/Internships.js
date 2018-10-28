@@ -27,10 +27,10 @@ class Internships extends React.Component {
     } else {
       return (
         <div>
-          <header>
+          {/* <header>
             <Header />
-          </header>
-          <main>
+          </header> */}
+          {/* <main> */}
             {internships.map(item => (
               <div key={item.id} className="card" style={{ width: "100%" }}>
 
@@ -61,10 +61,10 @@ class Internships extends React.Component {
                 
               </div>
             ))}
-          </main>
-          <footer>
+          {/* </main> */}
+          {/* <footer>
             <Footer />
-          </footer>
+          </footer> */}
         </div>
       );
     }

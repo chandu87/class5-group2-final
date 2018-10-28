@@ -35,14 +35,15 @@ class Mentors extends React.Component {
     else {
       return (
         <div>
-          <header>
+          {/* <header>
             <Header />
-          </header>
-          <main id="mentors">
+          </header> */}
+          {/* <main id="mentors"> */}
           <div className="container"> 
           <div className="row">
           <div className="col">
           <h1>Mentors</h1> <br />
+            <a href="/Mentors/add">Add new</a>
 
             {/* https://getbootstrap.com/docs/4.1/components/card/#card-columns */}
             <div className="card-columns">
@@ -65,11 +66,11 @@ class Mentors extends React.Component {
           </div>
           </div>
           </div>
-          </main>
+          {/* </main> */}
 
-          <footer>
+          {/* <footer>
             <Footer />
-          </footer>
+          </footer> */}
 
 
         </div>

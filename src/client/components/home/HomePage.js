@@ -6,11 +6,11 @@ class HomePage extends React.Component {
   render() {
     return (
       <div className="home-page">
-        <header>
+        {/* <header>
           <Header />
-        </header>
+        </header> */}
 
-        <main>
+        {/* <main> */}
           <div className="jumbotron">
             <h1 className="display-4">Welcome!</h1>
             <p className="lead">
@@ -36,10 +36,10 @@ class HomePage extends React.Component {
               </a>
             </p>
           </div>
-        </main>
-        <footer>
+        {/* </main> */}
+        {/* <footer>
             <Footer />
-          </footer>
+          </footer> */}
       </div>
     );
   }
