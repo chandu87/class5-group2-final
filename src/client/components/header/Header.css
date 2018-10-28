@@ -57,12 +57,13 @@
     margin: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     .siteLogo {
         flex-direction: column;
         text-align: center;
         float: none;
         margin-bottom: 15px;
+        margin-top: 15px;    
     }
     .menuLink {
         border-right: none;
@@ -73,4 +74,4 @@
     .nav {
         flex-direction: column;
     }
-}
+}   
