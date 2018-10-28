@@ -56,8 +56,8 @@ class Mentors extends React.Component {
                   <span>{item.offering}</span> <br />
                   <strong>Availability</strong><br />
                   <span>{item.availability}</span> <br />
-                  
                 </p>
+                <a href="#" class="btn btn-danger">Read more..</a>
               </div>
               </div>
               ))}
