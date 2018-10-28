@@ -8,34 +8,48 @@ TODOs
 2. Validation
 */
 class MentorForm extends Component {
-    state = {
-        "first_name": "Susanne",
-        "last_name": "Lervad",
-        "email": "sl@kontiki.fr",
-        "gender": "Female",
-        "profile_picture": "http://dummyimage.com/90x90.png/cc0000/ffffff",
-        "mentor_description": "Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
-        "languages": "Danish/French/English",
-        "availability": "Every Thursday from 12:00 PM to 03:00 PM",
-        "offering": "Networking/Self-employment/Terminology research",
-        "area_location": "Region Zealand",
-        "preferred_meeting_place": "Islands Brygge Copenhagen S",
-        "affiliation": "Termplus",
-        "active": 1
+    constructor(props) {
+        super(props);
+        if (this.props.isEditing) {
+            this.state = {
+                mentorData: this.props.mentorData
+            }
+        } else {
+            this.state = {
+                mentorData: {
+                    "first_name": "",
+                    "last_name": "",
+                    "email": "",
+                    "gender": "",
+                    "profile_picture": "",
+                    "mentor_description": "",
+                    "languages": "",
+                    "availability": "",
+                    "offering": "",
+                    "area_location": "",
+                    "preferred_meeting_place": "",
+                    "affiliation": "",
+                    "active": 1
+                }
+            }
+        }
     }
 
     updateField = (e) => {
         const { name, value } = e.target;
 
         this.setState({
-            [name]: value,
+            mentorData: {
+                ...this.state.mentorData,
+                [name]: value,
+            }
         })
     }
 
     submitForm = (e) => {
         e.preventDefault();
 
-        console.log({ state: this.state })
+        // console.log({ state: this.state })
 
         // debugger;
 
@@ -45,7 +59,7 @@ class MentorForm extends Component {
 
 
         var url = '/api/mentors';
-        var data = this.state;
+        var data = this.state.mentorData;
 
         fetch(url, {
         method: 'POST', // or 'PUT'
@@ -67,17 +81,17 @@ class MentorForm extends Component {
                 <h2>
                     {`${this.props.isEditing ? "Edit" : "Add"} Mentor`}
                 </h2>
-                
+
                 <div>
                     <label>
                         First Name
-                        <input name="first_name" value={this.state.first_name} onChange={this.updateField} />
+                        <input name="first_name" value={this.state.mentorData.first_name} onChange={this.updateField} />
                     </label>
                 </div>
                 <div>
                     <label>
                         Last Name
-                        <input name="last_name" value={this.state.last_name} onChange={this.updateField} />
+                        <input name="last_name" value={this.state.mentorData.last_name} onChange={this.updateField} />
                     </label>
                 </div>
                 <button type="submit">Submit</button>
