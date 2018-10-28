@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import Header from "../header/Header"
 import Footer from "../footer/Footer";
 import './Mentors.css';
@@ -52,6 +54,7 @@ class Mentors extends React.Component {
               <div key={item.id} class="card">
               <img className="card-img-top" src={item.profile_picture} alt={item.first_name + " "+ item.last_name} />
               <div className="card-body">
+                <Link to={`/Mentors/edit/${item.id}`} target="_blank">Edit</Link>
                 <h5 className="card-title">{item.first_name + " "+ item.last_name}</h5>
                 <p className="card-text"><strong>Services</strong><br />
                   <span>{item.offering}</span> <br />
