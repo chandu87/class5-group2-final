@@ -19,16 +19,16 @@ class MentorForm extends Component {
                 mentorData: {
                     "first_name": "",
                     "last_name": "",
-                    "email": "",
-                    "gender": "",
-                    "profile_picture": "",
-                    "mentor_description": "",
-                    "languages": "",
-                    "availability": "",
-                    "offering": "",
-                    "area_location": "",
-                    "preferred_meeting_place": "",
-                    "affiliation": "",
+                    "email": "c",
+                    "gender": "d",
+                    "profile_picture": "e",
+                    "mentor_description": "qe",
+                    "languages": "e",
+                    "availability": "df",
+                    "offering": "ere",
+                    "area_location": "e",
+                    "preferred_meeting_place": "w",
+                    "affiliation": "er",
                     "active": 1
                 }
             }
@@ -49,21 +49,19 @@ class MentorForm extends Component {
     submitForm = (e) => {
         e.preventDefault();
 
-        // console.log({ state: this.state })
+        let url = '', method = '';
 
-        // debugger;
-
-        // alert(JSON.stringify(this.state));
-
-        // TODO Call the api to save the form
-
-
-        var url = '/api/mentors';
-        var data = this.state.mentorData;
-
+        if (this.props.isEditing) {
+            url = `/api/mentors/${this.props.match.params.id}`
+            method = 'PUT';
+        } else {
+            url = `/api/mentors`
+            method = 'POST';
+        }
+        
         fetch(url, {
-        method: 'POST', // or 'PUT'
-        body: JSON.stringify(data), // data can be `string` or {object}!
+        method,
+        body: JSON.stringify(this.state.mentorData),
         headers:{
             'Content-Type': 'application/json'
         }
