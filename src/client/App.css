@@ -304,7 +304,7 @@ main {
    float: right;
  }
  .card-header{
-  background-color: #ccc;
+  background-color: rgba(204, 204, 204, 0.509);
  }
  
 .networking-item,
