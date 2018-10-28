@@ -64,6 +64,10 @@ class MentorForm extends Component {
     render () {
         return (
             <form onSubmit={this.submitForm}>
+                <h2>
+                    {`${this.props.isEditing ? "Edit" : "Add"} Mentor`}
+                </h2>
+                
                 <div>
                     <label>
                         First Name
