@@ -92,6 +92,12 @@ class MentorForm extends Component {
                         <input name="last_name" value={this.state.mentorData.last_name} onChange={this.updateField} />
                     </label>
                 </div>
+                <div>
+                    <label>
+                        Mentor Description
+                        <textarea name="mentor_description" value={this.state.mentorData.mentor_description} onChange={this.updateField} />
+                    </label>
+                </div>
                 <button type="submit">Submit</button>
             </form>
         )
