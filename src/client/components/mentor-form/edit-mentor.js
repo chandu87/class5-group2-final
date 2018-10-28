@@ -18,6 +18,8 @@ class EditMentor extends Component {
         const url = '/api/mentors'
         const id = this.props.match.params.id;
 
+        // TODO handle failure (404)
+
         fetch(`${url}/${id}`)
         .then(
             response => response.json()
@@ -34,7 +36,7 @@ class EditMentor extends Component {
             this.state.isLoading ? 
                 <div>Hang in there...</div>
                 :
-                <MentorForm {...this.props} mentorData={this.state.mentorData}  isEditing={true} />
+                <MentorForm {...this.props} mentorData={this.state.mentorData} id={this.props.match.params.id} isEditing={true} />
         )
     }
 }
