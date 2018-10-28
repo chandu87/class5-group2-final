@@ -7,7 +7,7 @@ TODOs
   1.b Call the appropriate endpoint
 2. Validation
 */
-class AddMentor extends Component {
+class MentorForm extends Component {
     state = {
         "first_name": "Susanne",
         "last_name": "Lervad",
@@ -82,4 +82,4 @@ class AddMentor extends Component {
     }
 }
 
-export default AddMentor;
+export default MentorForm;
