@@ -11,6 +11,7 @@ import MentorForm from './mentor-form';
 class EditMentor extends Component {
     state = {
         isLoading: true,
+        message: 'Hang in there...',
         mentorData: null
     }
 
@@ -29,12 +30,15 @@ class EditMentor extends Component {
                 mentorData: data
             })
         )
+        // .catch(error => this.setState({
+        //     message: error
+        // })) 
     }
 
     render() {
         return (
             this.state.isLoading ? 
-                <div>Hang in there...</div>
+                <div>{this.state.message}</div>
                 :
                 <MentorForm {...this.props} mentorData={this.state.mentorData} id={this.props.match.params.id} isEditing={true} />
         )
