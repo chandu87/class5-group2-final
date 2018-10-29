@@ -34,38 +34,37 @@ class Networking extends React.Component {
     else {
       return (
         <div>
-          <header>
-            <Header />
-          </header>
-          <main id="networking">
             <div className="container"> 
               <div className="row">
                 <div className="col">
                 <h1>Networking</h1> <br />
                 {items.map(item => (
                   <Link to={item.organisation_url} target="_blank" className="networking-item">
-                  <div className="card mb-4 shadow-sm">
-                  <div className="card-header">
-                    <h4 className="my-0 font-weight-normal"><img src={item.organisation_logo} width="100%" alt="Organization Logo"/></h4>
-                  </div>
-                  <div className="card-body">
+                  <div className="card mb-4">
+                    <div className="card-header">
                     <h2 className="card-title pricing-card-title"> {item.organisation_name}</h2>
-                      <div><strong>Org. Address:</strong> {item.organisation_address}</div>
-                      <div><strong>Contact Person:</strong> {item.contact_person}</div>
-                      <div><strong>Contact Email:</strong> {item.contact_email}</div>
-                      <div><strong>Contact Number:</strong> {item.contact_phone}</div>
-                  </div>
+                    </div>
+                    <div className="card-body">
+                      <div className="row">
+                        <div className="col-md-8">
+                            <div><strong>Org. Address:</strong> {item.organisation_address}</div>
+                            <div><strong>Contact Person:</strong> {item.contact_person}</div>
+                            <div><strong>Contact Email:</strong> {item.contact_email}</div>
+                            <div><strong>Contact Number:</strong> {item.contact_phone}</div>
+                            <br />
+                            <a href="#" className="btn btn-danger">Read more..</a>
+                        </div>
+                        <div className="col-md-4">
+                          <img className="my-0 font-weight-normal networking-image" src={item.organisation_logo} width="100%" alt="Organization Logo"/>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   </Link>
                 ))}                                  
                 </div>
               </div>
             </div>
-          </main>
-
-          <footer>
-            <Footer />
-          </footer>
         </div>
       );
     }

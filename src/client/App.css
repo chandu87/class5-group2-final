@@ -297,17 +297,42 @@ main {
   color:white;
  }
  .card{
-   /* padding : 10px; */
    margin-bottom: 10px;
+   box-shadow: 0 21px 23.2px 5.8px rgba(72,80,87,.13);
+   -webkit-box-shadow: 0 21px 23.2px 5.8px rgba(72,80,87,.13);
+   -moz-box-shadow: 0 21px 23.2px 5.8px rgba(72,80,87,.13); 
+   transition: 0.8s;
  }
+ .card:hover{
+  transform: translateY(-20px);
+  transition: 0.8s; 
+  box-shadow: 0 21px 23.2px 5.8px rgba(72,80,87,.13);
+  -webkit-box-shadow: 0 21px 23.2px 5.8px rgba(72,80,87,.13);
+  -moz-box-shadow: 0 21px 23.2px 5.8px rgba(72,80,87,.13); 
+}  
  .dead-line{
    float: right;
  }
  .card-header{
-  background-color: #ccc;
+  background-color: #f1e2e240;
  }
  
 .networking-item,
 .networking-item:hover {
    text-decoration: none;
+}
+.home-page{
+  background-image: url('./components/home/thread-event-lecture.jpg'); 
+}
+.home-page .jumbotron{
+background-color: #eee9efbd; 
+}
+
+.internship-image, .networking-image{
+  height: 10vw;
+  width: 14vw; 
+
+}
+.card-footer{
+  background-color: rgba(231, 222, 222, 0.14);
 }

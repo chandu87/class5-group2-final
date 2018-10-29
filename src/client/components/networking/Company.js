@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../header/Header"
 
 class Company extends React.Component {
 
@@ -13,13 +12,8 @@ class Company extends React.Component {
     else {
       return (
         <div>
-          <header>
-            <Header />
-          </header>
-          <main>
 
             <h2>Company</h2>
-          </main>
         </div>
       );
     }
