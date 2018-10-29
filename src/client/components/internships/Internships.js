@@ -30,6 +30,7 @@ class Internships extends React.Component {
           <header>
             <Header />
           </header>
+          
           <main>
             {internships.map(item => (
               <div key={item.id} className="card" style={{ width: "100%" }}>
