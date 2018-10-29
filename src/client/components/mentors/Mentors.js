@@ -46,7 +46,7 @@ class Mentors extends React.Component {
 
             {items.map(item => (
               <div key={item.id} class="card">
-              <img className="card-img-top" src={item.profile_picture} alt={item.first_name + " "+ item.last_name} />
+              <img className="mentor-image" src={item.profile_picture} alt={item.first_name + " "+ item.last_name} />
               <div className="card-body">
                 <Link to={`/Mentors/edit/${item.id}`} target="_blank">Edit</Link>
                 <h5 className="card-title">{item.first_name + " "+ item.last_name}</h5>
