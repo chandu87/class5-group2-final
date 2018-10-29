@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
 
 class Internships extends React.Component {
   constructor(props) {
@@ -27,16 +25,6 @@ class Internships extends React.Component {
     } else {
       return (
         <div>
-          <header>
-            <Header />
-          </header>
-          
-          <main>
-            <div className="container"> 
-            <div className="row">
-              <div className="col">
-              <h1>Internships</h1> <br />
-
             {internships.map(item => (
               <div key={item.id} className="card" style={{ width: "100%" }}>
 
@@ -67,13 +55,6 @@ class Internships extends React.Component {
                 
               </div>
             ))}
-            </div>
-            </div>
-            </div>
-          </main>
-          <footer>
-            <Footer />
-          </footer>
         </div>
       );
     }
