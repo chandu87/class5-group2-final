@@ -314,7 +314,7 @@ main {
    float: right;
  }
  .card-header{
-  background-color: #ccc;
+  background-color: #f1e2e240;
  }
  
 .networking-item,
@@ -326,4 +326,13 @@ main {
 }
 .home-page .jumbotron{
 background-color: #eee9efbd; 
+}
+
+.internship-image, .networking-image{
+  height: 10vw;
+  width: 14vw; 
+
+}
+.card-footer{
+  background-color: rgba(231, 222, 222, 0.14);
 }
