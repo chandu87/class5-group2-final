@@ -32,6 +32,11 @@ class Internships extends React.Component {
           </header>
           
           <main>
+            <div className="container"> 
+            <div className="row">
+              <div className="col">
+              <h1>Internships</h1> <br />
+
             {internships.map(item => (
               <div key={item.id} className="card" style={{ width: "100%" }}>
 
@@ -62,6 +67,9 @@ class Internships extends React.Component {
                 
               </div>
             ))}
+            </div>
+            </div>
+            </div>
           </main>
           <footer>
             <Footer />

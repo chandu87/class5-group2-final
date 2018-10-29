@@ -44,7 +44,7 @@ class Networking extends React.Component {
                 <h1>Networking</h1> <br />
                 {items.map(item => (
                   <Link to={item.organisation_url} target="_blank" className="networking-item">
-                  <div className="card mb-4 shadow-sm">
+                  <div className="card mb-4">
                   <div className="card-header">
                     <h4 className="my-0 font-weight-normal"><img src={item.organisation_logo} width="100%" alt="Organization Logo"/></h4>
                   </div>
@@ -54,6 +54,8 @@ class Networking extends React.Component {
                       <div><strong>Contact Person:</strong> {item.contact_person}</div>
                       <div><strong>Contact Email:</strong> {item.contact_email}</div>
                       <div><strong>Contact Number:</strong> {item.contact_phone}</div>
+                      <br />
+                      <a href="#" class="btn btn-danger">Read more..</a>
                   </div>
                   </div>
                   </Link>
