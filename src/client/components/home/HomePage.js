@@ -1,16 +1,9 @@
 import React from "react";
-import Footer from "../footer/Footer";
-import Header from "../header/Header";
 
 class HomePage extends React.Component {
   render() {
     return (
       <div className="home-page">
-        <header>
-          <Header />
-        </header>
-
-        <main>
           <div className="jumbotron">
             <h1 className="display-4">Welcome!</h1>
             <p className="lead">
@@ -36,10 +29,6 @@ class HomePage extends React.Component {
               </a>
             </p>
           </div>
-        </main>
-        <footer>
-            <Footer />
-          </footer>
       </div>
     );
   }

@@ -7,17 +7,17 @@ class Events extends React.Component {
   render() {
     return (
       <div>
-        <header>
+        {/* <header>
           <Header />
-        </header>
+        </header> */}
 
         <div className="col-md-6">
           <Calendar />
         </div>
 
-        <footer>
+        {/* <footer>
           <Footer />
-        </footer>
+        </footer> */}
       </div>
     );
   }

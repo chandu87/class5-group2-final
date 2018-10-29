@@ -34,10 +34,6 @@ class Networking extends React.Component {
     else {
       return (
         <div>
-          <header>
-            <Header />
-          </header>
-          <main id="networking">
             <div className="container"> 
               <div className="row">
                 <div className="col">
@@ -63,11 +59,6 @@ class Networking extends React.Component {
                 </div>
               </div>
             </div>
-          </main>
-
-          <footer>
-            <Footer />
-          </footer>
         </div>
       );
     }
