@@ -22,7 +22,6 @@ db.execute(sql,(err, result)=>{
         res.status(500).send(err);
         return;
     }
-    console.log(result);
     res.send(result);
 })
 }
