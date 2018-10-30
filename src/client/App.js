@@ -33,6 +33,7 @@ class App extends Component {
             <Route exact path={`/Mentors/edit/:id`} component={MentorForms.EditMentor} />
             <Route exact path="/Networking" component={Networking} />
             <Route exact path="/Networking/add" component={NetworkForms.addNetwork}/>
+            <Route exact path="/Networking/edit/:id" component={NetworkForms.editNetwork}/>
             <Route exact path={`/Networking/company/:id`} component={Company} />
           </Switch>
         </main>
