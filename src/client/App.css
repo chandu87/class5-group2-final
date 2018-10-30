@@ -330,13 +330,13 @@ background-color: #eee9efbd;
 
 .internship-image, .networking-image{
   height: 10vw;
-  width: 14vw; 
+  /* width: 14vw;  */
+  width: 100%;
 
 }
 .card-footer{
   background-color: rgba(231, 222, 222, 0.14);
 }
-
-#networking .card-footer .btn:hover {
-  color: white;
+.network-edit-button{
+  float: right;
 }

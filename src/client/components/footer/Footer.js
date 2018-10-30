@@ -54,7 +54,7 @@ class Footer extends React.Component {
 
                             <h4>Developed By</h4>
                             <p>
-                                Group # for the Final Project Class at <br />
+                                Group 2 for the Final Project Class at <br />
                                 Hack Your Future - Copenhagen<br />
                                 http://hackyourfuture.dk/<br />
                             </p>
