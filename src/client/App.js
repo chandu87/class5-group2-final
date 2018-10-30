@@ -14,6 +14,7 @@ import Networking from "./components/networking/Networking";
 import Company from "./components/networking/Company";
 // import { AddMentor, EditMentor } from "./components/mentor-form";
 import MentorForms from "./components/mentor-form";
+import NetworkForms from "./components/networking-form";
 
 class App extends Component {
   render() {
@@ -31,6 +32,7 @@ class App extends Component {
             <Route exact path="/Mentors/add" component={MentorForms.AddMentor} />
             <Route exact path={`/Mentors/edit/:id`} component={MentorForms.EditMentor} />
             <Route exact path="/Networking" component={Networking} />
+            <Route exact path="/Networking/add" component={NetworkForms.addNetwork}/>
             <Route exact path={`/Networking/company/:id`} component={Company} />
           </Switch>
         </main>
