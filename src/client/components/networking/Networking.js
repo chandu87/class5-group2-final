@@ -31,8 +31,8 @@ class Networking extends React.Component {
     }
     else {
       return (
-            <div className="container"> 
-              <h1>Networking</h1> 
+            <div className="container-fluid"> 
+              <h1>NETWORKING</h1> 
               <br/>
                 <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Networking/add">Add Network</a>
                 {items.map(item => (
@@ -55,7 +55,7 @@ class Networking extends React.Component {
                     </div>
                     <div className="card-footer">
                         <a href={item.organisation_url} className="btn btn-outline-danger btn-sm">Read more..</a>
-                        <a href="/Networking/Edit" className="btn btn-outline-danger network-edit-button btn-sm"> Edit</a>
+                        <a href={`/Networking/edit/${item.id}`} className="btn btn-outline-danger network-edit-button btn-sm"> Edit</a>
                     </div>
                   </div>
                 ))}                                  
