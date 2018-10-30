@@ -147,7 +147,7 @@ class networkingForm extends React.Component{
             const item = this.state.networkData;
             return(
                 <div>
-                    <h1>Successfully added network</h1>
+                    <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Network`}</h1>
                     <br/>
                     <div key={item.id} className="card mb-4 networking-item">
                     <div className="card-header">
