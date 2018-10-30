@@ -56,7 +56,7 @@ class networkingForm extends React.Component{
                 </div>
                 <div className="form-group">
                     <label for="organisation_description">Organisation description</label>
-                    <input type="text" name="organisation_description" value={this.state.networkData.organisation_description} onChange={this.updateField} className="form-control" id="organisation_description" placeholder="Enter organisation description"/>
+                    <input type="text" name="organisation_description" value={this.state.networkData.organisation_description} onChange={this.updateField} className="form-control form-control-lg" id="organisation_description" placeholder="Enter organisation description"/>
                 </div>
                 <div className="form-group">
                     <label for="organisation_logo">Organisation logo</label>
@@ -64,31 +64,45 @@ class networkingForm extends React.Component{
                 </div>
                 <div className="form-group">
                     <label for="organisation_url">Organisation url</label>
-                    <input type="url" name="organisation_url" value={this.state.networkData.organisation_url} onChange={this.updateField} className="form-control" id="organisation_url" placeholder="Enter organisation url"/>
+                    <input type="url" name="organisation_url" value={this.state.networkData.organisation_url} onChange={this.updateField} className="form-control form-control-sm" id="organisation_url" placeholder="Enter organisation url"/>
                 </div>
                 <div className="form-group">
                     <label for="organisation_address">Organisation address</label>
                     <input type="text" name="organisation_address" value={this.state.networkData.organisation_address} onChange={this.updateField} className="form-control" id="organisation_address" placeholder="Enter organisation address"/>
                 </div>
-                <div className="form-group">
-                    <label for="organisation_city">Organisation city</label>
-                    <input type="text" name="organisation_city" value={this.state.networkData.organisation_city} onChange={this.updateField} className="form-control" id="organisation_city" placeholder="Enter organisation city"/>
+                <div className="row">
+                    <div className="col">
+                        <div className="form-group">
+                            <label for="organisation_city">Organisation city</label>
+                            <input type="text" name="organisation_city" value={this.state.networkData.organisation_city} onChange={this.updateField} className="form-control" id="organisation_city" placeholder="Enter city name"/>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label for="organisation_postal_code">Organisation postal code</label>
+                            <input type="text" name="organisation_postal_code" value={this.state.networkData.organisation_postal_code} onChange={this.updateField} className="form-control" id="organisation_postal_code" placeholder="Enter Postal code"/>
+                        </div>
+                    </div>
                 </div>
-                <div className="form-group">
-                    <label for="organisation_postal_code">Organisation postal code</label>
-                    <input type="number" name="organisation_postal_code" value={this.state.networkData.organisation_postal_code} onChange={this.updateField} className="form-control" id="organisation_postal_code" placeholder="Enter organisation postal code"/>
-                </div>
-                <div className="form-group">
+                <div className="row">
+                    <div className="col">
+                    <div className="form-group">
                     <label for="contact_person">Contact person</label>
                     <input type="text" name="contact_person" value={this.state.networkData.contact_person} onChange={this.updateField} className="form-control" id="contact_person" placeholder="Enter contact person"/>
+                </div>
+
+                    </div>
+                    <div className="col">
+                    <div className="form-group">
+                    <label for="contact_phone">Contact phone</label>
+                    <input type="tel" name="contact_phone" value={this.state.networkData.contact_phone} onChange={this.updateField} className="form-control" id="contact_phone" placeholder="Enter contact phone"/>
+                </div>
+
+                    </div>
                 </div>
                 <div className="form-group">
                     <label for="contact_email">Contact email</label>
                     <input type="email" name="contact_email" value={this.state.networkData.contact_email} onChange={this.updateField} className="form-control" id="contact_email" placeholder="Enter contact email"/>
-                </div>
-                <div className="form-group">
-                    <label for="contact_phone">Contact phone</label>
-                    <input type="tel" name="contact_phone" value={this.state.networkData.contact_phone} onChange={this.updateField} className="form-control" id="contact_phone" placeholder="Enter contact phone"/>
                 </div>
                 <div class="form-check">
                     <input type="checkbox" name="active" value={this.state.networkData.active} onChange={this.updateField} className="form-check-input" id="checkActiveStatus"/>
