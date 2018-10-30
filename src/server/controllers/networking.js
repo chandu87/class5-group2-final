@@ -22,6 +22,8 @@ db.execute(sql,(err, result)=>{
         res.status(500).send(err);
         return;
     }
+    console.log(result);
+    res.send(result);
 })
 }
 export function updateNetwork(req,res){
@@ -47,7 +49,7 @@ export function updateNetwork(req,res){
         return;
       }
   
-      res.send('success');
+      res.send(result);
     });
 
 }
