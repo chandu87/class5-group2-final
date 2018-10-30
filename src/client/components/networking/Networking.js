@@ -33,13 +33,17 @@ class Networking extends React.Component {
     }
     else {
       return (
-        <div>
+        <div id="networking">
             <div className="container"> 
               <div className="row">
                 <div className="col">
                 <h1>Networking</h1> <br />
+
+                <div className="mb-4">
+                  <a href="/Networking/add" role="button" class="btn btn-success">Add Record</a>
+                </div>
+
                 {items.map(item => (
-                  <Link to={item.organisation_url} target="_blank" className="networking-item">
                   <div className="card mb-4">
                     <div className="card-header">
                     <h2 className="card-title pricing-card-title"> {item.organisation_name}</h2>
@@ -52,15 +56,20 @@ class Networking extends React.Component {
                             <div><strong>Contact Email:</strong> {item.contact_email}</div>
                             <div><strong>Contact Number:</strong> {item.contact_phone}</div>
                             <br />
-                            <a href="#" className="btn btn-danger">Read more..</a>
+                            <Link  to={item.organisation_url} target="_blank" className="btn btn-danger">Read more..</Link>
                         </div>
                         <div className="col-md-4">
                           <img className="my-0 font-weight-normal networking-image" src={item.organisation_logo} width="100%" alt="Organization Logo"/>
                         </div>
                       </div>
                     </div>
+                    <div class="card-footer">
+                      <small class="text-muted">
+                        <Link  to={`/Networking/edit/${item.id}`} target="_blank" role="button" class="btn btn-outline-primary">Edit</Link>
+                        <Link to="#" role="button" class="btn btn-outline-danger pull-right">Delete</Link>
+                      </small>
+                    </div>
                   </div>
-                  </Link>
                 ))}                                  
                 </div>
               </div>

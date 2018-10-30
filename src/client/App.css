@@ -336,3 +336,7 @@ background-color: #eee9efbd;
 .card-footer{
   background-color: rgba(231, 222, 222, 0.14);
 }
+
+#networking .card-footer .btn:hover {
+  color: white;
+}
