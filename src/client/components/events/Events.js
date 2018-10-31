@@ -1,5 +1,6 @@
 import React from "react";
 import Calendar from "./Calendar";
+import EventsListView from "./EventsListView.js";
 
 class Events extends React.Component {
   constructor(props) {
@@ -12,16 +13,29 @@ class Events extends React.Component {
         .then(response => response.json())
         .then(data => {
           console.log("------>",data);
-          this.setState({ internships: data });
+          this.setState({ events: data });
         });
     }
     //Read data using console
     //Display data using list
   render() {
     return (
-      <div>
-        <div className="col-md-6">
-          <Calendar />
+      <div className="container-fluid">
+        <div className="row">
+          <div className="btn-group events-btn" role="group">
+            <button className="btn btn-outline-primary active">Calender View</button>
+            <button className="btn btn-outline-primary">Map View</button>
+          </div>
+        </div>
+        <h1>List of Events</h1>
+
+        <div className="row">
+          <div className="col-md-6">
+              <EventsListView events={this.state.events}/>
+          </div>
+          <div className="col-md-6">
+            <Calendar />
+          </div>
         </div>
       </div>
     );
