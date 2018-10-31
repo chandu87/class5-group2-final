@@ -28,12 +28,11 @@ class Events extends React.Component {
           </div>
         </div>
         <h1>List of Events</h1>
-
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-6" data-spy="scroll" data-offset="0">
               <EventsListView events={this.state.events}/>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 calender-container">
             <Calendar />
           </div>
         </div>
