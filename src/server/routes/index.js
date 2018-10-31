@@ -3,6 +3,7 @@ import express from "express";
 import internshipsRoute from "./internships";
 import mentorsRoute from "./mentors";
 import networkingRoute from "./networking";
+import eventsRoute from "./events";
 
 const router = express.Router();
 
@@ -14,7 +15,7 @@ router.get("/hello", (req, res) => {
 router.use("/internships", internshipsRoute);
 router.use("/mentors", mentorsRoute);
 router.use("/networking", networkingRoute);
-router.use("/events", networkingRoute);
+router.use("/events", eventsRoute);
 
 router.use((req, res, next) => {
   const err = new Error("Not found.");

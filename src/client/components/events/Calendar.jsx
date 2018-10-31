@@ -90,7 +90,8 @@ class Calendar extends React.Component {
     return <div className="body">{rows}</div>;
   }
   findEvents(date){
-    const eventDates = [8, 12, 17, 25];
+    const eventDates = [];
+    // const eventDates = [8, 12, 17, 25];
     if(eventDates.includes(Number(date))){
       return `React JS`;
     }
