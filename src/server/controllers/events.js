@@ -12,7 +12,7 @@ export function listAllEvents(req, res){
       res.send(rows);
   })
 }
-export function createEvents(req,res){
+export function createEvent(req,res){
     const jsonData = req.body;
 const sql = SqlString.format('INSERT INTO events SET ?', jsonData);
 console.log(sql);
