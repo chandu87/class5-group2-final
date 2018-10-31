@@ -13,9 +13,9 @@ import Mentors from "./components/mentors/Mentors";
 import Networking from "./components/networking/Networking";
 import NetworkingItemDetails from "./components/networking/Network-item-details";
 import Company from "./components/networking/Company";
-// import { AddMentor, EditMentor } from "./components/mentor-form";
 import MentorForms from "./components/mentor-form";
 import NetworkForms from "./components/networking-form";
+import InternshipForms from "./components/internship-form";
 
 
 class App extends Component {
@@ -29,6 +29,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Homepage} />
             <Route exact path="/Internships" component={Internships} />
+            <Route exact path="/Internships/add" component={InternshipForms.AddInternship} />
+            <Route exact path={`/Internships/edit/:id`} component={InternshipForms.EditInternship} />
             <Route exact path="/Events" component={Events} />
             <Route exact path="/Mentors" component={Mentors} />
             <Route exact path="/Mentors/add" component={MentorForms.AddMentor} />
