@@ -70,6 +70,7 @@ class networkingForm extends React.Component {
     render(){
         if(this.state.displaySubmitForm){
             return(
+                <div class="container">
                 <form onSubmit={this.submitForm}>       
                     <h2>
                         {`${this.props.isEditing ? "Edit" : "Add"} Network`}
@@ -141,6 +142,7 @@ class networkingForm extends React.Component {
                     <button type="submit" className="btn btn-primary">Submit</button>
     
                 </form>
+                </div>
             );
         }else{
             const item = this.state.networkData;
