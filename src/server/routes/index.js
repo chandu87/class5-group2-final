@@ -3,6 +3,7 @@ import express from "express";
 import internshipsRoute from "./internships";
 import mentorsRoute from "./mentors";
 import networkingRoute from "./networking";
+import eventsRoute from "./events";
 
 const router = express.Router();
 
