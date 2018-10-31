@@ -344,6 +344,13 @@ background-color: #eee9efbd;
 .events-btn{
   margin-bottom: 1em;
 }
-.events-container{
+/* .calender-container{
   height: 100vh;
+  background: #222;
+} */
+
+.list-group{
+  height: 100vh;
+    overflow-y: scroll;
+    border: 1px solid rgba(156, 154, 154, 0.404);
 }
