@@ -11,10 +11,12 @@ import Homepage from "./components/home/HomePage";
 import Events from "./components/events/Events";
 import Mentors from "./components/mentors/Mentors";
 import Networking from "./components/networking/Networking";
+import NetworkingItemDetails from "./components/networking/Network-item-details";
 import Company from "./components/networking/Company";
 // import { AddMentor, EditMentor } from "./components/mentor-form";
 import MentorForms from "./components/mentor-form";
 import NetworkForms from "./components/networking-form";
+
 
 class App extends Component {
   render() {
@@ -33,6 +35,7 @@ class App extends Component {
             <Route exact path={`/Mentors/edit/:id`} component={MentorForms.EditMentor} />
             <Route exact path="/Networking" component={Networking} />
             <Route exact path="/Networking/add" component={NetworkForms.addNetwork}/>
+            <Route exact path="/Networking/details/:id" component={NetworkingItemDetails}/>
             <Route exact path="/Networking/edit/:id" component={NetworkForms.editNetwork}/>
             <Route exact path={`/Networking/company/:id`} component={Company} />
           </Switch>

@@ -75,7 +75,7 @@ export function deleteNetwork(req,res){
         return;
       }
   
-      res.send('success');
+      res.send(result);
     });
 }
 export function getNetworkById(req,res){
