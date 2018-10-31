@@ -2,9 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class Internships extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = { internships: [] };
+
   }
   //fetch data using API
   componentDidMount() {
@@ -28,7 +30,7 @@ class Internships extends React.Component {
         <div className="container"> 
         <h1>Internships</h1> 
         <br/>
-            <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Internship/add">Add Internship</a>
+            <Link className="btn btn-outline-danger btn-lg btn-block mentor-add-button" to="/Internships/add">Add Internship</Link>
             {internships.map(item => (
               <div key={item.id} className="card mb-4">
         
@@ -41,7 +43,7 @@ class Internships extends React.Component {
                       <div className="col-md-8">
                               <p className="card-text">{item.internship_description}</p>
                           <p className="card-text">Place : {item.location}</p>
-                          <Link href="#" className="btn btn-danger">
+                          <Link to="#" className="btn btn-danger">
                             Read more...
                           </Link>
                       </div>
@@ -57,8 +59,8 @@ class Internships extends React.Component {
         
                 </div>
                 <div className="card-footer">
-                  <Link to={`/Networking/Edit/${item.id}`} target="_blank" className="btn btn-outline-danger network-edit-button btn-sm"> Edit</Link>
-                  <Link to={`/Networking/Delete/${item.id}`} className="btn btn-outline-danger btn-sm">Delete</Link>
+                  <Link to={`/Internships/edit/${item.id}`} className="btn btn-outline-danger network-edit-button btn-sm"> Edit</Link>
+                  <Link to={`/Internships/delete/${item.id}`} className="btn btn-outline-danger btn-sm">Delete</Link>
                   </div>        
               </div>
             ))}

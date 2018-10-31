@@ -12,9 +12,9 @@ import Events from "./components/events/Events";
 import Mentors from "./components/mentors/Mentors";
 import Networking from "./components/networking/Networking";
 import Company from "./components/networking/Company";
-// import { AddMentor, EditMentor } from "./components/mentor-form";
 import MentorForms from "./components/mentor-form";
 import NetworkForms from "./components/networking-form";
+import InternshipForms from "./components/internship-form";
 
 class App extends Component {
   render() {

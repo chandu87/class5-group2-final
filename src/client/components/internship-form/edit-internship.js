@@ -1,14 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import InternshipForm from './internship-form';
 
-// export default (props) => {
-//     // Do the fetching, and render the form only when the data is here
-//     return (
-//         <InternshipForm {...props} isEditing={true} />
-//     )
-// }
-
-class EditInternship extends Component {
+class EditInternship extends React.Component {
     state = {
         isLoading: true,
         message: 'Hang in there...',
