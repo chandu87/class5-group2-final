@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
 
 class Internships extends React.Component {
   constructor(props) {
@@ -27,27 +25,32 @@ class Internships extends React.Component {
     } else {
       return (
         <div>
-          <header>
-            <Header />
-          </header>
-          <main>
             {internships.map(item => (
               <div key={item.id} className="card" style={{ width: "100%" }}>
 
                 <div className="card-header">
-                <img
-                    className="card-img-top"
-                    src={item.internship_theme_image}
-                    alt={item.internship_title}
-                  />
+                <h5 className="card-title">{item.internship_title}</h5>
+               
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title">{item.internship_title}</h5>
-                  <p className="card-text">{item.internship_description}</p>
-                  <p className="card-text">Place : {item.location}</p>
-                  <a href="#" className="btn btn-primary">
-                    Click for more
-                  </a>
+                  <div className="row">
+                      <div className="col-md-8">
+                              <p className="card-text">{item.internship_description}</p>
+                          <p className="card-text">Place : {item.location}</p>
+                          <a href="#" className="btn btn-danger">
+                            Click for more
+                          </a>
+                      </div>
+                      <div className="col-md-4">
+                          <img
+                        className="internship-image"
+                        src={item.internship_theme_image}
+                        alt={item.internship_title}
+                        />
+                      </div>
+
+                  </div>
+
                 </div>
                 <div className="card-footer">
                 <small className="text-muted">
@@ -61,10 +64,6 @@ class Internships extends React.Component {
                 
               </div>
             ))}
-          </main>
-          <footer>
-            <Footer />
-          </footer>
         </div>
       );
     }

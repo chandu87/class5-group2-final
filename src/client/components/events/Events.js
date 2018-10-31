@@ -1,7 +1,5 @@
 import React from "react";
 import Calendar from "./Calendar";
-import Header from "../header/Header"
-import Footer from "../footer/Footer";
 
 class Events extends React.Component {
   constructor(props) {
@@ -22,27 +20,9 @@ class Events extends React.Component {
   render() {
     return (
       <div>
-        <header>
-          <Header />
-        </header>
-        <main>
-          <div className="row">
-              <div className="col-md-6">
-                <Calendar />
-              </div>
-              <div className="col-md-5">
-                <li>Hello</li>
-                <li>Hello</li>  
-                <li>Hello</li>
-                <li>Hello</li>
-                <li>Hello</li>
-              </div>
-          </div>
-          
-        </main>
-        <footer>
-          <Footer />
-        </footer>
+        <div className="col-md-6">
+          <Calendar />
+        </div>
       </div>
     );
   }
