@@ -1,13 +1,13 @@
 import React from 'react';
 
-class networkingForm extends React.Component{
-    constructor(props){
+class networkingForm extends React.Component {
+    constructor(props) {
         super(props);
-        if(this.props.isEditing){
+        if (this.props.isEditing) {
             this.state = {
-                networkData : this.props.networkData
+                networkData: this.props.networkData
             }
-        }else{
+        } else {
             this.state = {
                 networkData: {
                     "organisation_name": "",
@@ -26,20 +26,22 @@ class networkingForm extends React.Component{
             }
         }
     }
-    submitForm = (e) =>{
+    submitForm = (e) => {
         e.preventDefault();
     }
-    render(){
-        return(
-            <form onSubmit={this.submitForm}>       
-                <h2>
-                    {`${this.props.isEditing ? "Edit" : "Add"} Network`}
-                </h2>
-                <div>
-                    <label>
-                        Organisation name
-                        
-                    </label>
+    render() {
+        return (
+            <form onSubmit={this.submitForm}>
+                <div className='form-group'>
+                    <h2>
+                        {`${this.props.isEditing ? "Edit" : "Add"} Network`}
+                    </h2>
+                    <div>
+                        <label>
+                            Affiliation
+                            <input className='form-control' name="affiliation" value={this.state.networkData.affiliation} onChange={this.updateField} />
+                        </label>
+                    </div>
                 </div>
             </form>
         );
