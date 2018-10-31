@@ -9,10 +9,10 @@ class Events extends React.Component {
   }
     //fetch data using API
     componentDidMount() {
-      fetch("/api/internships")
+      fetch("/api/events")
         .then(response => response.json())
         .then(data => {
-          console.log("------>",data);
+          // console.log("------>",data);
           this.setState({ events: data });
         });
     }
