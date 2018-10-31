@@ -31,7 +31,7 @@ class Networking extends React.Component {
     }
     else {
       return (
-            <div className="container-fluid"> 
+            <div className="container"> 
               <h1>NETWORKING</h1> 
               <br/>
                 <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Networking/add">Add Network</a>
