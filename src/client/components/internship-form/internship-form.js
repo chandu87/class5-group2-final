@@ -10,7 +10,6 @@ class InternshipForm extends Component {
         } else {
             this.state = {
                 internshipData: {
-                    "id": "",
                     "created_at": "",
                     "updated_at": "",
                     "internship_title": "",
@@ -26,6 +25,7 @@ class InternshipForm extends Component {
                     "travel_expenses": "",
                     "location": "",
                     "internship_add_date": "",
+                    "closing_date": "",
                     "internship_deadline": "",
                     "contact_person": "",
                     "phone_contact": "",                    
@@ -71,8 +71,10 @@ class InternshipForm extends Component {
         }
         }).then(res => res.text())
         .then(response => {
-            console.log('Success:', response)
-            // TODO redirect to the internship list page (/internship)
+            console.log('Success:', response);
+            this.setState({
+                displaySubmitForm : false
+            });
         })
         .catch(error => console.error('Error:', error));
     }
@@ -84,141 +86,171 @@ class InternshipForm extends Component {
                     {`${this.props.isEditing ? "Edit" : "Add"} Internship`}
                 </h2>
 
-                <div class="form-group">
-                    <label>
-                        Created Date
-                        <input  class="form-control" name="create_at" value={this.state.internshipData.created_at} onChange={this.updateField} />
-                    </label>
+                <div className="row">
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="created_at">Created Date</label>
+                            <input className="form-control" name="created_at" value={this.state.internshipData.created_at} onChange={this.updateField} />
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="updated_at">
+                                Updated Date
+                            </label>
+                            <input className="form-control" name="updated_at" value={this.state.internshipData.updated_at} onChange={this.updateField} />
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>
-                        Updated Date
-                        <input name="updated_at" value={this.state.internshipData.updated_at} onChange={this.updateField} />
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label>
+                <div className="form-group">
+                    <label htmlFor="internship_description">
                         Internship Description
-                        <textarea name="internship_description" value={this.state.internshipData.internship_description} onChange={this.updateField} />
                     </label>
+                    <textarea className="form-control" name="internship_description" value={this.state.internshipData.internship_description} onChange={this.updateField} rows="2" />
                 </div>
-                <div class="form-group">
-                    <label>
+                <div className="form-group">
+                    <label htmlFor="internship_category">
                         Internship Category
-                        <input name="internship_category" value={this.state.internshipData.internship_category} onChange={this.updateField} />
                     </label>
+                    <input className="form-control" name="internship_category" value={this.state.internshipData.internship_category} onChange={this.updateField} />
                 </div>
-                <div class="form-group">
-                    <label>
+                <div className="form-group">
+                    <label htmlFor="organisation_name">
                         Organization Name
-                        <input name="organisation_name" value={this.state.internshipData.organisation_name} onChange={this.updateField} />
                     </label>
+                    <input className="form-control" name="organisation_name" value={this.state.internshipData.organisation_name} onChange={this.updateField} />
                 </div>
-                <div class="form-group">
-                    <label>
+                <div className="form-group">
+                    <label htmlFor="department">
                         Department 
-                        <textarea name="department" value={this.state.internshipData.department} onChange={this.updateField} />
                     </label>
+                    <input className="form-control" name="department" value={this.state.internshipData.department} onChange={this.updateField} rows="2"/>
                 </div>
-                <div class="form-group">
-                    <label>
-                        Description
-                        <input name="internship_description" value={this.state.internshipData.internship_description} onChange={this.updateField} />
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label>
+                <div className="form-group">
+                    <label htmlFor="organisation_description">
                         Organization Description
-                        <input name="organisation_description" value={this.state.internshipData.organisation_description} onChange={this.updateField} />
                     </label>
+                    <textarea className="form-control" name="organisation_description" value={this.state.internshipData.organisation_description} onChange={this.updateField} rows="3"/>
                 </div>
-                <div class="form-group">
-                    <label>
-                        Internship Agreement
-                        <textarea name="internship_agreement" value={this.state.internshipData.internship_agreement} onChange={this.updateField} />
-                    </label>
+                <div className="row">
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="internship_agreement">
+                                Internship Agreement
+                            </label>
+                            <input className="form-control" name="internship_agreement" value={this.state.internshipData.internship_agreement} onChange={this.updateField} />
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="internship_requirements">
+                                Internship Requirements
+                            </label>
+                            <input className="form-control" name="internship_requirements" value={this.state.internshipData.internship_requirements} onChange={this.updateField} />
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>
-                        Internship Requirements
-                        <input name="internship_requirements" value={this.state.internshipData.internship_requirements} onChange={this.updateField} />
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label>
+                <div className="form-group">
+                    <label htmlFor="application_requirements">
                         Application Requirements
-                        <input name="application_requirements" value={this.state.internshipData.application_requirements} onChange={this.updateField} />
                     </label>
+                    <input className="form-control" name="application_requirements" value={this.state.internshipData.application_requirements} onChange={this.updateField} />
                 </div>
-                <div class="form-group">
-                    <label>
+                <div className="form-group">
+                    <label htmlFor="internship_availability_schedule">
                         Availability Date 
-                        <textarea name="internship_availability_schedule" value={this.state.internshipData.internship_availability_schedule} onChange={this.updateField} />
                     </label>
+                    <input className="form-control" name="internship_availability_schedule" value={this.state.internshipData.internship_availability_schedule} onChange={this.updateField} />
                 </div>
-                <div class="form-group">
-                    <label>
+                <div className="form-group">
+                    <label htmlFor="travel_expenses">
                         Travel Expenses
-                        <input name="travel_expenses" value={this.state.internshipData.travel_expenses} onChange={this.updateField} />
                     </label>
+                    <input className="form-control" name="travel_expenses" value={this.state.internshipData.travel_expenses} onChange={this.updateField} />
                 </div>
-                <div class="form-group">
-                    <label>
+                <div className="form-group">
+                    <label htmlFor="location">
                         location
-                        <input name="location" value={this.state.internshipData.location} onChange={this.updateField} />
                     </label>
+                    <input className="form-control" name="location" value={this.state.internshipData.location} onChange={this.updateField} />
                 </div>
-                <div class="form-group">
-                    <label>
-                        Internship Publish Date
-                        <textarea name="internship_add_date" value={this.state.internshipData.internship_add_date} onChange={this.updateField} />
-                    </label>
+                <div className="row">
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="internship_add_date">
+                                Internship Publish Date
+                            </label>
+                            <input className="form-control" name="internship_add_date" value={this.state.internshipData.internship_add_date} onChange={this.updateField} />
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="closing_date">
+                                Closing Date
+                            </label>
+                            <input className="form-control" name="closing_date" value={this.state.internshipData.closing_date} onChange={this.updateField} />
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="internship_deadline">
+                                Internship Deadline
+                            </label>
+                            <input className="form-control" name="internship_deadline" value={this.state.internshipData.internship_deadline} onChange={this.updateField} />
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>
-                        Internship Deadline
-                        <input name="internship_deadline" value={this.state.internshipData.internship_deadline} onChange={this.updateField} />
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label>
+                <div className="form-group">
+                    <label htmlFor="contact_person">
                         Contact Person
-                        <input name="contact_person" value={this.state.internshipData.contact_person} onChange={this.updateField} />
                     </label>
+                    <input className="form-control" name="contact_person" value={this.state.internshipData.contact_person} onChange={this.updateField} />
                 </div>
-                <div class="form-group">
-                    <label>
-                        Phone Contact 
-                        <textarea name="phone_contact" value={this.state.internshipData.phone_contact} onChange={this.updateField} />
-                    </label>
+                <div className="row">
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="phone_contact">
+                                Phone Contact 
+                            </label>
+                            <input className="form-control" name="phone_contact" value={this.state.internshipData.phone_contact} onChange={this.updateField} />
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="email_contact">
+                                Email
+                            </label>
+                            <input className="form-control" name="email_contact" value={this.state.internshipData.email_contact} onChange={this.updateField} />
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>
-                        Email
-                        <input name="email_contact" value={this.state.internshipData.email_contact} onChange={this.updateField} />
-                    </label>
+                <div className="row">
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="organisation_address">
+                                Organization Address
+                            </label>
+                            <input className="form-control" name="organisation_address" value={this.state.internshipData.organisation_address} onChange={this.updateField} />
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group">
+                            <label htmlFor="organisation_website">
+                                Organization Website
+                            </label>
+                            <input className="form-control" name="organisation_website" value={this.state.internshipData.organisation_website} onChange={this.updateField} />
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>
-                        Organization Address
-                        <input name="organisation_address" value={this.state.internshipData.organisation_address} onChange={this.updateField} />
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label>
-                        Organization Website
-                        <textarea name="organisation_website" value={this.state.internshipData.organisation_website} onChange={this.updateField} />
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label>
+                <div className="form-group">
+                    <label htmlFor="internship_theme_image">
                         Internship Theme Image
-                        <input name="internship_theme_image" value={this.state.internshipData.internship_theme_image} onChange={this.updateField} />
                     </label>
+                    <input className="form-control" name="internship_theme_image" value={this.state.internshipData.internship_theme_image} onChange={this.updateField} />
                 </div>
 
 
-                <button type="submit">Submit</button>
+                <button type="submit" className="btn btn-primary">Update</button>
             </form>
         )
     }
