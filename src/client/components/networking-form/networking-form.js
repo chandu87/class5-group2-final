@@ -76,13 +76,13 @@ class networkingForm extends React.Component{
                         {`${this.props.isEditing ? "Edit" : "Add"} Network`}
                     </h2>
                     <div className="form-group">
-                        <label htmlFor="organisation_name">Organisation name</label>
-                        <input type="text" name="organisation_name" value={this.state.networkData.organisation_name} onChange={this.updateField} className="form-control" id="organisation_name" aria-describedby="nameHelp" placeholder="Enter Name"/>
+                        <label htmlFor="organisation_name">Organisation name *</label>
+                        <input type="text" name="organisation_name" value={this.state.networkData.organisation_name} onChange={this.updateField} className="form-control" id="organisation_name" aria-describedby="nameHelp" placeholder="Enter Name" required/>
                         <small id="nameHelp" className="form-text text-muted">We'll share your details with everyone.</small>
                     </div>
                     <div className="form-group">
-                    <label htmlFor="sector_activity">Sector activity</label>
-                        <input type="text" name="sector_activity" value={this.state.networkData.sector_activity} onChange={this.updateField} className="form-control" id="sector_activity" placeholder="Enter Sector of Activity"/>
+                    <label htmlFor="sector_activity">Sector activity *</label>
+                        <input type="text" name="sector_activity" value={this.state.networkData.sector_activity} onChange={this.updateField} className="form-control" id="sector_activity" placeholder="Enter Sector of Activity" required/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="organisation_description">Organisation description</label>
@@ -97,20 +97,20 @@ class networkingForm extends React.Component{
                         <input type="url" name="organisation_url" value={this.state.networkData.organisation_url} onChange={this.updateField} className="form-control form-control-sm" id="organisation_url" placeholder="Enter organisation URL"/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="organisation_address">Organisation address</label>
-                        <input type="text" name="organisation_address" value={this.state.networkData.organisation_address} onChange={this.updateField} className="form-control" id="organisation_address" placeholder="Enter address, Floor, Street name"/>
+                        <label htmlFor="organisation_address">Organisation address *</label>
+                        <input type="text" name="organisation_address" value={this.state.networkData.organisation_address} onChange={this.updateField} className="form-control" id="organisation_address" placeholder="Enter address, Floor, Street name" required/>
                     </div>
                     <div className="row">
                         <div className="col">
                             <div className="form-group">
-                                <label htmlFor="organisation_city">Organisation city</label>
-                                <input type="text" name="organisation_city" value={this.state.networkData.organisation_city} onChange={this.updateField} className="form-control" id="organisation_city" placeholder="Enter city name"/>
+                                <label htmlFor="organisation_city">Organisation city *</label>
+                                <input type="text" name="organisation_city" value={this.state.networkData.organisation_city} onChange={this.updateField} className="form-control" id="organisation_city" placeholder="Enter city name" required/>
                             </div>
                         </div>
                         <div className="col">
                             <div className="form-group">
-                                <label htmlFor="organisation_postal_code">Organisation postal code</label>
-                                <input type="text" name="organisation_postal_code" value={this.state.networkData.organisation_postal_code} onChange={this.updateField} className="form-control" id="organisation_postal_code" placeholder="Enter Postal code"/>
+                                <label htmlFor="organisation_postal_code">Organisation postal code *</label>
+                                <input type="text" name="organisation_postal_code" value={this.state.networkData.organisation_postal_code} onChange={this.updateField} className="form-control" id="organisation_postal_code" placeholder="Enter Postal code" required/>
                             </div>
                         </div>
                     </div>
@@ -131,13 +131,13 @@ class networkingForm extends React.Component{
                         </div>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="contact_email">Contact email</label>
-                        <input type="email" name="contact_email" value={this.state.networkData.contact_email} onChange={this.updateField} className="form-control" id="contact_email" placeholder="Enter contact email"/>
+                        <label htmlFor="contact_email">Contact email *</label>
+                        <input type="email" name="contact_email" value={this.state.networkData.contact_email} onChange={this.updateField} className="form-control" id="contact_email" placeholder="Enter contact email" required/>
                     </div>
-                    {/* <div class="form-check">
-                        <input type="checkbox" name="active" value={this.state.networkData.active} onChange={this.updateField} className="form-check-input" id="checkActiveStatus"/>
+                    <div class="form-check">
+                        <input type="checkbox" name="active" value={this.state.networkData.active} onChange={this.updateField} className="form-check-input" id="checkActiveStatus" required/>
                         <label className="form-check-label" htmlFor="checkActiveStatus">Agree to make data active</label>
-                    </div> */}
+                    </div>
                     <br/>
                     <button type="submit" className="btn btn-primary">Submit</button>
     
