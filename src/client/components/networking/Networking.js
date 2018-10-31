@@ -55,9 +55,14 @@ class Networking extends React.Component {
                     </div>
                     <div className="card-footer">
                         <a href={item.organisation_url} className="btn btn-outline-danger btn-sm">Read more..</a>
-                        <a href={`/Networking/edit/${item.id}`} className="btn btn-outline-danger network-edit-button btn-sm"> Edit</a>
+                        <div className="row network-edit-button">
+                        <a href={`/Networking/details/${item.id}`} className="btn btn-outline-danger btn-sm"> Edit</a>
+                        {/* <a href={`/Networking/delete/${item.id}`} className="btn btn-outline-danger btn-sm"> Delete</a> */}
+                       {/* <button className="btn btn-outline-danger btn-sm" onClick={this.deleteNetwork}> Delete</button> */}
+                      </div>
+                        
                     </div>
-                  </div>
+                  </div>  
                 ))}                                  
                 </div>
       );
