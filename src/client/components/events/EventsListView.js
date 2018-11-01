@@ -20,7 +20,7 @@ class EventsListView extends React.Component{
                                 <strong> To </strong>{item.event_end_date} - {item.event_end_hour}</small>
                                 <div className="d-flex w-100 justify-content-between">
                                 <small><a href="#">Read more...</a></small>
-                                <small><a href="#">Edit</a></small>
+                                <small><a href={`/Events/edit/${item.id}`}>Edit</a></small>
                                 </div>
                                 </div>
                             </div>
