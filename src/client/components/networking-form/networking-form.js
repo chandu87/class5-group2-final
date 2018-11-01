@@ -1,15 +1,14 @@
 import React from 'react';
 
-class networkingForm extends React.Component{
-    constructor(props){
+class networkingForm extends React.Component {
+    constructor(props) {
         super(props);
-        if(this.props.isEditing){
+        if (this.props.isEditing) {
             this.state = {
                 networkData : this.props.networkData,
-                displaySubmitForm : true   
-
+                displaySubmitForm : true
             }
-        }else{
+        } else {
             this.state = {
                 networkData: {
                     "organisation_name": "",
@@ -71,6 +70,7 @@ class networkingForm extends React.Component{
     render(){
         if(this.state.displaySubmitForm){
             return(
+                <div class="container">
                 <form onSubmit={this.submitForm}>       
                     <h2>
                         {`${this.props.isEditing ? "Edit" : "Add"} Network`}
@@ -142,6 +142,7 @@ class networkingForm extends React.Component{
                     <button type="submit" className="btn btn-primary">Submit</button>
     
                 </form>
+                </div>
             );
         }else{
             const item = this.state.networkData;
@@ -174,7 +175,6 @@ class networkingForm extends React.Component{
                     <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Networking/add">Add New Network</a>
                 </div>);
         }
-
     }
 }   
 export default networkingForm;

@@ -60,46 +60,122 @@ class MentorForm extends Component {
         }
 
         fetch(url, {
-        method,
-        body: JSON.stringify(this.state.mentorData),
-        headers:{
-            'Content-Type': 'application/json'
-        }
+            method,
+            body: JSON.stringify(this.state.mentorData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         }).then(res => res.text())
-        .then(response => {
-            console.log('Success:', response)
-            // TODO redirect to the Mentors list page (/Mentors)
-        })
-        .catch(error => console.error('Error:', error));
+            .then(response => {
+                console.log('Success:', response)
+                // TODO redirect to the Mentors list page (/Mentors)
+            })
+            .catch(error => console.error('Error:', error));
     }
 
-    render () {
+    render() {
         return (
             <form onSubmit={this.submitForm}>
-                <h2>
-                    {`${this.props.isEditing ? "Edit" : "Add"} Mentor`}
-                </h2>
+                <div className='form-group card px-lg-5'>
+                    <h2 className='card-header mt-4'>
+                        {`${this.props.isEditing ? "Edit" : "Add"} Mentor`}
+                    </h2>
+                    <div className='row mt-4'>
 
-                <div>
-                    <label>
-                        First Name
-                        <input name="first_name" value={this.state.mentorData.first_name} onChange={this.updateField} />
-                    </label>
+                        <div className='col'>
+                            <label>
+                                First Name
+                                <input className='form-control mb-2 mr-sm-2 mb-sm-0' name="first_name" value={this.state.mentorData.first_name} onChange={this.updateField} />
+                            </label>
+                        </div>
+                        <div className='col'>
+                            <label>
+                                Last Name
+                                <input className='form-control mb-2 mr-sm-2 mb-sm-0' name="last_name" value={this.state.mentorData.last_name} onChange={this.updateField} />
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <div className='row'>
+                        <div className='col'>
+                            <label>
+                                Email
+                                <input className='form-control mb-2 mr-sm-2 mb-sm-0 ' name="email" value={this.state.mentorData.email} onChange={this.updateField} />
+                            </label>
+                        </div>
+
+                        <div className='col'>
+                            <label>
+                                Gender
+                                <input className='form-control mb-2 mr-sm-2 mb-sm-0 ' name="gender" value={this.state.mentorData.gender} onChange={this.updateField} />
+                            </label>
+                        </div>
+                    </div>
+                    <div mt-3>
+                        <label className=' mt-3'>
+                            Profile Picture
+                            <input className='form-control-file' type='file' name="profile_picture" value={this.state.mentorData.profile_picture} onChange={this.updateField} />
+                        </label>
+                    </div>
+                    <div>
+                        <label className=' mt-3'>
+                            Mentor Description
+                        <textarea className='form-control' rows='3' cols='67' name="mentor_description" value={this.state.mentorData.mentor_description} onChange={this.updateField} />
+                        </label>
+                    </div>
+
+                    <div className='row'>
+                        <div className='col'>
+                            <label>
+                                Languages
+                                <input className='form-control' name="languages" value={this.state.mentorData.languages} onChange={this.updateField} />
+                            </label>
+                        </div>
+                        <div className='col'>
+                            <label>
+                                Availability
+                                <input className='form-control' name="availability" value={this.state.mentorData.availability} onChange={this.updateField} />
+                            </label>
+                        </div>
+                    </div>
+                    <div className='row'>
+                        <div className='col'>
+                            <label>
+                                Offering
+                                <input className='form-control' name="offering" value={this.state.mentorData.offering} onChange={this.updateField} />
+                            </label>
+                        </div>
+                        <div className='col'>
+                            <label>
+                                Area Location
+                                <input className='form-control' name="area_location" value={this.state.mentorData.area_location} onChange={this.updateField} />
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className='row'>
+                        <div className='col'>
+                            <label>
+                                Preferred Meeting Place
+                            <input className='form-control' name="preferred_meeting_place" value={this.state.mentorData.preferred_meeting_place} onChange={this.updateField} />
+                            </label>
+                        </div>
+                        <div className='col'>
+                            <label>
+                                Affiliation
+                            <input className='form-control' name="affiliation" value={this.state.mentorData.affiliation} onChange={this.updateField} />
+                            </label>
+                        </div>
+                    </div>
+                    <div className='mb-4 mt-3'>
+                        <button className='btn btn-warning' type="submit">Save</button>
+                        <button className='btn btn-primary ml-4' type="cancel">Cancel</button>
+                    </div>
+
                 </div>
-                <div>
-                    <label>
-                        Last Name
-                        <input name="last_name" value={this.state.mentorData.last_name} onChange={this.updateField} />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Mentor Description
-                        <textarea name="mentor_description" value={this.state.mentorData.mentor_description} onChange={this.updateField} />
-                    </label>
-                </div>
-                <button type="submit">Submit</button>
             </form>
+
         )
     }
 }

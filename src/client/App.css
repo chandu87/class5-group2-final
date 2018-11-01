@@ -110,10 +110,11 @@ header #logo .icon {
 
 main {
   display: block;
-  margin: 0 auto;
+  /* margin: 0 auto;
   margin-top: 5em;
-  margin-bottom: 5em;
-  max-width: 50em;
+  margin-bottom: 5em; */
+  margin: 4em 4em;
+  /* max-width: 50em; */
 }
 
 
@@ -323,20 +324,34 @@ main {
 }
 .home-page{
   background-image: url('./components/home/thread-event-lecture.jpg'); 
+  /* height: 80vh; */
 }
 .home-page .jumbotron{
-background-color: #eee9efbd; 
+  background-color: #eee9efbd; 
 }
-
 .internship-image, .networking-image{
   height: 10vw;
-  /* width: 14vw;  */
   width: 100%;
-
 }
 .card-footer{
   background-color: rgba(231, 222, 222, 0.14);
 }
-.network-edit-button{
+.network-edit-button, .events-btn{
   float: right;
+}
+.events-btn{
+  margin-bottom: 1em;
+}
+/* .calender-container{
+  height: 100vh;
+  background: #222;
+} */
+
+.list-group{
+  height: 100vh;
+    overflow-y: scroll;
+    border: 1px solid rgba(156, 154, 154, 0.404);
+}
+.add-event-btn{
+  margin-bottom : 2em;
 }
