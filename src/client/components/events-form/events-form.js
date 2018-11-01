@@ -1,5 +1,5 @@
 import React from 'react';
-import EventDetailedView from '../events/EventDetailedView';
+import EventCard from '../events/EventCard';
 
 class EventsForm extends React.Component{
     constructor(props){
@@ -211,7 +211,7 @@ class EventsForm extends React.Component{
             <div>    
                 <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Event`}</h1>
                 <br/>
-                <EventDetailedView eventData = {this.state.eventsData}/>
+                <EventCard eventData = {this.state.eventsData}/>
                 <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Events/add">Add New Event</a>
                 <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Events">Go back to Events</a>
 
