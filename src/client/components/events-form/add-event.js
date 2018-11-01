@@ -3,7 +3,7 @@ import EventsForm from './events-form';
 
 class AddEvent extends React.Component{
     render(){
-        return(<EventsForm/>);
+        return(<EventsForm isEditing={false}/>);
     }
 }
 export default AddEvent;
