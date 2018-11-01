@@ -49,7 +49,7 @@ class Internships extends React.Component {
                       </div>
                       <div className="col-md-4">
                           <img
-                        className="internship-image"
+                        className="internship-image rounded"
                         src={item.internship_theme_image}
                         alt={item.internship_title}
                         />

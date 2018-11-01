@@ -14,10 +14,10 @@ class Networking extends React.Component {
    componentDidMount() {
      fetch('/api/networking')
       .then(res => res.json())
-      .then(json => {
+      .then(data => {
         this.setState({
           isLoaded: true,
-          items: json,
+          items: data,
         })
       });
   }
