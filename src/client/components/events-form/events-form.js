@@ -21,8 +21,8 @@ class EventsForm extends React.Component{
                     "event_city": "",
                     "event_end_date": "",
                     "event_end_hour": "",
-                    "event_geo_lat": "",
-                    "event_geo_lng": "",
+                    "event_geo_lat": 0,
+                    "event_geo_lng": 0,
                     "event_language": "",
                     "event_name": "",
                     "event_postal_code": "",
@@ -57,6 +57,7 @@ class EventsForm extends React.Component{
         }else{
             url='/api/events';
             method = 'POST';
+            console.log("POST request");
         }
         fetch(url, {
             method,
@@ -64,7 +65,10 @@ class EventsForm extends React.Component{
             headers:{
               'Content-Type': 'application/json'
             }
-          }).then(res => res.json())
+          }).then(res => {
+                console.log("res : ",  res);
+                return res.json()
+            })
           .then(response => {
               console.log('Success:', response);
               this.setState({
