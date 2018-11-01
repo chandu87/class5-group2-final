@@ -76,7 +76,7 @@ export function deleteEvent(req,res){
         return;
       }
   
-      res.send('success');
+      res.send(result);
     });
 }
 export function getEventById(req,res){
