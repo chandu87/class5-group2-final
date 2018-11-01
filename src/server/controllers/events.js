@@ -22,7 +22,9 @@ db.execute(sql,(err, result)=>{
         res.status(500).send(err);
         return;
     }
+    res.send(result);
 })
+
 }
 export function updateEvent(req,res){
     const eventId = req.params.id;
