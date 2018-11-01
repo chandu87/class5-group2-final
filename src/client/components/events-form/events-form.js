@@ -3,30 +3,40 @@ import React from 'react';
 class EventsForm extends React.Component{
     constructor(props){
         super(props);
+        if (this.props.isEditing) {
         this.state = {
-            eventsData : {
-                            "contact_email": "",
-                            "contact_person": "",
-                            "contact_phone": "",
-                            "event_URL": "",
-                            "event_address": "",
-                            "event_agenda": "",
-                            "event_city": "",
-                            "event_end_date": "",
-                            "event_end_hour": "",
-                            "event_geo_lat": "",
-                            "event_geo_lng": "",
-                            "event_language": "",
-                            "event_name": "",
-                            "event_postal_code": "",
-                            "event_start_date": "",
-                            "event_start_hour": "",
-                            "event_theme_image": "",
-                            "event_type": "",
-                            "max_participants": "",
-                            "active": "1"
-            }
+            eventsData : this.props.eventsData,
+            displaySubmitForm : true
         }
+    }else{
+        this.state = 
+            {
+                eventsData : {
+                    "contact_email": "",
+                    "contact_person": "",
+                    "contact_phone": "",
+                    "event_URL": "",
+                    "event_address": "",
+                    "event_agenda": "",
+                    "event_city": "",
+                    "event_end_date": "",
+                    "event_end_hour": "",
+                    "event_geo_lat": "",
+                    "event_geo_lng": "",
+                    "event_language": "",
+                    "event_name": "",
+                    "event_postal_code": "",
+                    "event_start_date": "",
+                    "event_start_hour": "",
+                    "event_theme_image": "",
+                    "event_type": "",
+                    "max_participants": "",
+                    "active": "1"
+                },
+                displaySubmitForm : true
+            }
+
+    }
     }
     updateField = (e) =>{
         const {name, value} = e.target;
@@ -40,6 +50,28 @@ class EventsForm extends React.Component{
     submitForm = (e) =>{
         e.preventDefault();
         console.log(this.state.eventsData);
+        let url = '', method = '';
+        if(this.props.isEditing){
+            url = `/api/events/${this.props.match.params.id}`;
+            method = 'PUT';
+        }else{
+            url='/api/events';
+            method = 'POST';
+        }
+        fetch(url, {
+            method,
+            body: JSON.stringify(this.state.eventsData), // data can be `string` or {object}!
+            headers:{
+              'Content-Type': 'application/json'
+            }
+          }).then(res => res.json())
+          .then(response => {
+              console.log('Success:', response);
+              this.setState({
+                  displaySubmitForm : false
+              });
+            })
+          .catch(error => console.error('Error:', error));
     }
     render(){
         return(
