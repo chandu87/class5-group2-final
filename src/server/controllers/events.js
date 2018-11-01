@@ -49,7 +49,7 @@ export function updateEvent(req,res){
         return;
       }
   
-      res.send('success');
+      res.send(result);
     });
 
 }
