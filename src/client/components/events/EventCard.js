@@ -2,7 +2,8 @@ import React from 'react';
 
 class EventCard extends React.Component{
     render(){
-        const item = this.props.eventData;
+        const item = this.props.eventsData;
+        console.log("-------------",item);
         return(
             <div>
             <br/>
@@ -37,7 +38,7 @@ class EventCard extends React.Component{
               </div>
             </div>
             <div className="card-footer">
-                <a href={`/Events/Edit/${item.id}`} className="btn btn-outline-danger network-edit-button btn-sm"> Update</a>
+                <a href={`/Events/edit/${item.id}`} className="btn btn-outline-danger network-edit-button btn-sm"> Update</a>
             </div>
           </div>
         </div>
