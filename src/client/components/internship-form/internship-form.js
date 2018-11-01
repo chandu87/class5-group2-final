@@ -71,10 +71,7 @@ class InternshipForm extends Component {
         }
         }).then(res => res.text())
         .then(response => {
-            console.log('Success:', response);
-            this.setState({
-                displaySubmitForm : false
-            });
+            console.log('Success:', response)
         })
         .catch(error => console.error('Error:', error));
     }
@@ -188,7 +185,7 @@ class InternshipForm extends Component {
                             <label htmlFor="closing_date">
                                 Closing Date
                             </label>
-                            <input className="form-control" name="closing_date" value={this.state.internshipData.closing_date} onChange={this.updateField} />
+                            <input className="form-control" name="closing_date" value={this.state.internshipData.created} onChange={this.updateField} />
                         </div>
                     </div>
                     <div className="col">
