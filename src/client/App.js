@@ -17,6 +17,7 @@ import MentorForms from "./components/mentor-form";
 import NetworkForms from "./components/networking-form";
 import InternshipForms from "./components/internship-form";
 import EventsForm from './components/events-form';
+import EventDetailedView from "./components/events/EventDetailedView";
 
 class App extends Component {
   render() {
@@ -34,6 +35,7 @@ class App extends Component {
             <Route exact path="/Events" component={Events} />
             <Route exact path="/Events/add" component={EventsForm.AddEvent} />
             <Route exact path="/Events/edit/:id" component={EventsForm.EditEvent} />
+            <Route exact path="/Events/details/:id" component={EventDetailedView} />
             <Route exact path="/Mentors" component={Mentors} />
             <Route exact path="/Mentors/add" component={MentorForms.AddMentor} />
             <Route exact path={`/Mentors/edit/:id`} component={MentorForms.EditMentor} />
