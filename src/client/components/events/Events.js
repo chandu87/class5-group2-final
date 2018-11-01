@@ -1,6 +1,7 @@
 import React from "react";
 import Calendar from "./Calendar";
 import EventsListView from "./EventsListView.js";
+import Map from "./Map";
 
 class Events extends React.Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class Events extends React.Component {
             <Calendar />
           </div>
         </div>
+        <Map/>
       </div>
     );
   }
