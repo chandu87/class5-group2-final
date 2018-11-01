@@ -74,6 +74,7 @@ class EventsForm extends React.Component{
           .catch(error => console.error('Error:', error));
     }
     render(){
+        if(this.state.displaySubmitForm){
         return(
             <div className="container">
                 <form onSubmit={this.submitForm}>
@@ -200,6 +201,38 @@ class EventsForm extends React.Component{
                 </form>
             </div>
         );
+    }else{
+        const item = this.state.eventsData;
+        return(
+            <div>
+                <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Event`}</h1>
+                <br/>
+                <div key={item.id} className="card mb-4 networking-item">
+                <div className="card-header">
+                <h2 className="card-title pricing-card-title"> {item.event_name}</h2>
+                </div>
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-md-8">
+                        <div><strong>Org. Address:</strong> {item.event_address}</div>
+                        <div><strong>Contact Person:</strong> {item.contact_person}</div>
+                        <div><strong>Contact Email:</strong> {item.contact_email}</div>
+                        <div><strong>Contact Number:</strong> {item.contact_phone}</div>
+                    </div>
+                    <div className="col-md-4">
+                      <img className="my-0 font-weight-normal networking-image" src={item.event_theme_image} width="100%" alt="Organization Logo"/>
+                    </div>
+                  </div>
+                </div>
+                <div className="card-footer">
+                    <a href="/Networking/Edit" className="btn btn-outline-danger network-edit-button btn-sm"> Edit</a>
+                </div>
+              </div>
+
+                <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Events/add">Add New Event</a>
+            </div>);
+
+    }
     }
 }
 export default EventsForm;
