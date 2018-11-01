@@ -120,40 +120,40 @@ class EventsForm extends React.Component{
                     <div className="row">
                         <div className="col">
                             <div className="form-group">
-                                <label htmlFor="event_geo_lat">Event Geo-lat</label>
-                                <input type="text" name="event_geo_lat" value={this.state.eventsData.event_geo_lat} onChange={this.updateField} className="form-control form-control-sm" id="event_geo_lat" placeholder="Enter Event Geo_lat "/>
+                                <label htmlFor="event_geo_lat">Event Geo-lat *</label>
+                                <input type="text" name="event_geo_lat" value={this.state.eventsData.event_geo_lat} onChange={this.updateField} className="form-control form-control-sm" id="event_geo_lat" placeholder="Enter Event Geo_lat" required/>
                             </div>
                         </div>
                         <div className="col">
                             <div className="form-group">
-                                <label htmlFor="event_geo_lng">Event Geo-lng</label>
-                                <input type="text" name="event_geo_lng" value={this.state.eventsData.event_geo_lng} onChange={this.updateField} className="form-control form-control-sm" id="event_geo_lng" placeholder="Enter Event Geo_lng"/>
+                                <label htmlFor="event_geo_lng">Event Geo-lng *</label>
+                                <input type="text" name="event_geo_lng" value={this.state.eventsData.event_geo_lng} onChange={this.updateField} className="form-control form-control-sm" id="event_geo_lng" placeholder="Enter Event Geo_lng" required/>
                             </div>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col">
                             <div className="form-group">
-                                <label htmlFor="event_start_date">Event Start Date</label>
-                                <input type="date" name="event_start_date" value={this.state.eventsData.event_start_date} onChange={this.updateField} className="form-control form-control-sm" id="event_start_date" placeholder="Enter Start date"/>
+                                <label htmlFor="event_start_date">Event Start Date *</label>
+                                <input type="date" name="event_start_date" value={this.state.eventsData.event_start_date} onChange={this.updateField} className="form-control form-control-sm" id="event_start_date" placeholder="Enter Start date" required/>
                             </div>
                         </div>
                         <div className="col">
                             <div className="form-group">
-                                <label htmlFor="event_start_hour">Event Start Hour</label>
-                                <input type="time" name="event_start_hour" value={this.state.eventsData.event_start_hour} onChange={this.updateField} className="form-control form-control-sm" id="event_start_hour" placeholder="Enter Start hour"/>
+                                <label htmlFor="event_start_hour">Event Start Hour *</label>
+                                <input type="time" name="event_start_hour" value={this.state.eventsData.event_start_hour} onChange={this.updateField} className="form-control form-control-sm" id="event_start_hour" placeholder="Enter Start hour" required/>
                             </div>
                         </div>
                         <div className="col">
                             <div className="form-group">
-                                <label htmlFor="event_end_date">Event End Date</label>
-                                <input type="date" name="event_end_date" value={this.state.eventsData.event_end_date} onChange={this.updateField} className="form-control form-control-sm" id="event_end_date" placeholder="Enter End date"/>
+                                <label htmlFor="event_end_date">Event End Date *</label>
+                                <input type="date" name="event_end_date" value={this.state.eventsData.event_end_date} onChange={this.updateField} className="form-control form-control-sm" id="event_end_date" placeholder="Enter End date" required/>
                             </div>
                         </div>
                         <div className="col">
                             <div className="form-group">
-                                <label htmlFor="event_end_hour">Event End Hour</label>
-                                <input type="time" name="event_end_hour" value={this.state.eventsData.event_end_hour} onChange={this.updateField} className="form-control form-control-sm" id="event_end_hour" placeholder="Enter End hour "/>
+                                <label htmlFor="event_end_hour">Event End Hour *</label>
+                                <input type="time" name="event_end_hour" value={this.state.eventsData.event_end_hour} onChange={this.updateField} className="form-control form-control-sm" id="event_end_hour" placeholder="Enter End hour " required/>
                             </div>
                         </div>
 
@@ -161,8 +161,8 @@ class EventsForm extends React.Component{
                     <div className="row">
                         <div className="col">
                             <div className="form-group">
-                                <label htmlFor="event_language">Event Language</label>
-                                <input type="text" name="event_language" value={this.state.eventsData.event_language} onChange={this.updateField} className="form-control form-control-sm" id="event_language" placeholder="Enter event language"/>
+                                <label htmlFor="event_language">Event Language *</label>
+                                <input type="text" name="event_language" value={this.state.eventsData.event_language} onChange={this.updateField} className="form-control form-control-sm" id="event_language" placeholder="Enter event language" required/>
                             </div>
                         </div>
                         <div className="col">
@@ -178,14 +178,14 @@ class EventsForm extends React.Component{
                         <input type="text" name="event_theme_image" value={this.state.eventsData.event_theme_image} onChange={this.updateField} className="form-control form-control-sm" id="event_theme_image" placeholder="Enter event theme image"/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="contact_person">Event Contact person</label>
-                        <input type="text" name="contact_person" value={this.state.eventsData.contact_person} onChange={this.updateField} className="form-control form-control-sm" id="contact_person" placeholder="Enter contact person"/>
+                        <label htmlFor="contact_person">Event Contact person *</label>
+                        <input type="text" name="contact_person" value={this.state.eventsData.contact_person} onChange={this.updateField} className="form-control form-control-sm" id="contact_person" placeholder="Enter contact person" required/>
                     </div>
                     <div className="row">
                         <div className="col">
                             <div className="form-group">
-                                <label htmlFor="contact_email">Event Contact Email</label>
-                                <input type="email" name="contact_email" value={this.state.eventsData.contact_email} onChange={this.updateField} className="form-control form-control-sm" id="contact_email" placeholder="Enter contact email"/>
+                                <label htmlFor="contact_email">Event Contact Email *</label>
+                                <input type="email" name="contact_email" value={this.state.eventsData.contact_email} onChange={this.updateField} className="form-control form-control-sm" id="contact_email" placeholder="Enter contact email" required/>
                             </div>
                         </div>
                         <div className="col">
