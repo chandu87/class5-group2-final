@@ -21,14 +21,14 @@ class Events extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <div className="row">
+        <div className="container">
+          <a className="btn btn-outline-primary" href="/Events/add">ADD NEW EVENT</a>
           <div className="btn-group events-btn" role="group">
             <button className="btn btn-outline-primary active">Calender View</button>
             <button className="btn btn-outline-primary">Map View</button>
           </div>
         </div>
-        <h1>List of Events</h1>
-        
+        <h3>List of Events</h3>
           <div className="row">
           <div className="col-md-6">
               <EventsListView events={this.state.events}/>
