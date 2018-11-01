@@ -232,8 +232,8 @@ class EventsForm extends React.Component{
                     <a href="/Networking/Edit" className="btn btn-outline-danger network-edit-button btn-sm"> Edit</a>
                 </div>
               </div>
-
-                <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Events/add">Add New Event</a>
+                    <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Events/add">Add New Event</a>
+                    <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Events">Go back to Events</a>
             </div>);
 
     }
