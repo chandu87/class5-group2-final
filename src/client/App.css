@@ -352,3 +352,6 @@ main {
     overflow-y: scroll;
     border: 1px solid rgba(156, 154, 154, 0.404);
 }
+.add-event-btn{
+  margin-bottom : 2em;
+}
