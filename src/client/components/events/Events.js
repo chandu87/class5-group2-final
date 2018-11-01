@@ -22,7 +22,7 @@ class Events extends React.Component {
     return (
       <div className="container-fluid">
         <div className="container">
-          <a className="btn btn-outline-primary" href="/Events/add">ADD NEW EVENT</a>
+          <a className="btn btn-outline-primary add-event-btn" href="/Events/add">ADD NEW EVENT</a>
           <div className="btn-group events-btn" role="group">
             <button className="btn btn-outline-primary active">Calender View</button>
             <button className="btn btn-outline-primary">Map View</button>
