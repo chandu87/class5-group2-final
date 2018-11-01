@@ -29,10 +29,10 @@ class EditEvent extends React.Component{
     }
 
     render(){
-        return(            
+        return( 
             this.state.isLoading ? 
             <div>{this.state.message}</div>
-            :
+            :            
             <EventsForm {...this.props} eventsData={this.state.eventsData} id={this.props.match.params.id} isEditing={true}/>);
     }
 }
