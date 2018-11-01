@@ -1,6 +1,6 @@
 import React from 'react';
 
-class EventDetailedView extends React.Component{
+class EventCard extends React.Component{
     render(){
         const item = this.props.eventData;
         return(
@@ -44,4 +44,4 @@ class EventDetailedView extends React.Component{
         );
     }
 }
-export default EventDetailedView;
+export default EventCard;
