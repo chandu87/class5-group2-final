@@ -2,13 +2,13 @@ import React from 'react';
 
 class EventsListView extends React.Component{
     render(){
-        // console.log(this.props.events);
+        console.log(this.props.events);
         const events = this.props.events;
         return(
                 <div className="row">
                     <div className="list-group">
                     {events.map(item =>  (
-                            <a key={item.id} href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+                            <div key={item.id} className="list-group-item list-group-item-action flex-column align-items-start">
                                 <div className="d-flex w-100 justify-content-between">
                                 <h5 className="mb-1">{item.event_name}</h5>
                                 <small>{item.event_language}</small>
@@ -18,8 +18,12 @@ class EventsListView extends React.Component{
                                 <div>
                                 <small>Date : <strong>From</strong> {item.event_start_date} - {item.event_start_hour} 
                                 <strong> To </strong>{item.event_end_date} - {item.event_end_hour}</small>
+                                <div className="d-flex w-100 justify-content-between">
+                                <small><a href="#">Read more...</a></small>
+                                <small><a href="#">Edit</a></small>
                                 </div>
-                            </a>
+                                </div>
+                            </div>
                             ))
                     }
                     </div>            
