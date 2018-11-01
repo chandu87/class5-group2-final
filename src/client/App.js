@@ -33,6 +33,7 @@ class App extends Component {
             <Route exact path={`/Internships/edit/:id`} component={InternshipForms.EditInternship} />
             <Route exact path="/Events" component={Events} />
             <Route exact path="/Events/add" component={EventsForm.AddEvent} />
+            <Route exact path="/Events/edit/:id" component={EventsForm.EditEvent} />
             <Route exact path="/Mentors" component={Mentors} />
             <Route exact path="/Mentors/add" component={MentorForms.AddMentor} />
             <Route exact path={`/Mentors/edit/:id`} component={MentorForms.EditMentor} />
