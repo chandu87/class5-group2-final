@@ -19,8 +19,8 @@ class EventsListView extends React.Component{
                                 <small>Date : <strong>From</strong> {item.event_start_date} - {item.event_start_hour} 
                                 <strong> To </strong>{item.event_end_date} - {item.event_end_hour}</small>
                                 <div className="d-flex w-100 justify-content-between">
-                                <small><a href={`/Events/details/${item.id}`}>Read more...</a></small>
-                                <small><a href={`/Events/edit/${item.id}`}>Edit</a></small>
+                                <a href={`/Events/details/${item.id}`} className="badge badge-info">Read more...</a>
+                                <a href={`/Events/edit/${item.id}`} className="badge badge-danger">Edit</a>
                                 </div>
                                 </div>
                             </div>
