@@ -348,7 +348,7 @@ main {
 } */
 
 .list-group{
-  height: 100vh;
+  height: 82vh;
     overflow-y: scroll;
     border: 1px solid rgba(156, 154, 154, 0.404);
 }

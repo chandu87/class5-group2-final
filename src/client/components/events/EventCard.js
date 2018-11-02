@@ -37,9 +37,11 @@ class EventCard extends React.Component{
                 </div>
               </div>
             </div>
-            <div className="card-footer">
-                <a href={`/Events/edit/${item.id}`} className="btn btn-outline-danger network-edit-button btn-sm"> Update</a>
-            </div>
+            {/* { this.props.displayEditBtns ?             <div className="card-footer">
+                <a href={`/Events/edit/${item.id}`} className="btn btn-outline-danger btn-sm"> Update</a>
+                <a href={`/Events/edit/${item.id}`} className="btn btn-outline-danger network-edit-button btn-sm"> Delete</a>
+            </div> : <li>No Edit mode</li>} */}
+
           </div>
         </div>
         );

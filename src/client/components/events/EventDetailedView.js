@@ -34,7 +34,9 @@ class EventDetailedView extends React.Component{
             this.state.isLoading ? 
             <div>{this.state.message}</div>
             :
-            <EventCard eventsData={this.state.eventsData}/>
+            <div><EventCard eventsData={this.state.eventsData} displayEditBtns={false}/>
+            <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Events">Go back to Events</a>
+        </div>
 
         );
     }

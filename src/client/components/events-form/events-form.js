@@ -7,7 +7,7 @@ class EventsForm extends React.Component{
         if (this.props.isEditing) {
         this.state = {
             eventsData : this.props.eventsData,
-            displaySubmitForm : true
+            displaySubmitForm : false
         }
     }else{
         this.state = 
@@ -46,6 +46,11 @@ class EventsForm extends React.Component{
                 ...this.state.eventsData, 
                 [name]: value
             }
+        })
+    }
+    displayForm = () =>{
+        this.setState({
+            displaySubmitForm : true
         })
     }
     submitForm = (e) =>{
@@ -201,17 +206,28 @@ class EventsForm extends React.Component{
                         <label className="form-check-label" htmlFor="checkActiveStatus">Agree to make data active</label>
                     </div>
                     <br/>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-outline-primary">Submit</button>
+                    <a className="btn btn-outline-primary" href="/Events">Cancel</a>
                 
                 </form>
             </div>
         );
-    }else{
+    }else if(this.props.isEditing){
+        return(
+            <div>
+                <EventCard eventsData={this.state.eventsData}/>
+                <button className="btn btn-outline-danger btn-lg btn-block mentor-add-button" onClick={this.displayForm}>Edit Event</button>
+                {/* <button class="btn btn-outline-danger btn-lg btn-block mentor-add-button" >Delete Event</button> */}
+                <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Events">Go back to Events</a>
+            </div>
+            );
+    }
+    else{
         return(
             <div>    
                 <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Event`}</h1>
                 <br/>
-                <EventCard eventData = {this.state.eventsData}/>
+                <EventCard eventsData = {this.state.eventsData}/>
                 <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Events/add">Add New Event</a>
                 <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Events">Go back to Events</a>
 
