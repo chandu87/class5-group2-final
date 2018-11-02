@@ -84,7 +84,8 @@ class networkingForm extends React.Component {
           .then(response => {
               console.log('Success:', response);
               this.setState({
-                  displaySubmitForm : false
+                  displaySubmitForm : false,
+                  displayDetailsCard : false
               });
             })
           .catch(error => console.error('Error:', error));
