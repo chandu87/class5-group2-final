@@ -38,7 +38,7 @@ class Networking extends React.Component {
 
             </div>
                 {items.map(item => (
-                  <div key={item.id} className="col-md-7">
+                  <div key={item.id} className="col-md-12">
                   <div className="card mb-4 networking-item">
                     <div className="card-header">
                     <h5 className="card-title pricing-card-title"> {item.organisation_name}</h5>
@@ -51,20 +51,16 @@ class Networking extends React.Component {
                             <div><strong>Contact Email:</strong> {item.contact_email}</div>
                             <div><strong>Contact Number:</strong> {item.contact_phone}</div>
                             <br/>
-                            <a href={item.organisation_url} className=""><span className="badge badge-danger">Read more..</span></a>
+                            <a href={`/Networking/details/${item.id}`} className="badge badge-danger">Read more..</a>
                         </div>
                         <div className="col-md-5">
                           <img className="my-0 font-weight-normal networking-image" src={item.organisation_logo} width="100%" alt="Organization Logo"/>
                         </div>
-
-
                       </div>
                     </div>
                     <div className="card-footer">
                         <div className="row network-edit-button">
-                        <a href={`/Networking/details/${item.id}`} className="btn btn-outline-danger btn-sm"> Edit</a>
-                        {/* <a href={`/Networking/delete/${item.id}`} className="btn btn-outline-danger btn-sm"> Delete</a> */}
-                       {/* <button className="btn btn-outline-danger btn-sm" onClick={this.deleteNetwork}> Delete</button> */}
+                        <a href={`/Networking/edit/${item.id}`} className="btn btn-outline-danger btn-sm"> Edit</a>
                       </div>
                         
                     </div>
