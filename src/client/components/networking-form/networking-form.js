@@ -6,7 +6,9 @@ class networkingForm extends React.Component {
         if (this.props.isEditing) {
             this.state = {
                 networkData : this.props.networkData,
-                displaySubmitForm : true
+                displaySubmitForm : false,
+                displayDetailsCard:true,
+                isActive : true
             }
         } else {
             this.state = {
@@ -24,7 +26,9 @@ class networkingForm extends React.Component {
                     "contact_phone": "",
                     "active": 1
                 },
-                displaySubmitForm : true               
+                displaySubmitForm : true,
+                displayDetailsCard:false,
+                isActive : true               
             }
         }
     }
@@ -39,6 +43,24 @@ class networkingForm extends React.Component {
         })
 
     }
+    displaySubmitForm = () =>{
+        this.setState({
+            displaySubmitForm : true
+        });
+    }
+    deleteNetwork = () =>{
+        console.log("deleting.....");
+        fetch(`/api/networking/${this.props.match.params.id}`,{
+          method: 'DELETE'
+        }).then(res => res.json())
+        .then(response=> {
+          console.log('deelete :', response);
+          this.setState({
+            isActive : false
+        });
+        
+        })
+      }
 
     //This function for Submitting our request to database to add or modifiy data
     submitForm = (e) =>{
@@ -62,13 +84,14 @@ class networkingForm extends React.Component {
           .then(response => {
               console.log('Success:', response);
               this.setState({
-                  displaySubmitForm : false
+                  displaySubmitForm : false,
+                  displayDetailsCard : false
               });
             })
           .catch(error => console.error('Error:', error));
         }
     render(){
-        if(this.state.displaySubmitForm){
+        if(this.state.displaySubmitForm && this.state.isActive){
             return(
                 <div class="container">
                 <form onSubmit={this.submitForm}>       
@@ -139,17 +162,16 @@ class networkingForm extends React.Component {
                         <label className="form-check-label" htmlFor="checkActiveStatus">Agree to make data active</label>
                     </div>
                     <br/>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-outline-danger btn-sm">Submit</button>
+                    <a href={`/Networking`} className="btn btn-outline-danger btn-sm">Cancel</a>
     
                 </form>
                 </div>
             );
-        }else{
+        }else if(this.state.displayDetailsCard && this.state.isActive){
             const item = this.state.networkData;
-            return(
-                <div>
-                    <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Network`}</h1>
-                    <br/>
+                return(
+                    <div>
                     <div key={item.id} className="card mb-4 networking-item">
                     <div className="card-header">
                     <h2 className="card-title pricing-card-title"> {item.organisation_name}</h2>
@@ -168,7 +190,53 @@ class networkingForm extends React.Component {
                       </div>
                     </div>
                     <div className="card-footer">
-                        <a href="/Networking/Edit" className="btn btn-outline-danger network-edit-button btn-sm"> Edit</a>
+                    <button className="btn btn-outline-danger btn-sm" onClick={this.displaySubmitForm}> Update</button>
+                    <button className="btn btn-outline-danger btn-sm" onClick={this.deleteNetwork}> Delete</button>
+                    <a href={`/Networking`} className="btn btn-outline-danger btn-sm network-edit-button">Go Back to Networks</a>
+
+ 
+                    </div>
+                  </div>
+                </div>);
+        }else if(!this.state.isActive){
+            return(<div>
+                <h3>Network Successfully Deleted</h3>
+                <a href={`/Networking`} className="btn btn-outline-danger btn-sm">Go Back to Networks</a>
+            </div>);
+        }
+        else{
+            const item = this.state.networkData;
+            return(
+                <div>
+                    <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Network`}</h1>
+                    <br/>
+                    <div key={item.id} className="card mb-4 networking-item">
+                    <div className="card-header">
+                    <h2 className="card-title pricing-card-title"> {item.organisation_name}</h2>
+                    </div>
+                    <div className="card-body">
+                      <div className="row">
+                        <div className="col-md-8">
+                            <div><strong>Org. Address:</strong> {item.organisation_address}</div>
+                            <div><strong>Contact Person:</strong> {item.contact_person}</div>
+                            <div><strong>Contact Email:</strong> {item.contact_email}</div>
+                            <div><strong>Contact Number:</strong> {item.contact_phone}</div>
+                                <div><strong>Organisation Name</strong> {item.organisation_name}</div>
+                                <div><strong>Organisation City </strong> {item.organisation_city}</div>
+                                <div><strong>Organisation Postal code </strong> {item.organisation_postal_code}</div>
+                                <div><strong>Sector activity </strong> {item.sector_activity}</div>
+                                <div><strong>Organisation description </strong> {item.organisation_description}</div>
+                                <div><strong>Organisation URL </strong> {item.organisation_url}</div>
+                        </div>
+                        <div className="col-md-4">
+                          <img className="my-0 font-weight-normal networking-image" src={item.organisation_logo} width="100%" alt="Organization Logo"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card-footer">
+                    <button className="btn btn-outline-danger btn-sm" onClick={this.displaySubmitForm}> Update</button>
+                    <button className="btn btn-outline-danger btn-sm" onClick={this.deleteNetwork}> Delete</button>
+                    <a href={`/Networking`} className="btn btn-outline-danger btn-sm network-edit-button">Go Back to Networks</a>
                     </div>
                   </div>
 

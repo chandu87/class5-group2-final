@@ -63,8 +63,9 @@ class NetworkItemDetails extends React.Component{
                         </div>
                         </div>
                         <div className="card-footer">
-                            <a href={`/Networking/edit/${item.id}`} className="btn btn-outline-danger btn-sm"> Update</a>
-                            <button className="btn btn-outline-danger btn-sm network-edit-button" onClick={this.deleteNetwork}> Delete</button>
+                            {/* <a href={`/Networking/edit/${item.id}`} className="btn btn-outline-danger btn-sm"> Update</a>
+                            <button className="btn btn-outline-danger btn-sm network-edit-button" onClick={this.deleteNetwork}> Delete</button> */}
+                             <a href={`/Networking`} className="btn btn-outline-danger btn-sm"> Go back</a>
                         </div>
                   </div>
                 

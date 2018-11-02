@@ -7,7 +7,9 @@ class EventsForm extends React.Component{
         if (this.props.isEditing) {
         this.state = {
             eventsData : this.props.eventsData,
-            displaySubmitForm : true
+            displaySubmitForm : false,
+            displayDetailsCard:true,
+            isActive : true
         }
     }else{
         this.state = 
@@ -34,7 +36,9 @@ class EventsForm extends React.Component{
                     "max_participants": "",
                     "active": "1"
                 },
-                displaySubmitForm : true
+                displaySubmitForm : true,
+                displayDetailsCard: false,
+                isActive: true
             }
 
     }
@@ -47,6 +51,25 @@ class EventsForm extends React.Component{
                 [name]: value
             }
         })
+    }
+    displayForm = () =>{
+        this.setState({
+            displaySubmitForm : true
+        })
+    }
+    deleteEvent = () =>{
+        console.log("deleting.....");
+        fetch(`/api/events/${this.props.match.params.id}`,{
+          method: 'DELETE'
+        }).then(res => res.json())
+        .then(response=> {
+          console.log('deelete :', response);
+          this.setState({
+            isActive : false
+        });
+        
+        })
+
     }
     submitForm = (e) =>{
         e.preventDefault();
@@ -73,13 +96,14 @@ class EventsForm extends React.Component{
           .then(response => {
               console.log('Success:', response);
               this.setState({
-                  displaySubmitForm : false
+                  displaySubmitForm : false,
+                  displayDetailsCard: false
               });
             })
           .catch(error => console.error('Error:', error));
     }
     render(){
-        if(this.state.displaySubmitForm){
+        if(this.state.displaySubmitForm && this.state.isActive){
         return(
             <div className="container">
                 <form onSubmit={this.submitForm}>
@@ -201,19 +225,44 @@ class EventsForm extends React.Component{
                         <label className="form-check-label" htmlFor="checkActiveStatus">Agree to make data active</label>
                     </div>
                     <br/>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-outline-primary">Submit</button>
+                    <a className="btn btn-outline-primary" href="/Events">Cancel</a>
                 
                 </form>
             </div>
         );
-    }else{
+    }else if(this.state.displayDetailsCard && this.state.isActive){
+        return(
+            <div>
+                <div>
+                    <button className="col-md-2 btn btn-outline-danger" onClick={this.displayForm}>Edit Event</button>
+                    <button className="col-md-2 btn btn-outline-danger" onClick={this.deleteEvent}>Delete Event</button>
+                    <a className="col-md-4 btn btn-outline-danger network-add-button" href="/Events">Go back to Events</a>
+                </div>
+                <EventCard eventsData={this.state.eventsData}/>
+            </div>
+            );
+    }else if(!this.state.isActive){
+        return(
+            <div className="container">
+                <h3>Event is Successfully Deleted</h3>
+                <br/>
+                <a className="btn btn-outline-danger" href="/Events">Go back to Events</a>
+                <a className="btn btn-outline-danger" href="/Events/add">Add New Event</a>
+
+            </div>
+            );
+    }
+    else{
         return(
             <div>    
                 <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Event`}</h1>
                 <br/>
-                <EventCard eventData = {this.state.eventsData}/>
-                <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Events/add">Add New Event</a>
-                <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Events">Go back to Events</a>
+                <div>
+                    <a className="btn btn-outline-danger" href="/Events/add">Add New Event</a>
+                    <a className="btn btn-outline-danger" href="/Events">Go back to Events</a>
+                </div>
+                <EventCard eventsData = {this.state.eventsData}/>
 
             </div>);
         }
