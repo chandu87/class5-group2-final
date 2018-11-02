@@ -220,6 +220,12 @@ class networkingForm extends React.Component {
                             <div><strong>Contact Person:</strong> {item.contact_person}</div>
                             <div><strong>Contact Email:</strong> {item.contact_email}</div>
                             <div><strong>Contact Number:</strong> {item.contact_phone}</div>
+                                <div><strong>Organisation Name</strong> {item.organisation_name}</div>
+                                <div><strong>Organisation City </strong> {item.organisation_city}</div>
+                                <div><strong>Organisation Postal code </strong> {item.organisation_postal_code}</div>
+                                <div><strong>Sector activity </strong> {item.sector_activity}</div>
+                                <div><strong>Organisation description </strong> {item.organisation_description}</div>
+                                <div><strong>Organisation URL </strong> {item.organisation_url}</div>
                         </div>
                         <div className="col-md-4">
                           <img className="my-0 font-weight-normal networking-image" src={item.organisation_logo} width="100%" alt="Organization Logo"/>
