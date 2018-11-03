@@ -225,9 +225,8 @@ class EventsForm extends React.Component{
                         <label className="form-check-label" htmlFor="checkActiveStatus">Agree to make data active</label>
                     </div>
                     <br/>
-                    <button type="submit" className="btn btn-outline-primary">Submit</button>
-                    <a className="btn btn-outline-primary" href="/Events">Cancel</a>
-                
+                    <button type="submit" className="btn btn-outline-danger btn-sm col-md-2">Submit</button>
+                    <a className="btn btn-outline-danger btn-sm col-md-2" href="/Events">Cancel</a>
                 </form>
             </div>
         );
@@ -235,9 +234,9 @@ class EventsForm extends React.Component{
         return(
             <div>
                 <div>
-                    <button className="col-md-2 btn btn-outline-danger" onClick={this.displayForm}>Edit Event</button>
-                    <button className="col-md-2 btn btn-outline-danger" onClick={this.deleteEvent}>Delete Event</button>
-                    <a className="col-md-4 btn btn-outline-danger network-add-button" href="/Events">Go back to Events</a>
+                    <button className="col-md-2 btn btn-outline-danger btn-sm" onClick={this.displayForm}>Edit Event</button>
+                    <button className="col-md-2 btn btn-outline-danger btn-sm" onClick={this.deleteEvent}>Delete Event</button>
+                    <a className="col-md-4 btn btn-outline-danger btn-sm network-edit-button" href="/Events">Go back to Events</a>
                 </div>
                 <EventCard eventsData={this.state.eventsData}/>
             </div>
@@ -247,8 +246,8 @@ class EventsForm extends React.Component{
             <div className="container">
                 <h3>Event is Successfully Deleted</h3>
                 <br/>
-                <a className="btn btn-outline-danger" href="/Events">Go back to Events</a>
-                <a className="btn btn-outline-danger" href="/Events/add">Add New Event</a>
+                <a className="btn btn-outline-danger btn-sm" href="/Events">Go back to Events</a>
+                <a className="btn btn-outline-danger btn-sm" href="/Events/add">Add New Event</a>
 
             </div>
             );
@@ -259,8 +258,11 @@ class EventsForm extends React.Component{
                 <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Event`}</h1>
                 <br/>
                 <div>
-                    <a className="btn btn-outline-danger" href="/Events/add">Add New Event</a>
-                    <a className="btn btn-outline-danger" href="/Events">Go back to Events</a>
+                <button className="col-md-2 btn btn-outline-danger btn-sm" onClick={this.displayForm}>Edit Event</button>
+                <button className="col-md-2 btn btn-outline-danger btn-sm" onClick={this.deleteEvent}>Delete Event</button>
+
+                    <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Events/add">Add New Event</a>
+                    <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Events">Go back to Events</a>
                 </div>
                 <EventCard eventsData = {this.state.eventsData}/>
 
