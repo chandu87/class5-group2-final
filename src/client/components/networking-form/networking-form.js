@@ -1,4 +1,5 @@
 import React from 'react';
+import NetworkCard from '../networking/NetworkCard';
 
 class networkingForm extends React.Component {
     constructor(props) {
@@ -168,79 +169,36 @@ class networkingForm extends React.Component {
                 </form>
                 </div>
             );
-        }else if(this.state.displayDetailsCard && this.state.isActive){
-            const item = this.state.networkData;
-                return(
+        }
+        else if(this.state.displayDetailsCard && this.state.isActive){
+            return(
                     <div>
-                    <div key={item.id} className="card mb-4 networking-item">
-                    <div className="card-header">
-                    <h2 className="card-title pricing-card-title"> {item.organisation_name}</h2>
-                    </div>
-                    <div className="card-body">
-                      <div className="row">
-                        <div className="col-md-8">
-                            <div><strong>Org. Address:</strong> {item.organisation_address}</div>
-                            <div><strong>Contact Person:</strong> {item.contact_person}</div>
-                            <div><strong>Contact Email:</strong> {item.contact_email}</div>
-                            <div><strong>Contact Number:</strong> {item.contact_phone}</div>
+                        <div>
+                            <button className="btn btn-outline-danger btn-sm" onClick={this.displaySubmitForm}> Update</button>
+                            <button className="btn btn-outline-danger btn-sm" onClick={this.deleteNetwork}> Delete</button>
+                            <a href={`/Networking`} className="btn btn-outline-danger btn-sm network-edit-button">Go Back to Networks</a>
                         </div>
-                        <div className="col-md-4">
-                          <img className="my-0 font-weight-normal networking-image" src={item.organisation_logo} width="100%" alt="Organization Logo"/>
-                        </div>
-                      </div>
+                        <NetworkCard networkItem={this.state.networkData}/>
                     </div>
-                    <div className="card-footer">
-                    <button className="btn btn-outline-danger btn-sm" onClick={this.displaySubmitForm}> Update</button>
-                    <button className="btn btn-outline-danger btn-sm" onClick={this.deleteNetwork}> Delete</button>
-                    <a href={`/Networking`} className="btn btn-outline-danger btn-sm network-edit-button">Go Back to Networks</a>
-
- 
-                    </div>
-                  </div>
+                    );
+        }
+        else if(!this.state.isActive){
+            return(
+                <div>
+                    <h3>Network Successfully Deleted</h3>
+                    <a href={`/Networking`} className="btn btn-outline-danger btn-sm">Go Back to Networks</a>
                 </div>);
-        }else if(!this.state.isActive){
-            return(<div>
-                <h3>Network Successfully Deleted</h3>
-                <a href={`/Networking`} className="btn btn-outline-danger btn-sm">Go Back to Networks</a>
-            </div>);
         }
         else{
-            const item = this.state.networkData;
             return(
                 <div>
                     <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Network`}</h1>
                     <br/>
-                    <div key={item.id} className="card mb-4 networking-item">
-                    <div className="card-header">
-                    <h2 className="card-title pricing-card-title"> {item.organisation_name}</h2>
-                    </div>
-                    <div className="card-body">
-                      <div className="row">
-                        <div className="col-md-8">
-                            <div><strong>Org. Address:</strong> {item.organisation_address}</div>
-                            <div><strong>Contact Person:</strong> {item.contact_person}</div>
-                            <div><strong>Contact Email:</strong> {item.contact_email}</div>
-                            <div><strong>Contact Number:</strong> {item.contact_phone}</div>
-                                <div><strong>Organisation Name</strong> {item.organisation_name}</div>
-                                <div><strong>Organisation City </strong> {item.organisation_city}</div>
-                                <div><strong>Organisation Postal code </strong> {item.organisation_postal_code}</div>
-                                <div><strong>Sector activity </strong> {item.sector_activity}</div>
-                                <div><strong>Organisation description </strong> {item.organisation_description}</div>
-                                <div><strong>Organisation URL </strong> {item.organisation_url}</div>
-                        </div>
-                        <div className="col-md-4">
-                          <img className="my-0 font-weight-normal networking-image" src={item.organisation_logo} width="100%" alt="Organization Logo"/>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="card-footer">
                     <button className="btn btn-outline-danger btn-sm" onClick={this.displaySubmitForm}> Update</button>
                     <button className="btn btn-outline-danger btn-sm" onClick={this.deleteNetwork}> Delete</button>
+                    <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Networking/add">Add New Network</a>
                     <a href={`/Networking`} className="btn btn-outline-danger btn-sm network-edit-button">Go Back to Networks</a>
-                    </div>
-                  </div>
-
-                    <a className="btn btn-outline-danger btn-lg btn-block mentor-add-button" href="/Networking/add">Add New Network</a>
+                    <NetworkCard networkItem={this.state.networkData}/>
                 </div>);
         }
     }
