@@ -16,11 +16,7 @@
     color: blueviolet;
 }
 .mentor-image{
-    max-width: 250px;
-    max-height: 250px;
-    overflow: hidden;
-    border-radius: 100%;
-    display: inline-block;
+    height: 220px;
 }
 /* @media (min-width: 600px) .mentor-image{
      height: 33vw;
