@@ -5,23 +5,23 @@ class SearchBar extends React.Component{
         return(
             <div className="container search-bar">
             <form>
-                <div class="form-row align-items-center">
-                    <div class="col-auto">
-                    <label class="sr-only" for="inlineFormInput">Name</label>
-                    <input type="text" class="form-control mb-3" id="inlineFormInput" placeholder="Search Keyword"/>
+                <div className="form-row align-items-center">
+                    <div className="col-auto">
+                    <label className="sr-only" htmlFor="inlineFormInput">Name</label>
+                    <input type="text" className="form-control mb-3" id="inlineFormInput" placeholder="Search Keyword"/>
                     </div>
                     <div className="col-auto">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">@</div>
+                        <div className="input-group mb-3">
+                            <div className="input-group-prepend">
+                                <div className="input-group-text">@</div>
                             </div>
-                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="City Name"/>
+                            <input type="text" className="form-control" id="inlineFormInputGroup" placeholder="City Name"/>
                         </div>
                     </div>
-                    <div class="col-auto">
-                    <div class="form-select mb-3">
+                    <div className="col-auto">
+                    <div className="form-select mb-3">
                         <select className="custom-select" id="inputGroupSelect02">
-                            <option selected>Choose...</option>
+                            <option defaultValue>Choose...</option>
                             <option value="1">Events</option>
                             <option value="2">InternShips</option>
                             <option value="3">Mentors</option>
@@ -29,8 +29,8 @@ class SearchBar extends React.Component{
                         </select>
                     </div>
                     </div>
-                    <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Search</button>
+                    <div className="col-auto">
+                    <button type="submit" className="btn btn-primary mb-3">Search</button>
                     </div>
                 </div>
         </form>                
