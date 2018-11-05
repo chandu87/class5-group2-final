@@ -95,11 +95,18 @@ class EventsForm extends React.Component{
             })
           .then(response => {
               console.log('Success:', response);
+              // Redirect to homepage "/" route
+              // TODO Maybe show a success message (using a library) -it could disappear after few seconds-
+            //   this.props.history.push('/Events');
+              // TODO only if editing, change the page to details
+            //   this.props.history.push(`/Events/details/${this.}`);
+
               this.setState({
                   displaySubmitForm : false,
                   displayDetailsCard: false
               });
             })
+            
           .catch(error => console.error('Error:', error));
     }
     render(){
