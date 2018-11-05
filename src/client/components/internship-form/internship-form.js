@@ -169,7 +169,7 @@ class InternshipForm extends Component {
                                 <label htmlFor="internship_add_date">
                                     Internship Publish Date
                                 </label>
-                                <input text="text" className="form-control" id="internship_add_date" name="internship_add_date" value={this.state.internshipData.internship_add_date} onChange={this.updateField} />
+                                <input text="date" className="form-control" id="internship_add_date" name="internship_add_date" value={this.state.internshipData.internship_add_date} onChange={this.updateField} />
                             </div>
                         </div>
                         <div className="col">

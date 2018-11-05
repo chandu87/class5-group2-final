@@ -5,7 +5,8 @@ import {
     createNetwork,
     updateNetwork,
     deleteNetwork,
-    getNetworkById
+    getNetworkById,
+    searchNetwork
 } from '../controllers/networking';
 
 const router = express.Router();
@@ -15,5 +16,5 @@ router.post("/", createNetwork);
 router.put("/:id", updateNetwork);
 router.delete("/:id", deleteNetwork);
 router.get("/:id", getNetworkById);
-
+router.get("/query/:searchQuery", searchNetwork);
 export default router;
