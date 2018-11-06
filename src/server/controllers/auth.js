@@ -19,7 +19,7 @@ const passwordHash = '$2b$10$0Jvk7/fBmMI/mISeI1p2zus/UkRG0dWrlTWvyPl6h1P7o3krvjZ
 // // encryptPassword(password);
 
 // export const checkLoginInfo = (user, pass) => user === email && pass === password;
-export const checkLoginInfo = (user, pass) => user === email && bcrypt.compare(pass, passwordHash);
+export const checkLoginInfo = (user, pass) => user === email && bcrypt.compareSync(pass, passwordHash);
 
 export const createToken = (user, pass) => jwt.sign({ email: user }, jwtPass);
 
