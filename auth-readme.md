@@ -1,28 +1,41 @@
-Steps to do Auth
+# Steps to do Auth
 
 Client
 
 1. Create a sign in form
-2. Send the values to the backend and check if they are correct (check hard-coded values)
-3. If correct, return a token (sha of the user object (with name and other required options))
-4. Save the value in the localStorage in the frontend
-5. Create a global function to add this token (from localStorage) to every request in the header (Authorization)
-6. If the token doesn't exist return an error from the Client
-7. Check for the token existance in the client, to render the Add/Edit buttons
-8. On Logout remove the value from localStorage (maybe name the token Authorization)
+  1.a In which we send the login credentials to the backend and check if they are correct (check hard-coded values for now)
+  1.b If correct, return a token from the server (sha of the user object (with name and other required options))
+  1.c In the frontend, save the value in the localStorage
+2. Create a global function to add this token (from localStorage) to every request in the header (Authorization) (protectedFetch)
+3. If the token doesn't exist return an error from the Client
+4. Protect UI
+  4.a Disable/Hide Add, Edit and Delete buttons if user is not logged In
+  4.b Don't send the request to the server if the authentication token is not available in localStorage
+5. Add a logout page
+  5.a When called remove the auth token from localStorage
 
-Server
-1. Create login route, that checks the username/password (hard-coded values, and returns a token)
+---
 
+Server:
 
+1. Create login route, that checks the username is the same and password is the original of the hashed value [using bcrytp] (hard-coded values, and returns a token)
+2. Write a middleware that verifies the token, and continue only if it is valid
+3. Use the middle ware to protect add, edit and delete endpoints
+4. For now we are going to use hard-coded email and password in the code
+   But explain how we can use `bcrypt` library to encrypt passwords, and save them to the database
 
+---
 
+New concepts:
 
+- Express.js Middlewares (mainly to secure route)
+- json web token (jwt)
+- localStorage
 
+---
 
-New concepts
+New Libraries:
 
-Express.js Middlewares
-jsonwebtoken
-localStorage
-secureRoutes
+- jsonwebtoken: https://github.com/auth0/node-jsonwebtoken
+- lodash: https://github.com/lodash/lodash
+- classnames: https://github.com/JedWatson/classnames
