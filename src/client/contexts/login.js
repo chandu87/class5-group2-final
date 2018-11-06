@@ -1,4 +1,5 @@
 import React from "react";
+import _ from 'lodash';
 import jwt from "jsonwebtoken";
 
 export const LoginContext = React.createContext({
@@ -16,7 +17,9 @@ export const loadContextValue = () => {
 
   const authToken = localStorage.getItem("authToken");
 
-  if (authToken) {
+  console.log({authToken})
+
+  if (_.isString(authToken) && authToken != 'undefined' && authToken != 'null') {
     const decodedAuthToken = jwt.decode(authToken);
 
     contextValue = {
