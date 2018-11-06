@@ -20,6 +20,7 @@ import EventsForm from './components/events-form';
 import EventDetailedView from "./components/events/EventDetailedView";
 import SearchBar from "./components/search-bar/SearchBar";
 import Login from "./components/login";
+import Logout from "./components/logout";
 
 class App extends Component {
   render() {
@@ -49,6 +50,7 @@ class App extends Component {
             <Route exact path="/Networking/edit/:id" component={NetworkForms.editNetwork}/>
             <Route exact path={`/Networking/company/:id`} component={Company} />
             <Route exact path="/login" component={Login} />
+              <Route exact path="/logout" component={Logout} />
           </Switch>
         </main>
         <footer>
