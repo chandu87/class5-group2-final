@@ -12,6 +12,28 @@ export function listAllNetworking(req, res){
       res.send(rows);
   })
 }
+
+export function searchNetwork(req,res){
+  let searchQuery = req.query.network_name;
+  searchQuery = `%${searchQuery}%`;
+const sql = SqlString.format('SELECT * FROM networking WHERE sector_activity LIKE ? AND active = ?',  [searchQuery,true]);
+console.log(sql);
+
+db.execute(sql,(err, result)=>{
+  if(err){
+      res.status(500).send(err);
+      return;
+  }
+    
+  if (result.length === 0) {
+    res.status(404).send('Not Found');
+    return;
+  }
+
+  res.send(result);
+})
+}
+
 export function createNetwork(req,res){
     const jsonData = req.body;
 const sql = SqlString.format('INSERT INTO networking SET ?', jsonData);

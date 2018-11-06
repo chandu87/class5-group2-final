@@ -19,6 +19,7 @@ import InternshipForms from "./components/internship-form";
 import EventsForm from './components/events-form';
 import EventDetailedView from "./components/events/EventDetailedView";
 import SearchBar from "./components/search-bar/SearchBar";
+import NetworkSearch from "./components/networking/NetworkSearch";
 import Login from "./components/login";
 import Logout from "./components/logout";
 
@@ -35,8 +36,7 @@ class App extends Component {
             <Header />
           </header>
           <main>
-          <SearchBar />
-
+            <SearchBar />
             <Switch>
               <Route exact path="/" component={Homepage} />
               <Route exact path="/Internships" component={Internships} />
@@ -54,6 +54,7 @@ class App extends Component {
               <Route exact path="/Networking/details/:id" component={NetworkingItemDetails}/>
               <Route exact path="/Networking/edit/:id" component={NetworkForms.editNetwork}/>
               <Route exact path={`/Networking/company/:id`} component={Company} />
+              <Route exact path="/Networking/search" component={NetworkSearch} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/logout" component={Logout} />
             </Switch>
