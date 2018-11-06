@@ -20,19 +20,19 @@ class SearchBar extends React.Component{
             }
         })
     }
-    submitForm = (e) => {
-        // e.preventDefault();
-        // console.log(this.props.location.search);
-        console.log(this.state.networkData);
-        const q_name = `network_name=${this.state.networkData.network_name}`;
-        const q_location = `network_location=${this.state.networkData.network_location}`;
-        // this.props.history.push(`/Networking/search?${q_name}&${q_location}`);
-        this.props.history.push({pathname : '/Networking/search', search : `?${q_name}&${q_location}`});
-        console.log("Submit form");
-    }
+    // submitForm = (e) => {
+    //     // e.preventDefault();
+    //     // console.log(this.props.location.search);
+    //     console.log(this.state.networkData);
+    //     const q_name = `network_name=${this.state.networkData.network_name}`;
+    //     const q_location = `network_location=${this.state.networkData.network_location}`;
+    //     // this.props.history.push(`/Networking/search?${q_name}&${q_location}`);
+    //     this.props.history.push({pathname : '/Networking/search', search : `?${q_name}&${q_location}`});
+    //     console.log("Submit form");
+    // }
     render(){
         return(
-            <form>
+            <form action="/Networking/search">
             <div className="container search-bar">
                 <div className="form-row align-items-center">
                     <div className="col-auto">
@@ -63,7 +63,7 @@ class SearchBar extends React.Component{
                     </div>
                     </div>
                     <div className="col-auto">
-                    <button onClick={this.submitForm}>Button</button>
+                    <button >Button</button>
                     {/* <a className=" btn btn-outline-danger btn-sm" href="/Networking/search/NGO">Search</a> */}
                     </div>
                 </div>       
