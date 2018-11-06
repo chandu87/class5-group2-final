@@ -21,7 +21,7 @@ class Events extends React.Component {
     //Display data using list
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container">
         <div className="container">
           <a className="btn btn-outline-danger add-event-btn" href="/Events/add">ADD NEW EVENT</a>
           <div className="btn-group events-btn" role="group">

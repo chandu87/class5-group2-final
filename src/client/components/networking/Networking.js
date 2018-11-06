@@ -33,8 +33,8 @@ class Networking extends React.Component {
       return (
             <div className="container"> 
             <div className="row">
-            <h1 className="col-md-8">NETWORKING</h1> 
-                <a className="col-md-4 btn btn-outline-danger mentor-add-button" href="/Networking/add">Add New Network</a>
+            <h1 className="">NETWORKING</h1> 
+                <a className="btn btn-outline-danger btn-lg btn-block" href="/Networking/add">Add New Network</a>
 
             </div>
                 {items.map(item => (
