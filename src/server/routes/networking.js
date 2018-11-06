@@ -15,6 +15,6 @@ router.get("/", listAllNetworking);
 router.post("/", createNetwork);
 router.put("/:id", updateNetwork);
 router.delete("/:id", deleteNetwork);
+router.get("/search", searchNetwork);
 router.get("/:id", getNetworkById);
-router.get("/search/:searchQuery", searchNetwork);
 export default router;

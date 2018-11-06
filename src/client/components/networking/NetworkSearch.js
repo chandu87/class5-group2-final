@@ -1,5 +1,7 @@
 import React from 'react';
 import NetworkCard from "./NetworkCard";
+import queryString from 'querystring';
+
 
 
 class NetworkSearch extends React.Component{
@@ -7,23 +9,32 @@ class NetworkSearch extends React.Component{
         super(props);
         this.state = {
             data :{},
-            dataisLoading : false
+            dataisLoaded : false
         }
     }
-    componentDidMount(){
-        console.log(this.props);
-        fetch(`/api/Networking/search/${this.props.match.params.searchQuery}`).then(res=>res.json())
+    componentWillMount(){
+        debugger;
+        console.log(this.props.location);
+
+        const query = this.props.location.search.substr(1);
+        const searchData = queryString.parse(query);
+
+        fetch(`/api/Networking/search?network_name=${searchData.network_name}`).then(res=>res.json())
         .then(response=>{
             this.setState({
                 data: response,
-                dataisLoading : true
+                dataisLoaded : true
             })
         })
 
     }
     render(){
-        if(this.state.dataisLoading){
-            console.log(this.state.data);
+        // const new_query = this.props.location.search.substr(1);
+        // const new_searchData = queryString.parse(query);
+
+
+        if(this.state.dataisLoaded){
+            // console.log(this.state.data);
             return(
             <div>
                 {this.state.data.map((item)=>

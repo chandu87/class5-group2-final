@@ -48,7 +48,7 @@ class App extends Component {
             <Route exact path="/Networking/details/:id" component={NetworkingItemDetails}/>
             <Route exact path="/Networking/edit/:id" component={NetworkForms.editNetwork}/>
             <Route exact path={`/Networking/company/:id`} component={Company} />
-            <Route exact path="/Networking/search/:searchQuery" component={NetworkSearch} />
+            <Route exact path="/Networking/search" component={NetworkSearch} />
           </Switch>
         </main>
         <footer>
