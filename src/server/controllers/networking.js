@@ -14,7 +14,7 @@ export function listAllNetworking(req, res){
 }
 
 export function searchNetwork(req,res){
-  let searchQuery = req.params.searchQuery;
+  let searchQuery = req.query.network_name;
   searchQuery = `%${searchQuery}%`;
 const sql = SqlString.format('SELECT * FROM networking WHERE sector_activity LIKE ? AND active = ?',  [searchQuery,true]);
 console.log(sql);
