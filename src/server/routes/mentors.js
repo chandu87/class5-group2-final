@@ -1,5 +1,5 @@
 import express from 'express';
-import { checkIsLoggedInMiddleware } from "../controllers/auth";
+import { authenticatedRoute } from "../controllers/auth";
 
 import {
   listAllMentors,
@@ -12,9 +12,9 @@ import {
 const router = express.Router();
 
 router.get('/', listAllMentors);
-router.post('/', checkIsLoggedInMiddleware, createMentor);
+router.post('/', authenticatedRoute, createMentor);
 router.get('/:id', getMentorById);
-router.put('/:id', checkIsLoggedInMiddleware, updateMentor);
-router.delete('/:id', checkIsLoggedInMiddleware, deleteMentor);
+router.put('/:id', authenticatedRoute, updateMentor);
+router.delete('/:id', authenticatedRoute, deleteMentor);
 
 export default router;

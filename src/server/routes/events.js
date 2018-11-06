@@ -1,5 +1,5 @@
 import express from 'express';
-import { checkIsLoggedInMiddleware } from "../controllers/auth";
+import { authenticatedRoute } from "../controllers/auth";
 
 import { 
   listAllEvents,
@@ -12,9 +12,9 @@ import {
 const router = express.Router();
 
 router.get("/", listAllEvents);
-router.post("/", checkIsLoggedInMiddleware, createEvent);
-router.put("/:id", checkIsLoggedInMiddleware, updateEvent);
-router.delete("/:id", checkIsLoggedInMiddleware, deleteEvent);
+router.post("/", authenticatedRoute, createEvent);
+router.put("/:id", authenticatedRoute, updateEvent);
+router.delete("/:id", authenticatedRoute, deleteEvent);
 router.get("/:id", getEventById);
 
 export default router;

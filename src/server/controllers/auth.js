@@ -11,7 +11,8 @@ export const createToken = (user, pass) => jwt.sign({ email: user }, jwtPass);
 
 export const verifyToken = token => jwt.verify(token, jwtPass);
 
-export const checkIsLoggedInMiddleware = (req, res, next) => {
+// This method looks for the Authorization header in the rqeuest, and verifies that its value is correct
+export const authenticatedRoute = (req, res, next) => {
   // check that the header Authorization exists
   if (!req.headers.authorization) {
     return res.status(401).send({ message: 'no credentials sent' });
@@ -21,6 +22,10 @@ export const checkIsLoggedInMiddleware = (req, res, next) => {
   if (!verifyToken(req.headers.authorization)) {
     return res.status(401).send({ message: 'invalid credentials sent' }); 
   }
+
+  // Notes;
+  //  Tokens have an expiration period (usually people set it to 1 hour), we could check for that as well
+  //  Advanced: At this step we could also get the email returned from verifyToken, and check for the role of this user (read from database -or from the token itself, if we set it there-) to create a role based authentication system
   
   // If token is good, then go to next()
   next();
@@ -40,7 +45,7 @@ export const login = (req, res) => {
 };
 
 // export default {
-//   checkIsLoggedInMiddleware,
+//   authenticatedRoute,
 //   checkLoginInfo,
 //   createToken,
 //   verifyToken
