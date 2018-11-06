@@ -31,11 +31,18 @@ New concepts:
 - Express.js Middlewares (mainly to secure route)
 - json web token (jwt)
 - localStorage
+- hash passwords (using bcrypt)
 
 ---
 
 New Libraries:
 
-- jsonwebtoken: https://github.com/auth0/node-jsonwebtoken
-- lodash: https://github.com/lodash/lodash
-- classnames: https://github.com/JedWatson/classnames
+- jsonwebtoken: compact and self-contained way for securely transmitting information
+  - Repo: https://github.com/auth0/node-jsonwebtoken
+- bcrypt: Password hashing function
+  - Repo: https://github.com/kelektiv/node.bcrypt.js
+  - Wiki: https://en.wikipedia.org/wiki/Bcrypt
+- lodash: modern JavaScript utility library
+  - Repo: https://github.com/lodash/lodash
+- classnames: utility for conditionally joining classNames together
+  - Repo: https://github.com/JedWatson/classnames
