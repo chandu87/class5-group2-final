@@ -1,6 +1,8 @@
 import bcrypt from 'bcrypt';
 import jwt from "jsonwebtoken";
 
+import UnauthorizedError from '../errors/UnauthorizedError';
+
 const jwtPass = "caipaenie7thol8Z";
 
 // The email and password hash should be saved to a database, they are hard-coded here for simplification
@@ -11,12 +13,13 @@ const passwordHash = '$2b$10$0Jvk7/fBmMI/mISeI1p2zus/UkRG0dWrlTWvyPl6h1P7o3krvjZ
 
 // const encryptPassword = pass => {
 //   const saltRounds = 10;
-//   bcrypt.hash(pass, saltRounds, function(err, hash) {
-//     // Store hash in your password DB.
-//     console.log({hash});
-//   });
+//   // bcrypt.hash(pass, saltRounds, function(err, hash) {
+//   //   // Store hash in your password DB.
+//   //   console.log({hash});
+//   // });
+//   console.log({ hash: bcrypt.hashSync(pass, saltRounds) });
 // }
-// // encryptPassword(password);
+// encryptPassword(password);
 
 // export const checkLoginInfo = (user, pass) => user === email && pass === password;
 export const checkLoginInfo = (user, pass) => user === email && bcrypt.compareSync(pass, passwordHash);
@@ -29,12 +32,14 @@ export const verifyToken = token => jwt.verify(token, jwtPass);
 export const authenticatedRoute = (req, res, next) => {
   // check that the header Authorization exists
   if (!req.headers.authorization) {
-    return res.status(401).send({ message: 'no credentials sent' });
+    return next(new UnauthorizedError('credentials_required', { message: 'No authorization token was found' }));
+    // return res.status(401).send({ message: 'no credentials sent' });
   }
 
   // verify the authorization header token
   if (!verifyToken(req.headers.authorization)) {
-    return res.status(401).send({ message: 'invalid credentials sent' }); 
+    return next(new UnauthorizedError('credentials_bad_format', { message: "Couldn't verify the authorization token" }));
+    // return res.status(401).send({ message: 'invalid credentials sent' }); 
   }
 
   // Notes;
@@ -45,11 +50,13 @@ export const authenticatedRoute = (req, res, next) => {
   next();
 };
 
-export const login = (req, res) => {
+export const login = (req, res, next) => {
   const jsonData = req.body;
 
   if (!checkLoginInfo(jsonData.email, jsonData.password)) {
-    return res.status(401).send({ message: 'invalid credentials'});
+    // return res.send(401, new UnauthorizedError('credentials_invalid', { message: "User name and password don't match our records" }));
+    return next(new UnauthorizedError('credentials_invalid', { message: "User name and password don't match our records" }));
+    // return res.send(401, { message: 'invalid credentials'});
   }
 
   const token = createToken(jsonData.email, jsonData.password);
