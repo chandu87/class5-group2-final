@@ -1,6 +1,8 @@
 import React from 'react';
 import EventCard from '../events/EventCard';
 
+import { protectedFetch } from '../../lib/auth';
+
 class EventsForm extends React.Component{
     constructor(props){
         super(props);
@@ -59,7 +61,7 @@ class EventsForm extends React.Component{
     }
     deleteEvent = () =>{
         console.log("deleting.....");
-        fetch(`/api/events/${this.props.match.params.id}`,{
+        protectedFetch(`/api/events/${this.props.match.params.id}`,{
           method: 'DELETE'
         }).then(res => res.json())
         .then(response=> {
@@ -83,7 +85,7 @@ class EventsForm extends React.Component{
             method = 'POST';
             console.log("POST request");
         }
-        fetch(url, {
+        protectedFetch(url, {
             method,
             body: JSON.stringify(this.state.eventsData), // data can be `string` or {object}!
             headers:{
