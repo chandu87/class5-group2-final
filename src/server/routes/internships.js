@@ -1,4 +1,5 @@
 import express from 'express';
+import { checkIsLoggedInMiddleware } from "../controllers/auth";
 
 import {
   listAllInternships,
@@ -11,9 +12,9 @@ import {
 const router = express.Router();
 
 router.get('/', listAllInternships);
-router.post('/', createInternship);
+router.post('/', checkIsLoggedInMiddleware, createInternship);
 router.get('/:id', getInternshipById);
-router.put('/:id', updateInternship);
-router.delete('/:id', deleteInternship);
+router.put('/:id', checkIsLoggedInMiddleware, updateInternship);
+router.delete('/:id', checkIsLoggedInMiddleware, deleteInternship);
 
 export default router;
