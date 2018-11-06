@@ -34,6 +34,9 @@ class Header extends React.Component {
                                             <li className="nav-item iconNetwork">
                                                 <span className="icon material-icons md-36 md-dark">people</span>
                                                 <Link to="/Networking" className="nav-link"> Networking </Link></li>
+                                            <li className="nav-item iconCode">
+                                                <span className="icon material-icons md-36 md-dark" />
+                                                <Link to="/login" className="nav-link"> Login </Link></li>
                                         </ul>
                                     </nav>
                                 </div>

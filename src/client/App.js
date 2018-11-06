@@ -19,6 +19,7 @@ import InternshipForms from "./components/internship-form";
 import EventsForm from './components/events-form';
 import EventDetailedView from "./components/events/EventDetailedView";
 import SearchBar from "./components/search-bar/SearchBar";
+import Login from "./components/login";
 
 class App extends Component {
   render() {
@@ -47,6 +48,7 @@ class App extends Component {
             <Route exact path="/Networking/details/:id" component={NetworkingItemDetails}/>
             <Route exact path="/Networking/edit/:id" component={NetworkForms.editNetwork}/>
             <Route exact path={`/Networking/company/:id`} component={Company} />
+            <Route exact path="/login" component={Login} />
           </Switch>
         </main>
         <footer>
