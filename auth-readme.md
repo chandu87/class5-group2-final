@@ -32,6 +32,8 @@ New concepts:
 - json web token (jwt)
 - localStorage
 - hash passwords (using bcrypt)
+- React Context:
+  - Link: https://reactjs.org/docs/context.html
 
 ---
 
