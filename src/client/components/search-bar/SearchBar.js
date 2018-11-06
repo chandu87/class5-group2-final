@@ -30,7 +30,7 @@ class SearchBar extends React.Component{
                     </div>
                     </div>
                     <div className="col-auto">
-                    <button type="submit" className="btn btn-primary mb-3">Search</button>
+                    <a className=" btn btn-outline-danger btn-sm" href="/Networking/search/NGO">Search</a>
                     </div>
                 </div>
         </form>                
