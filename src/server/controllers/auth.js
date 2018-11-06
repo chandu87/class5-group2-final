@@ -1,11 +1,25 @@
+import bcrypt from 'bcrypt';
 import jwt from "jsonwebtoken";
-
-const email = "hest@hyf.com";
-const password = "jacob";
 
 const jwtPass = "caipaenie7thol8Z";
 
-export const checkLoginInfo = (user, pass) => user === email && pass === password;
+// The email and password hash should be saved to a database, they are hard-coded here for simplification
+const email = "hest@hyf.com";
+// const password = "jacob";
+const passwordHash = '$2b$10$0Jvk7/fBmMI/mISeI1p2zus/UkRG0dWrlTWvyPl6h1P7o3krvjZae';
+
+
+// const encryptPassword = pass => {
+//   const saltRounds = 10;
+//   bcrypt.hash(pass, saltRounds, function(err, hash) {
+//     // Store hash in your password DB.
+//     console.log({hash});
+//   });
+// }
+// // encryptPassword(password);
+
+// export const checkLoginInfo = (user, pass) => user === email && pass === password;
+export const checkLoginInfo = (user, pass) => user === email && bcrypt.compare(pass, passwordHash);
 
 export const createToken = (user, pass) => jwt.sign({ email: user }, jwtPass);
 
