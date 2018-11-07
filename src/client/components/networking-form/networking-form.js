@@ -94,7 +94,7 @@ class networkingForm extends React.Component {
     render(){
         if(this.state.displaySubmitForm && this.state.isActive){
             return(
-                <div class="container">
+                <div className="container">
                 <form onSubmit={this.submitForm}>       
                     <h2>
                         {`${this.props.isEditing ? "Edit" : "Add"} Network`}
@@ -158,7 +158,7 @@ class networkingForm extends React.Component {
                         <label htmlFor="contact_email">Contact email *</label>
                         <input type="email" name="contact_email" value={this.state.networkData.contact_email} onChange={this.updateField} className="form-control" id="contact_email" placeholder="Enter contact email" required/>
                     </div>
-                    <div class="form-check">
+                    <div className="form-check">
                         <input type="checkbox" name="active" value={this.state.networkData.active} onChange={this.updateField} className="form-check-input" id="checkActiveStatus" required/>
                         <label className="form-check-label" htmlFor="checkActiveStatus">Agree to make data active</label>
                     </div>

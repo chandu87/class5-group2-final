@@ -81,6 +81,7 @@ class InternshipForm extends Component {
     render () {
         if(this.state.displaySubmitForm) {
             return (
+                <div className="container"> 
                 <form onSubmit={this.submitForm}>
                     <h2>
                         {`${this.props.isEditing ? "Edit" : "Add"} Internship`}
@@ -241,6 +242,7 @@ class InternshipForm extends Component {
     
                     <button type="submit" className="btn btn-primary">Update</button>
                 </form>
+                </div>
             )    
         } else {
             return(

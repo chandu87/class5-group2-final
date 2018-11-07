@@ -1,10 +1,13 @@
 import React from "react";
 import logo from "../../thread-logo.png";
 import { Link } from "react-router-dom";
+import LoginContext from '../../contexts/login';
 
 import "./Header.css";
 
 class Header extends React.Component {
+    static contextType = LoginContext;
+
     render() {
         return (
             <div className="container-fluid">
@@ -34,6 +37,19 @@ class Header extends React.Component {
                                             <li className="nav-item iconNetwork">
                                                 <span className="icon material-icons md-36 md-dark">people</span>
                                                 <Link to="/Networking" className="nav-link"> Networking </Link></li>
+                                            {
+                                                this.context.isLoggedIn ?
+                                                    <li className="nav-item iconCode">
+                                                        <span className="icon material-icons md-36 md-dark" />
+                                                        {this.context.email}
+                                                        <Link to="/logout" className="nav-link"> Logout </Link>
+                                                    </li>
+                                                :
+                                                    <li className="nav-item iconCode">
+                                                        <span className="icon material-icons md-36 md-dark" />
+                                                        <Link to="/login" className="nav-link"> Login </Link>
+                                                    </li>
+                                            }
                                         </ul>
                                     </nav>
                                 </div>
