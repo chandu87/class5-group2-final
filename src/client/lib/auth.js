@@ -6,7 +6,7 @@ export const protectedFetch = (url, properites = {}) => {
   const authToken = localStorage.getItem('authToken');
 
   return new Promise((resolve, reject) => {
-    if (!authToken) {
+    if (!_.isString(authToken) || authToken == 'undefined' || authToken == 'null') {
       return reject(new Error('Login token missing, unauthorized'));
     }
 
