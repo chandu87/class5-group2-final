@@ -30,7 +30,7 @@ class SearchBar extends React.Component{
                         <label className="sr-only" htmlFor="inlineFormInput">Name</label>
                         <input type="text" className="form-control mb-3" name="name" 
                             value={this.state.data.name} onChange={this.updateField} 
-                            id="inlineFormInput" placeholder="Search Keyword" required/>
+                            id="inlineFormInput" placeholder="Search Keyword"/>
                     </div>
                     <div className="col-auto">
                         <div className="input-group mb-3">
@@ -39,7 +39,7 @@ class SearchBar extends React.Component{
                             </div>
                             <input type="text" className="form-control" name="location" 
                                     value={this.state.data.location} onChange={this.updateField} 
-                                    id="inlineFormInputGroup" placeholder="City Name" required/>
+                                    id="inlineFormInputGroup" placeholder="City Name"/>
                         </div>
                     </div>
                     <div className="col-auto">
