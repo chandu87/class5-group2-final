@@ -5,40 +5,31 @@ class SearchBar extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            networkData: {
-                network_name : "",
-                network_location:""
+            data: {
+                name : "",
+                location:"",
+                table:""
             }
         }
     }
     updateField = (e) =>{
         const {name, value} = e.target;
         this.setState({
-            networkData : {
-                ...this.state.networkData,
+            data : {
+                ...this.state.data,
                 [name]: value
             }
         })
     }
-    submitForm = (e) => {
-        // e.preventDefault();
-        // console.log(this.props.location.search);
-        console.log(this.state.networkData);
-        const q_name = `network_name=${this.state.networkData.network_name}`;
-        const q_location = `network_location=${this.state.networkData.network_location}`;
-        // this.props.history.push(`/Networking/search?${q_name}&${q_location}`);
-        this.props.history.push({pathname : '/Networking/search', search : `?${q_name}&${q_location}`});
-        console.log("Submit form");
-    }
     render(){
         return(
-            <form>
+            <form action={`/${this.state.data.table}/search`}>
             <div className="container search-bar">
                 <div className="form-row align-items-center">
                     <div className="col-auto">
                         <label className="sr-only" htmlFor="inlineFormInput">Name</label>
-                        <input type="text" className="form-control mb-3" name="network_name" 
-                            value={this.state.networkData.network_name} onChange={this.updateField} 
+                        <input type="text" className="form-control mb-3" name="name" 
+                            value={this.state.data.name} onChange={this.updateField} 
                             id="inlineFormInput" placeholder="Search Keyword" required/>
                     </div>
                     <div className="col-auto">
@@ -46,25 +37,27 @@ class SearchBar extends React.Component{
                             <div className="input-group-prepend">
                                 <div className="input-group-text">@</div>
                             </div>
-                            <input type="text" className="form-control" name="network_location" 
-                                    value={this.state.networkData.network_location} onChange={this.updateField} 
-                                    id="inlineFormInputGroup" placeholder="City Name"/>
+                            <input type="text" className="form-control" name="location" 
+                                    value={this.state.data.location} onChange={this.updateField} 
+                                    id="inlineFormInputGroup" placeholder="City Name" required/>
                         </div>
                     </div>
                     <div className="col-auto">
-                    <div className="form-select mb-3">
-                        <select className="custom-select" id="inputGroupSelect02" required>
-                            <option defaultValue>Choose...</option>
-                            <option value="1">Events</option>
-                            <option value="2">InternShips</option>
-                            <option value="3">Mentors</option>
-                            <option value="4">Networking</option>
-                        </select>
-                    </div>
+                        <div className="form-select mb-3">
+                            <select className="custom-select" id="inputGroupSelect02" name="table" 
+                                    value={this.state.data.table} onChange={this.updateField} required>
+                                <option value="">None</option>
+                                <option value="Events">Events</option>
+                                <option value="InternShips">InternShips</option>
+                                <option value="Mentors">Mentors</option>
+                                <option value="Networking">Networking</option>
+                            </select>
+                        </div>
                     </div>
                     <div className="col-auto">
-                    <button onClick={this.submitForm}>Button</button>
-                    {/* <a className=" btn btn-outline-danger btn-sm" href="/Networking/search/NGO">Search</a> */}
+                        <div className="input-group mb-3">
+                            <button className="btn btn-outline-danger">Search</button>
+                        </div>
                     </div>
                 </div>       
             </div>

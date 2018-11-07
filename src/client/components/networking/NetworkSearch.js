@@ -13,32 +13,28 @@ class NetworkSearch extends React.Component{
         }
     }
     componentWillMount(){
-        debugger;
-        console.log(this.props.location);
+        // debugger;
+        // console.log(this.props.location);
 
         const query = this.props.location.search.substr(1);
         const searchData = queryString.parse(query);
 
-        fetch(`/api/Networking/search?network_name=${searchData.network_name}`).then(res=>res.json())
+        fetch(`/api/Networking/search?name=${searchData.name}&location=${searchData.location}`).then(res=>res.json())
         .then(response=>{
             this.setState({
                 data: response,
                 dataisLoaded : true
             })
         })
-
     }
     render(){
-        // const new_query = this.props.location.search.substr(1);
-        // const new_searchData = queryString.parse(query);
-
 
         if(this.state.dataisLoaded){
             // console.log(this.state.data);
             return(
-            <div>
+            <div className="container">
                 {this.state.data.map((item)=>
-            <NetworkCard networkItem={item}/>
+                    <NetworkCard networkItem={item}/>
                 )}
             </div>);
         }
