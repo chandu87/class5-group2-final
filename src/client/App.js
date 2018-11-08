@@ -20,6 +20,7 @@ import EventsForm from './components/events-form';
 import EventDetailedView from "./components/events/EventDetailedView";
 import SearchBar from "./components/search-bar/SearchBar";
 import NetworkSearch from "./components/networking/NetworkSearch";
+import MentorSearch from "./components/mentors/MentorSearch";
 
 class App extends Component {
   render() {
@@ -49,6 +50,8 @@ class App extends Component {
             <Route exact path="/Networking/edit/:id" component={NetworkForms.editNetwork}/>
             <Route exact path={`/Networking/company/:id`} component={Company} />
             <Route exact path="/Networking/search" component={NetworkSearch} />
+            <Route exact path="/Mentors/search" component={MentorSearch} />
+
           </Switch>
         </main>
         <footer>
