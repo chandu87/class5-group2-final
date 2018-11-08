@@ -1,4 +1,5 @@
 import express from 'express';
+import { authenticatedRoute } from "../controllers/auth";
 
 import {
   listAllInternships,
@@ -11,9 +12,9 @@ import {
 const router = express.Router();
 
 router.get('/', listAllInternships);
-router.post('/', createInternship);
+router.post('/', authenticatedRoute, createInternship);
 router.get('/:id', getInternshipById);
-router.put('/:id', updateInternship);
-router.delete('/:id', deleteInternship);
+router.put('/:id', authenticatedRoute, updateInternship);
+router.delete('/:id', authenticatedRoute, deleteInternship);
 
 export default router;

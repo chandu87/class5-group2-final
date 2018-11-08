@@ -1,6 +1,10 @@
 import React from 'react';
+import classNames from 'classnames';
+import LoginContext from '../../contexts/login';
 
 class EventsListView extends React.Component{
+    static contextType = LoginContext;
+
     render(){
         console.log(this.props.events);
         const events = this.props.events;
@@ -19,8 +23,8 @@ class EventsListView extends React.Component{
                                 <small>Date : <strong>From</strong> {item.event_start_date} - {item.event_start_hour} 
                                 <strong> To </strong>{item.event_end_date} - {item.event_end_hour}</small>
                                 <div className="d-flex w-100 justify-content-between">
-                                <a href={`/Events/details/${item.id}`} className="badge badge-info">Read more...</a>
-                                <a href={`/Events/edit/${item.id}`} className="badge badge-danger">Edit</a>
+                                <a href={`/Events/details/${item.id}`} className="btn badge badge-info">Read more...</a>
+                                <a href={`/Events/edit/${item.id}`} className={`btn badge badge-danger ${classNames({ disabled: !this.context.isLoggedIn })}`}>Edit2</a>
                                 </div>
                                 </div>
                             </div>
