@@ -68,7 +68,8 @@ class InternshipForm extends Component {
         method,
         body: JSON.stringify(this.state.internshipData),
         headers:{
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('authToken')
         }
         }).then(res => res.text())
         .then(response => {

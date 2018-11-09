@@ -58,12 +58,12 @@ class MentorForm extends Component {
             url = `/api/mentors`
             method = 'POST';
         }
-
         fetch(url, {
             method,
             body: JSON.stringify(this.state.mentorData),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('authToken')
             }
         }).then(res => res.text())
             .then(response => {

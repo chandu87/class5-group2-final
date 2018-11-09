@@ -52,7 +52,10 @@ class networkingForm extends React.Component {
     deleteNetwork = () =>{
         console.log("deleting.....");
         fetch(`/api/networking/${this.props.match.params.id}`,{
-          method: 'DELETE'
+          method: 'DELETE',
+          headers:{
+            'Authorization': localStorage.getItem('authToken')
+          }
         }).then(res => res.json())
         .then(response=> {
           console.log('deelete :', response);
@@ -79,7 +82,8 @@ class networkingForm extends React.Component {
             method,
             body: JSON.stringify(this.state.networkData), // data can be `string` or {object}!
             headers:{
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Authorization': localStorage.getItem('authToken')
             }
           }).then(res => res.json())
           .then(response => {
