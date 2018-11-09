@@ -62,7 +62,10 @@ class EventsForm extends React.Component{
     deleteEvent = () =>{
         console.log("deleting.....");
         protectedFetch(`/api/events/${this.props.match.params.id}`,{
-          method: 'DELETE'
+          method: 'DELETE',
+          headers:{
+             'Authorization': localStorage.getItem('authToken')
+          }
         }).then(res => res.json())
         .then(response=> {
           console.log('deelete :', response);
@@ -89,7 +92,8 @@ class EventsForm extends React.Component{
             method,
             body: JSON.stringify(this.state.eventsData), // data can be `string` or {object}!
             headers:{
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Authorization': localStorage.getItem('authToken')
             }
           }).then(res => {
                 console.log("res : ",  res);
