@@ -6,9 +6,13 @@ import LoginContext from '../../contexts/login';
 import "./Header.css";
 
 class Header extends React.Component {
-    static contextType = LoginContext;
+    // static contextType = LoginContext;
+    // console.log(contextType);
 
     render() {
+        const contextType = LoginContext._currentValue;
+        console.log(contextType);
+    
         return (
             <div className="container-fluid">
                 <div className="container">
@@ -38,10 +42,10 @@ class Header extends React.Component {
                                                 <span className="icon material-icons md-36 md-dark">people</span>
                                                 <Link to="/Networking" className="nav-link"> Networking </Link></li>
                                             {
-                                                this.context.isLoggedIn ?
+                                                contextType.isLoggedIn ?
                                                     <li className="nav-item iconCode">
                                                         <span className="icon material-icons md-36 md-dark" />
-                                                        {this.context.email}
+                                                        {contextType.email}
                                                         <Link to="/logout" className="nav-link"> Logout </Link>
                                                     </li>
                                                 :
