@@ -26,7 +26,6 @@ class Internships extends React.Component {
   //Add style to it or follow List view from Group1
 
   render() {
-    console.log(this.state.internships);
     const { internships } = this.state;
     if (internships.length <= 0) {
       return <div>Loading ...</div>;
@@ -37,7 +36,7 @@ class Internships extends React.Component {
         <br/>
             <Link className="btn btn-outline-danger btn-lg btn-block mentor-add-button" to="/Internships/add">Add Internship</Link>
             {internships.map(item => (
-              <Link to={`/Internships/details/${item.id}`} key={item.id} target="_blank" className="card-as-link">
+              <Link to={`/Internships/details/${item.id}`} key={item.id} className="card-as-link">
                 <div key={item.id} className="card mb-4">
           
                   <div className="card-header">

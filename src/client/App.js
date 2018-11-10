@@ -7,6 +7,7 @@ import "@material/card/dist/mdc.card.min.css";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Internships from "./components/internships/Internships";
+import InternshipItemDetails from "./components/internships/Internship-item-details";
 import Homepage from "./components/home/HomePage";
 import Events from "./components/events/Events";
 import Mentors from "./components/mentors/Mentors";
@@ -42,6 +43,7 @@ class App extends Component {
               <Route exact path="/Internships" component={Internships} />
               <Route exact path="/Internships/add" component={InternshipForms.AddInternship} />
               <Route exact path={`/Internships/edit/:id`} component={InternshipForms.EditInternship} />
+              <Route exact path="/Internships/details/:id" component={InternshipItemDetails}/>
               <Route exact path="/Events" component={Events} />
               <Route exact path="/Events/add" component={EventsForm.AddEvent} />
               <Route exact path="/Events/edit/:id" component={EventsForm.EditEvent} />
