@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LoginContext from '../../contexts/login';
 
 
 class Networking extends React.Component {
@@ -23,6 +24,8 @@ class Networking extends React.Component {
   }
 
   render() {
+        const contextType = LoginContext._currentValue;
+        console.log("Networking page",contextType.isLoggedIn);
 
     const { isLoaded, items } = this.state;
     console.log(items);
@@ -33,13 +36,14 @@ class Networking extends React.Component {
       return (
             <div className="container"> 
             <div className="row">
-            <h1 className="">NETWORKING</h1> 
+            <h1 className="">NETWORKING</h1>
+            {contextType.isLoggedIn ? 
                 <a className="btn btn-outline-danger btn-lg btn-block" href="/Networking/add">Add New Network</a>
-
+                : ""} 
             </div>
                 {items.map(item => (
-                  <div key={item.id} className="col-md-12">
-                  <div className="card mb-4 networking-item">
+                  <a href={`/Networking/details/${item.id}`} key={item.id} className="row card networking-item">
+                  {/* <div className="card mb-4 networking-item"> */}
                     <div className="card-header">
                     <h5 className="card-title pricing-card-title"> {item.organisation_name}</h5>
                     </div>
@@ -51,7 +55,7 @@ class Networking extends React.Component {
                             <div><strong>Contact Email:</strong> {item.contact_email}</div>
                             <div><strong>Contact Number:</strong> {item.contact_phone}</div>
                             <br/>
-                            <a href={`/Networking/details/${item.id}`} className="badge badge-danger">Read more..</a>
+                            {/* <a href={`/Networking/details/${item.id}`} className="badge badge-danger">Read more..</a> */}
                         </div>
                         <div className="col-md-5">
                           <img className="my-0 font-weight-normal networking-image" src={item.organisation_logo} width="100%" alt="Organization Logo"/>
@@ -59,13 +63,13 @@ class Networking extends React.Component {
                       </div>
                     </div>
                     <div className="card-footer">
-                        <div className="row network-edit-button">
+                    { contextType.isLoggedIn ?  <div className="row network-edit-button">
                         <a href={`/Networking/edit/${item.id}`} className="btn btn-outline-danger btn-sm"> Edit</a>
-                      </div>
+                      </div> : "" }
                         
                     </div>
-                  </div>  
-                  </div>
+                  {/* </div>   */}
+                  </a>
                 ))}                                  
                 </div>
       );

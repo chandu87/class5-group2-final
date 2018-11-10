@@ -96,6 +96,7 @@ class networkingForm extends React.Component {
           .catch(error => console.error('Error:', error));
         }
     render(){
+        
         if(this.state.displaySubmitForm && this.state.isActive){
             return(
                 <div className="container">
