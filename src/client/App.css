@@ -312,7 +312,8 @@ main {
  .card-header{
   background-color: #f1e2e240;
  }
- 
+.card-as-link,
+.card-as-link:hover, 
 .networking-item,
 .networking-item:hover {
    text-decoration: none;
