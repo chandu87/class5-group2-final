@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LoginContext from '../../contexts/login';
 
 class Internships extends React.Component {
 
@@ -26,6 +27,9 @@ class Internships extends React.Component {
   //Add style to it or follow List view from Group1
 
   render() {
+    const contextType = LoginContext._currentValue;
+    console.log("Internship page",contextType.isLoggedIn);
+
     const { internships } = this.state;
     if (internships.length <= 0) {
       return <div>Loading ...</div>;
@@ -34,7 +38,10 @@ class Internships extends React.Component {
         <div className="container"> 
         <h1>Internships</h1> 
         <br/>
+        {contextType.isLoggedIn ? 
             <Link className="btn btn-outline-danger btn-lg btn-block mentor-add-button" to="/Internships/add">Add Internship</Link>
+            : ""} 
+
             {internships.map(item => (
               <Link to={`/Internships/details/${item.id}`} key={item.id} className="card-as-link">
                 <div key={item.id} className="card mb-4">
@@ -48,7 +55,7 @@ class Internships extends React.Component {
                         <div className="col-md-8">
                             <p className="card-text">{item.internship_description}</p>
                             <p className="card-text">Place : {item.location}</p>
-                            <Link to="#" className="btn btn-danger">
+                            <Link to={`/Internships/details/${item.id}`} className="btn btn-danger">
                               Read more...
                             </Link>
                         </div>
@@ -63,11 +70,16 @@ class Internships extends React.Component {
                     </div>
           
                   </div>
+
+                  {contextType.isLoggedIn ? 
                   <div className="card-footer">
                     <Link to={`/Internships/edit/${item.id}`} className="btn btn-outline-danger network-edit-button btn-sm"> Edit</Link>
                     <Link to={`/Internships/delete/${item.id}`} className="btn btn-outline-danger btn-sm">Delete</Link>
-                    </div>        
+                  </div>
+                  : ""} 
+
                 </div>
+
               </Link>
             ))}
         </div>
