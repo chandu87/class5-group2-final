@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { NotificationManager } from 'react-notifications';
+
 
 class Login extends Component {
   state = {
@@ -34,6 +36,7 @@ class Login extends Component {
       })
       .then(response => {
         console.log("Success:", JSON.stringify(response));
+        NotificationManager.success('Logged In Successfully');
         localStorage.setItem('authToken', response.token);
 
         // TODO maybe add a message showing "Logged in Successfully";
@@ -41,7 +44,17 @@ class Login extends Component {
 
         this.props.history.push('/');
       })
-      .catch(error => console.error("Error:", error));
+      .catch(error => {
+        NotificationManager.error('Invalid credentials');
+        // TODO Maybe clear the passsword form
+        this.setState({
+          user: {
+            ...this.state.user,
+            password: ''
+          }
+        })
+        console.error("Error:", error)
+      });
   };
 
   render() {
