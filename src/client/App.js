@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+import { NotificationContainer } from 'react-notifications';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "@material/card/dist/mdc.card.min.css";
+import 'react-notifications/lib/notifications.css';
 
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
@@ -35,6 +37,7 @@ class App extends Component {
         <LoginContext.Provider value={contextValue}>
           <header>
             <Header />
+            <NotificationContainer/>
           </header>
           <main>
             <SearchBar />
