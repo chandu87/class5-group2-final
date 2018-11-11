@@ -3,10 +3,11 @@ import jwt from "jsonwebtoken";
 
 import UnauthorizedError from '../errors/UnauthorizedError';
 
-const jwtPass = "caipaenie7thol8Z";
+const jwtSecret = "caipaenie7thol8Z";
 
 // The email and password hash should be saved to a database, they are hard-coded here for simplification
-const email = "hest@hyf.com";
+const email = "admin@hyf.com";
+const userName = "Admin"
 // const password = "jacob";
 const passwordHash = '$2b$10$0Jvk7/fBmMI/mISeI1p2zus/UkRG0dWrlTWvyPl6h1P7o3krvjZae';
 
@@ -22,11 +23,11 @@ const passwordHash = '$2b$10$0Jvk7/fBmMI/mISeI1p2zus/UkRG0dWrlTWvyPl6h1P7o3krvjZ
 // encryptPassword(password);
 
 // export const checkLoginInfo = (user, pass) => user === email && pass === password;
-export const checkLoginInfo = (user, pass) => user === email && bcrypt.compareSync(pass, passwordHash);
+export const checkLoginInfo = (userEmail, pass) => userEmail === email && bcrypt.compareSync(pass, passwordHash);
 
-export const createToken = (user, pass) => jwt.sign({ email: user }, jwtPass);
+export const createToken = userEmail => jwt.sign({ email: userEmail, userName }, jwtSecret);
 
-export const verifyToken = token => jwt.verify(token, jwtPass);
+export const verifyToken = token => jwt.verify(token, jwtSecret);
 
 // This method looks for the Authorization header in the rqeuest, and verifies that its value is correct
 export const authenticatedRoute = (req, res, next) => {
@@ -59,7 +60,7 @@ export const login = (req, res, next) => {
     // return res.send(401, { message: 'invalid credentials'});
   }
 
-  const token = createToken(jsonData.email, jsonData.password);
+  const token = createToken(jsonData.email);
   
   // TODO Read user info from a table in the database
   return res.status(200).send({ success: true, token });
