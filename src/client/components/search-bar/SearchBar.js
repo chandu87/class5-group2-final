@@ -26,13 +26,13 @@ class SearchBar extends React.Component{
             <form action={`/${this.state.data.table}/search`}>
             <div className="container search-bar">
                 <div className="form-row align-items-center">
-                    <div className="col-auto">
+                    <div className="col-md-4">
                         <label className="sr-only" htmlFor="inlineFormInput">Name</label>
                         <input type="text" className="form-control mb-3" name="name" 
                             value={this.state.data.name} onChange={this.updateField} 
                             id="inlineFormInput" placeholder="Search Keyword"/>
                     </div>
-                    <div className="col-auto">
+                    <div className="col-md-3">
                         <div className="input-group mb-3">
                             <div className="input-group-prepend">
                                 <div className="input-group-text">@</div>
@@ -42,7 +42,7 @@ class SearchBar extends React.Component{
                                     id="inlineFormInputGroup" placeholder="City Name"/>
                         </div>
                     </div>
-                    <div className="col-auto">
+                    <div className="col-md-3">
                         <div className="form-select mb-3">
                             <select className="custom-select" id="inputGroupSelect02" name="table" 
                                     value={this.state.data.table} onChange={this.updateField} required>
@@ -54,7 +54,7 @@ class SearchBar extends React.Component{
                             </select>
                         </div>
                     </div>
-                    <div className="col-auto">
+                    <div className="col-md-2">
                         <div className="input-group mb-3">
                             <button className="btn btn-outline-danger">Search</button>
                         </div>

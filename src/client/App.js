@@ -55,7 +55,9 @@ class App extends Component {
               <Route exact path="/Networking/add" component={NetworkForms.addNetwork}/>
               <Route exact path="/Networking/details/:id" component={NetworkingItemDetails}/>
               <Route exact path="/Networking/edit/:id" component={NetworkForms.editNetwork}/>
-              <Route exact path={`/Networking/company/:id`} component={Company} />
+              <Route exact path="/Networking/delete/:id" component={NetworkForms.deleteNetwork}/>
+
+              {/* <Route exact path={`/Networking/company/:id`} component={Company} /> */}
               <Route exact path="/Networking/search" component={NetworkSearch} />
               <Route exact path="/Mentors/search" component={MentorSearch} />
               <Route exact path="/login" component={Login} />
