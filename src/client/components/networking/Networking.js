@@ -63,8 +63,9 @@ class Networking extends React.Component {
                       </div>
                     </div>
                     <div className="card-footer">
-                    { contextType.isLoggedIn ?  <div className="row network-edit-button">
-                        <a href={`/Networking/edit/${item.id}`} className="btn btn-outline-danger btn-sm"> Edit</a>
+                    { contextType.isLoggedIn ?  <div className="row">
+                        <a href={`/Networking/edit/${item.id}`} className="btn btn-outline-danger btn-sm network-edit-button"> Edit</a>
+                        <a href={`/Networking/delete/${item.id}`} className="btn btn-outline-danger btn-sm"> Delete</a>                        
                       </div> : "" }
                         
                     </div>

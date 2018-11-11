@@ -7,9 +7,7 @@ class networkingForm extends React.Component {
         if (this.props.isEditing) {
             this.state = {
                 networkData : this.props.networkData,
-                displaySubmitForm : false,
-                displayDetailsCard:true,
-                isActive : true
+                displaySubmitForm:true,
             }
         } else {
             this.state = {
@@ -27,9 +25,7 @@ class networkingForm extends React.Component {
                     "contact_phone": "",
                     "active": 1
                 },
-                displaySubmitForm : true,
-                displayDetailsCard:false,
-                isActive : true               
+                displaySubmitForm:true,
             }
         }
     }
@@ -44,27 +40,6 @@ class networkingForm extends React.Component {
         })
 
     }
-    displaySubmitForm = () =>{
-        this.setState({
-            displaySubmitForm : true
-        });
-    }
-    deleteNetwork = () =>{
-        console.log("deleting.....");
-        fetch(`/api/networking/${this.props.match.params.id}`,{
-          method: 'DELETE',
-          headers:{
-            'Authorization': localStorage.getItem('authToken')
-          }
-        }).then(res => res.json())
-        .then(response=> {
-          console.log('deelete :', response);
-          this.setState({
-            isActive : false
-        });
-        
-        })
-      }
 
     //This function for Submitting our request to database to add or modifiy data
     submitForm = (e) =>{
@@ -89,15 +64,14 @@ class networkingForm extends React.Component {
           .then(response => {
               console.log('Success:', response);
               this.setState({
-                  displaySubmitForm : false,
-                  displayDetailsCard : false
+                  displaySubmitForm : false
               });
             })
           .catch(error => console.error('Error:', error));
         }
     render(){
         
-        if(this.state.displaySubmitForm && this.state.isActive){
+        if(this.state.displaySubmitForm){
             return(
                 <div className="container">
                 <form onSubmit={this.submitForm}>       
@@ -175,32 +149,12 @@ class networkingForm extends React.Component {
                 </div>
             );
         }
-        else if(this.state.displayDetailsCard && this.state.isActive){
-            return(
-                    <div>
-                        <div>
-                            <button className="btn btn-outline-danger btn-sm" onClick={this.displaySubmitForm}> Update</button>
-                            <button className="btn btn-outline-danger btn-sm" onClick={this.deleteNetwork}> Delete</button>
-                            <a href={`/Networking`} className="btn btn-outline-danger btn-sm network-edit-button">Go Back to Networks</a>
-                        </div>
-                        <NetworkCard networkItem={this.state.networkData}/>
-                    </div>
-                    );
-        }
-        else if(!this.state.isActive){
-            return(
-                <div>
-                    <h3>Network Successfully Deleted</h3>
-                    <a href={`/Networking`} className="btn btn-outline-danger btn-sm">Go Back to Networks</a>
-                </div>);
-        }
         else{
             return(
-                <div>
+                <div className="container">
                     <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Network`}</h1>
                     <br/>
-                    <button className="btn btn-outline-danger btn-sm" onClick={this.displaySubmitForm}> Update</button>
-                    <button className="btn btn-outline-danger btn-sm" onClick={this.deleteNetwork}> Delete</button>
+                    <button className="btn btn-outline-danger btn-sm" onClick={this.displaySubmitForm}> Edit</button>
                     <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Networking/add">Add New Network</a>
                     <a href={`/Networking`} className="btn btn-outline-danger btn-sm network-edit-button">Go Back to Networks</a>
                     <NetworkCard networkItem={this.state.networkData}/>
