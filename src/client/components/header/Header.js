@@ -45,7 +45,7 @@ class Header extends React.Component {
                                                 contextType.isLoggedIn ?
                                                     <li className="nav-item iconCode">
                                                         <span className="icon material-icons md-36 md-dark" />
-                                                        {contextType.email}
+                                                        {contextType.userName}
                                                         <Link to="/logout" className="nav-link"> Logout </Link>
                                                     </li>
                                                 :
