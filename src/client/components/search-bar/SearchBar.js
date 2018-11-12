@@ -1,7 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
 import { withRouter} from 'react-router-dom';
-import querystring from 'querystring';
 
 class SearchBar extends React.Component{
     constructor(props){
@@ -14,18 +12,6 @@ class SearchBar extends React.Component{
             }
         }
     }
-
-    // componentDidMount = () => {
-    //     if (this.state.data.table != this.props.route ) {
-    //         this.setState({
-    //             data: {
-    //                 ...this.state.data,
-    //                 table: this.props.route
-    //             }
-    //         })
-    //     }
-    // }
-
     updateField = (e) =>{
         const {name, value} = e.target;
         this.setState({
