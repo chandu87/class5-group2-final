@@ -22,10 +22,13 @@ export const loadContextValue = () => {
   if (_.isString(authToken) && authToken != 'undefined' && authToken != 'null') {
     const decodedAuthToken = jwt.decode(authToken);
 
+    console.log({decodedAuthToken});
+
     contextValue = {
       isLoggedIn: true,
       token: authToken,
-      email: decodedAuthToken.email
+      email: decodedAuthToken.email,
+      userName: decodedAuthToken.userName
     };
   }
 

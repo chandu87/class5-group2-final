@@ -109,6 +109,6 @@ export function deleteInternship(req, res) {
       return;
     }
 
-    res.send('success');
+    res.send(result);
   });
 }
