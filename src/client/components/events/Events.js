@@ -39,19 +39,25 @@ class Events extends React.Component {
   //Read data using console
   //Display data using list
   render() {
+    const contextType = LoginContext._currentValue;
+    console.log("Networking page",contextType.isLoggedIn);
+
     return (
       <div className="container">
+      <h1>Events</h1>
         <div className="container">
-          {this.renderAddNewEventButton()}
+          {/* { contextType.isLoggedIn ? this.renderAddNewEventButton() : "" }           */}
+          { contextType.isLoggedIn ? <a className='btn btn-outline-danger add-event-btn' href="/Events/add">ADD NEW EVENT</a> : "" }          
           <div className="btn-group events-btn" role="group">
             <button className="btn btn-outline-danger active">Calender View</button>
             <button className="btn btn-outline-danger">Map View</button>
           </div>
         </div>
+        <br/>
         <h3>List of Events</h3>
           <div className="row">
           <div className="col-md-6">
-              <EventsListView events={this.state.events}/>
+              <EventsListView events={this.state.events} isLoggedIn = {contextType.isLoggedIn}/>
           </div>
           <div className="col-md-6">
             <Calendar />
