@@ -6,8 +6,7 @@ class NetworkItemDetails extends React.Component{
         super(props);
         this.state = {
             itemDetailedData : "",
-            isLoading: true,
-            isActive : true
+            isLoading: true
         }
     }
     componentDidMount(){
@@ -19,23 +18,19 @@ class NetworkItemDetails extends React.Component{
         }));
     }    
     render(){
-        if(!this.state.isLoading && this.state.isActive){
+        if(!this.state.isLoading){
         return(
-                    <div>
+                    <div className="container">
                         <a href={`/Networking`} className="btn btn-outline-danger btn-sm">Go back to Networks</a>
                         <NetworkCard networkItem={this.state.itemDetailedData}/>
                     </div>
                 );
-            }else if(!this.state.isLoading && !this.state.isActive){
-                return(
-                        <div>
-                            <h4>Item Successfully deleted</h4>
-                            <br/>
-                            <a href="/Networking"> Go Back</a>
-                        </div>);
             }
             else{
-                return(<li>Is loading . . . . .</li>);
+                return(
+                    <div className="container">
+                        <h2>Is loading . . . . .</h2>
+                    </div>);
             }
     }
 }
