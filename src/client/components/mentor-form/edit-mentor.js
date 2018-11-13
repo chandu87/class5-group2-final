@@ -1,14 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MentorForm from './mentor-form';
 
-// export default (props) => {
-//     // Do the fetching, and render the form only when the data is here
-//     return (
-//         <MentorForm {...props} isEditing={true} />
-//     )
-// }
-
-class EditMentor extends Component {
+class EditMentor extends React.Component {
     state = {
         isLoading: true,
         message: 'Hang in there...',

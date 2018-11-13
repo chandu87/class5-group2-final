@@ -19,14 +19,14 @@ class InternshipForm extends React.Component {
                     "department": "",
                     "internship_description": "",
                     "organisation_description": "",
-                    "internship_agreement": "",
-                    "internship_requirements": "",
+                    "internship_agreement": 1,
+                    "internship_requirements": 1,
                     "application_requirements": "",
                     "internship_availabiltiy_schedule": "",
-                    "travel_expenses": "",
+                    "travel_expenses": 1,
                     "location": "",
                     "internship_add_date": "",
-                    "closing_date": "",
+                    "closing_date": 1,
                     "internship_deadline": "",
                     "contact_person": "",
                     "phone_contact": "",                    
@@ -42,7 +42,7 @@ class InternshipForm extends React.Component {
     }
 
     updateField = (e) => {
-        const { name, value } = e.target;
+        const { name,value } = e.target;
 
         this.setState({
             internshipData: {
