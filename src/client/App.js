@@ -52,6 +52,8 @@ class App extends Component {
               <Route exact path="/Events/add" component={EventsForm.AddEvent} />
               <Route exact path="/Events/edit/:id" component={EventsForm.EditEvent} />
               <Route exact path="/Events/details/:id" component={EventDetailedView} />
+              <Route exact path="/Events/delete/:id" component={EventsForm.DeleteEvent}/>
+
               <Route exact path="/Mentors" component={Mentors} />
               <Route exact path="/Mentors/add" component={MentorForms.AddMentor} />
               <Route exact path={`/Mentors/edit/:id`} component={MentorForms.EditMentor} />
