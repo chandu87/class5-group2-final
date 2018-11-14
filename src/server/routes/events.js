@@ -6,7 +6,8 @@ import {
   createEvent,
   updateEvent,
   deleteEvent,
-  getEventById
+  getEventById,
+  searchEvent
 } from '../controllers/events';
 
 const router = express.Router();
@@ -15,6 +16,7 @@ router.get("/", listAllEvents);
 router.post("/", authenticatedRoute, createEvent);
 router.put("/:id", authenticatedRoute, updateEvent);
 router.delete("/:id", authenticatedRoute, deleteEvent);
+router.get("/search",searchEvent);
 router.get("/:id", getEventById);
 
 export default router;

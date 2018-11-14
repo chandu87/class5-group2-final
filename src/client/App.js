@@ -33,6 +33,8 @@ import SearchBar from "./components/search-bar/SearchBar";
 import Login from "./components/login";
 import Logout from "./components/logout";
 import LoginContext, { loadContextValue } from './contexts/login';
+import MentorSearch from "./components/mentors/MentorSearch";
+import EventSearch from "./components/events/EventSearch";
 
 class App extends Component {
   render() {
@@ -62,6 +64,7 @@ class App extends Component {
               <Route exact path="/Events/edit/:id" component={EventsForm.EditEvent} />
               <Route exact path="/Events/details/:id" component={EventDetailedView} />
               <Route exact path="/Events/delete/:id" component={EventsForm.DeleteEvent}/>
+              <Route exact path="/Events/search" component={EventSearch} />
 
               { /* Mentors Page*/}
               <Route exact path="/Mentors" component={Mentors} />
