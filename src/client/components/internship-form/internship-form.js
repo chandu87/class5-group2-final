@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
+import InternshipCard from '../internships/InternshipCard';
 
-class InternshipForm extends Component {
+class InternshipForm extends React.Component {
     constructor(props) {
         super(props);
         if (this.props.isEditing) {
@@ -18,14 +19,14 @@ class InternshipForm extends Component {
                     "department": "",
                     "internship_description": "",
                     "organisation_description": "",
-                    "internship_agreement": "",
-                    "internship_requirements": "",
+                    "internship_agreement": 1,
+                    "internship_requirements": 1,
                     "application_requirements": "",
                     "internship_availabiltiy_schedule": "",
-                    "travel_expenses": "",
+                    "travel_expenses": 1,
                     "location": "",
                     "internship_add_date": "",
-                    "closing_date": "",
+                    "closing_date": 1,
                     "internship_deadline": "",
                     "contact_person": "",
                     "phone_contact": "",                    
@@ -41,7 +42,7 @@ class InternshipForm extends Component {
     }
 
     updateField = (e) => {
-        const { name, value } = e.target;
+        const { name,value } = e.target;
 
         this.setState({
             internshipData: {
@@ -65,13 +66,14 @@ class InternshipForm extends Component {
         }
         console.log("Data from form", this.state.internshipData);
         fetch(url, {
-        method,
-        body: JSON.stringify(this.state.internshipData),
-        headers:{
-            'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem('authToken')
-        }
-        }).then(res => res.text())
+            method,
+            body: JSON.stringify(this.state.internshipData),
+            headers:{
+                'Content-Type': 'application/json',
+                    'Authorization': localStorage.getItem('authToken')
+            }
+        })
+        .then(res => res.text())
         .then(response => {
             console.log('Success:', response),
             this.setState({displaySubmitForm:false});
@@ -163,7 +165,7 @@ class InternshipForm extends Component {
                         <label htmlFor="location">
                             location
                         </label>
-                        <input type="tex" className="form-control" name="location" value={this.state.internshipData.location} onChange={this.updateField} />
+                        <input type="text" className="form-control" id="location" name="location" value={this.state.internshipData.location} onChange={this.updateField} />
                     </div>
                     <div className="row">
                         <div className="col">
@@ -237,48 +239,32 @@ class InternshipForm extends Component {
                         <label htmlFor="internship_theme_image">
                             Internship Theme Image
                         </label>
-                        <input type="text" className="form-control" name="internship_theme_image" value={this.state.internshipData.internship_theme_image} onChange={this.updateField} />
+                        <input type="url" className="form-control" id="internship_theme_image" name="internship_theme_image" value={this.state.internshipData.internship_theme_image} onChange={this.updateField} />
                     </div>
     
-    
-                    <button type="submit" className="btn btn-primary">Update</button>
+                    <div className="form-group form-check">
+                        <input type="checkbox" name="active" value={this.state.internshipData.active} onChange={this.updateField} className="form-check-input" id="checkActiveStatus" required/>
+                        <label className="form-check-label" htmlFor="checkActiveStatus">Agree to make data active</label>
+                    </div>
+
+                    <button type="submit" className="btn btn-outline-danger btn-sm">Submit</button>
+                    <Link to={`/Networking`} className="btn btn-outline-danger btn-sm">Cancel</Link>
+
                 </form>
                 </div>
             )    
         } else {
             return(
 
-                <div key={this.state.internshipData.id} className="card mb-4">
-        
-                <div className="card-header">
-                <h5 className="card-title">{this.state.internshipData.internship_title}</h5>
-               
-                </div>
-                <div className="card-body">
-                  <div className="row">
-                      <div className="col-md-8">
-                              <p className="card-text">{this.state.internshipData.internship_description}</p>
-                          <p className="card-text">Place : {this.state.internshipData.location}</p>
-                          <Link to="#" className="btn btn-danger">
-                            Read more...
-                          </Link>
-                      </div>
-                      <div className="col-md-4">
-                          <img
-                        className="internship-image rounded"
-                        src={this.state.internshipData.internship_theme_image}
-                        alt={this.state.internshipData.internship_title}
-                        />
-                      </div>
-        
-                  </div>
-        
-                </div>
-                <div className="card-footer">
-                  <Link to={`/Internships/edit/${this.state.internshipData.id}`} className="btn btn-outline-danger network-edit-button btn-sm"> Edit</Link>
-                  <Link to={`/Internships/delete/${this.state.internshipData.id}`} className="btn btn-outline-danger btn-sm">Delete</Link>
-                  </div>        
-              </div>
+                <div className="container">
+                    <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Internship`}</h1>
+                    <br/>
+                    <button className="btn btn-outline-danger btn-sm mb-4" onClick={this.displaySubmitForm}> Edit</button> 
+                    <Link to="/Internships/add" className="btn btn-outline-danger btn-sm mb-4 pull-right">Add New Internship</Link>
+                    <Link to={`/Internships`} className="btn btn-outline-danger btn-sm mb-4 pull-right">Go Back to Internships</Link>
+                    <InternshipCard internshipItem={this.state.internshipData}/>
+                </div>                
+
             )
         }
     }

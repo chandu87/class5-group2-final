@@ -1,28 +1,28 @@
 import React from 'react';
 
-class InternshipCard extends React.Component{
+class MentorCard extends React.Component{
     render(){
-        const item = this.props.internshipItem;
+        const item = this.props.mentorItem;
         console.log('card details',item);
         return(
                 <div key={item.id} className="card mb-4 card-as-link">
                         <div className="card-header">
-                        <h2 className="card-title pricing-card-title"> {item.internship_title}</h2>
+                        <h2 className="card-title pricing-card-title"> {item.offering}</h2>
                         </div>
                         <div className="card-body">
                             <div className="row mb-4">
                                 <div className="col-md-3">
-                                    <img className="my-0 font-weight-normal networking-image" src={item.internship_theme_image} width="100%" alt={item.application_requirements} />
+                                    <img className="my-0 font-weight-normal networking-image" src={item.profile_picture} width="100%" alt={item.offering} />
                                 </div>
                             </div>
                             <dl className="row">
-                                    <dt className="col-sm-3">Internship title</dt> 
-                                    <dd className="col-sm-9">{item.internship_title}</dd>
-                                    <dt className="col-sm-3">Internship Category</dt> 
-                                    <dd className="col-sm-9"> {item.internship_category}</dd>
-                                    <dt className="col-sm-3">Organization Name</dt>
-                                    <dd className="col-sm-9"> {item.organisation_name}</dd>
-                                    <dt className="col-sm-3">Department</dt> 
+                                    <dt className="col-sm-3">First Name</dt> 
+                                    <dd className="col-sm-9">{item.first_name}</dd>
+                                    <dt className="col-sm-3">Last Name</dt> 
+                                    <dd className="col-sm-9"> {item.last_name}</dd>
+                                    <dt className="col-sm-3"> Email</dt>
+                                    <dd className="col-sm-9"> {item.email}</dd>
+{ /*                                    <dt className="col-sm-3">Department</dt> 
                                     <dd className="col-sm-9">{item.department}</dd>
                                     <dt className="col-sm-3">Internship Description</dt> 
                                     <dd className="col-sm-9">{item.internship_description}</dd>
@@ -38,6 +38,7 @@ class InternshipCard extends React.Component{
                                     <dt className="col-sm-3">Email Contact </dt> <dd className="col-sm-9"> {item.email_contact}</dd>
                                     <dt className="col-sm-3">Organization Address </dt> <dd className="col-sm-9"> {item.organisation_address}</dd>
                                     <dt className="col-sm-3">Organization Website </dt> <dd className="col-sm-9"> {item.organisation_website}</dd>
+        */       }                                    
                             </dl>
                         </div>
                     </div>
@@ -45,4 +46,4 @@ class InternshipCard extends React.Component{
         }
 }
 
-export default InternshipCard;
+export default MentorCard;
