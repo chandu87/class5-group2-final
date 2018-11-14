@@ -66,6 +66,7 @@ class App extends Component {
               <Route exact path="/Mentors/add" component={MentorForms.AddMentor} />
               <Route exact path="/Mentors/edit/:id" component={MentorForms.EditMentor} />
               <Route exact path="/Mentors/details/:id" component={MentorItemDetails}/>
+              <Route exact path="/Mentors/delete/:id" component={MentorForms.DeleteMentor}/>
               <Route exact path="/Mentors/search" component={MentorSearch} />
               { /* Networking Page*/}
               <Route exact path="/Networking" component={Networking} />

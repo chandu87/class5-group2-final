@@ -53,6 +53,7 @@ class Mentors extends React.Component {
                   <span>{item.availability}</span> <br />
                 </p>
                 <Link to={`/Mentors/details/${item.id}`} className="btn btn-danger">Read more..</Link>
+                <Link to={`/Mentors/delete/${item.id}`} className="btn btn-outline-danger btn-sm pull-right"> Delete</Link>                
                 <Link to={`/Mentors/edit/${item.id}`} className="btn btn-outline-danger btn-sm pull-right"> Edit</Link>                
               </div>
               </div>
