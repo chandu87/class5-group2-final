@@ -17,6 +17,7 @@ import InternshipForms from "./components/internship-form";
 import Events from "./components/events/Events";
 import EventsForm from './components/events-form';
 import EventDetailedView from "./components/events/EventDetailedView";
+import EventSearch from "./components/events/EventSearch";
 
 import Mentors from "./components/mentors/Mentors";
 import MentorSearch from "./components/mentors/MentorSearch";
@@ -61,6 +62,9 @@ class App extends Component {
               <Route exact path="/Events/add" component={EventsForm.AddEvent} />
               <Route exact path="/Events/edit/:id" component={EventsForm.EditEvent} />
               <Route exact path="/Events/details/:id" component={EventDetailedView} />
+              <Route exact path="/Events/delete/:id" component={EventsForm.DeleteEvent}/>
+              <Route exact path="/Events/search" component={EventSearch} />
+
               { /* Mentors Page*/}
               <Route exact path="/Mentors" component={Mentors} />
               <Route exact path="/Mentors/add" component={MentorForms.AddMentor} />

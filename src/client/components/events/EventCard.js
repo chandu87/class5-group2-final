@@ -3,7 +3,7 @@ import React from 'react';
 class EventCard extends React.Component{
     render(){
         const item = this.props.eventsData;
-        console.log("-------------",item);
+        // console.log("-------------",item);
         return(
             <div>
             <br/>

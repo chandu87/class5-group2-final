@@ -9,9 +9,7 @@ class EventsForm extends React.Component{
         if (this.props.isEditing) {
         this.state = {
             eventsData : this.props.eventsData,
-            displaySubmitForm : false,
-            displayDetailsCard:true,
-            isActive : true
+            displaySubmitForm : true
         }
     }else{
         this.state = 
@@ -38,9 +36,7 @@ class EventsForm extends React.Component{
                     "max_participants": "",
                     "active": "1"
                 },
-                displaySubmitForm : true,
-                displayDetailsCard: false,
-                isActive: true
+                displaySubmitForm : true
             }
 
     }
@@ -54,28 +50,6 @@ class EventsForm extends React.Component{
             }
         })
     }
-    displayForm = () =>{
-        this.setState({
-            displaySubmitForm : true
-        })
-    }
-    deleteEvent = () =>{
-        console.log("deleting.....");
-        protectedFetch(`/api/events/${this.props.match.params.id}`,{
-          method: 'DELETE',
-          headers:{
-             'Authorization': localStorage.getItem('authToken')
-          }
-        }).then(res => res.json())
-        .then(response=> {
-          console.log('deelete :', response);
-          this.setState({
-            isActive : false
-        });
-        
-        })
-
-    }
     submitForm = (e) =>{
         e.preventDefault();
         console.log(this.state.eventsData);
@@ -88,7 +62,7 @@ class EventsForm extends React.Component{
             method = 'POST';
             console.log("POST request");
         }
-        protectedFetch(url, {
+        fetch(url, {
             method,
             body: JSON.stringify(this.state.eventsData), // data can be `string` or {object}!
             headers:{
@@ -109,15 +83,14 @@ class EventsForm extends React.Component{
             //   this.props.history.push(`/Events/details/${this.}`);
 
               this.setState({
-                  displaySubmitForm : false,
-                  displayDetailsCard: false
+                  displaySubmitForm : false
               });
             })
             
           .catch(error => console.error('Error:', error));
     }
     render(){
-        if(this.state.displaySubmitForm && this.state.isActive){
+        if(this.state.displaySubmitForm){
         return(
             <div className="container">
                 <form onSubmit={this.submitForm}>
@@ -244,37 +217,15 @@ class EventsForm extends React.Component{
                 </form>
             </div>
         );
-    }else if(this.state.displayDetailsCard && this.state.isActive){
-        return(
-            <div>
-                <div>
-                    <button className="col-md-2 btn btn-outline-danger btn-sm" onClick={this.displayForm}>Edit Event</button>
-                    <button className="col-md-2 btn btn-outline-danger btn-sm" onClick={this.deleteEvent}>Delete Event</button>
-                    <a className="col-md-4 btn btn-outline-danger btn-sm network-edit-button" href="/Events">Go back to Events</a>
-                </div>
-                <EventCard eventsData={this.state.eventsData}/>
-            </div>
-            );
-    }else if(!this.state.isActive){
-        return(
-            <div className="container">
-                <h3>Event is Successfully Deleted</h3>
-                <br/>
-                <a className="btn btn-outline-danger btn-sm" href="/Events">Go back to Events</a>
-                <a className="btn btn-outline-danger btn-sm" href="/Events/add">Add New Event</a>
-
-            </div>
-            );
     }
     else{
         return(
-            <div>    
+            <div className="container">    
                 <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Event`}</h1>
                 <br/>
                 <div>
-                <button className="col-md-2 btn btn-outline-danger btn-sm" onClick={this.displayForm}>Edit Event</button>
-                <button className="col-md-2 btn btn-outline-danger btn-sm" onClick={this.deleteEvent}>Delete Event</button>
-
+                    <a className="col-md-2 btn btn-outline-danger btn-sm" href={`/Events/edit/${this.props.match.params.id}`}>Edit</a>
+                    <a className="col-md-2 btn btn-outline-danger btn-sm" href={`/Events/delete/${this.props.match.params.id}`}>Delete</a>
                     <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Events/add">Add New Event</a>
                     <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Events">Go back to Events</a>
                 </div>
