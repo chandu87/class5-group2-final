@@ -24,7 +24,10 @@ class EventsListView extends React.Component{
                                 <strong> To </strong>{item.event_end_date} - {item.event_end_hour}</small>
                                 <div className="d-flex w-100 justify-content-between">
                                 <a href={`/Events/details/${item.id}`} className="btn badge badge-danger">Read more...</a>
-                                {this.props.isLoggedIn ? <a href={`/Events/edit/${item.id}`} className={`btn badge badge-danger ${classNames({ disabled: !this.context.isLoggedIn })}`}>Edit</a> : ""}
+                                {this.props.isLoggedIn ? <div>
+                                    <a href={`/Events/edit/${item.id}`} className="btn badge badge-danger">Edit</a>
+                                    <a href={`/Events/delete/${item.id}`} className="btn badge badge-danger">Delete</a>
+                                    </div> : ""}
                                 </div>
                                 </div>
                             </div>
