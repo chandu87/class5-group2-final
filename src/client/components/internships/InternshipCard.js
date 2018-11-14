@@ -7,7 +7,7 @@ class InternshipCard extends React.Component{
         return(
                 <div key={item.id} className="card mb-4 card-as-link">
                         <div className="card-header">
-                        <h2 className="card-title pricing-card-title"> {item.organisation_name}</h2>
+                        <h2 className="card-title pricing-card-title"> {item.internship_title}</h2>
                         </div>
                         <div className="card-body">
                             <div className="row mb-4">
@@ -17,7 +17,7 @@ class InternshipCard extends React.Component{
                             </div>
                             <dl className="row">
                                     <dt className="col-sm-3">Internship title</dt> 
-                                    <dd className="col-sm-9">{item.application_requirements}</dd>
+                                    <dd className="col-sm-9">{item.internship_title}</dd>
                                     <dt className="col-sm-3">Internship Category</dt> 
                                     <dd className="col-sm-9"> {item.internship_category}</dd>
                                     <dt className="col-sm-3">Organization Name</dt>
