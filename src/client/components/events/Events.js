@@ -60,10 +60,11 @@ class Events extends React.Component {
               <EventsListView events={this.state.events} isLoggedIn = {contextType.isLoggedIn}/>
           </div>
           <div className="col-md-6">
-            <Calendar />
+            {/* <Calendar /> */}
+            <Map events={this.state.events}/>
+
           </div>
         </div>
-        <Map/>
       </div>
     );
   }
