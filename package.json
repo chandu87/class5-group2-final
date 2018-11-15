@@ -17,6 +17,7 @@
     "classnames": "^2.2.6",
     "date-fns": "^1.29.0",
     "express": "^4.16.4",
+    "google-maps-react": "^2.0.2",
     "jsonwebtoken": "^8.3.0",
     "lodash": "^4.17.11",
     "mdbreact": "^4.8.1",
