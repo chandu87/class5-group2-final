@@ -38,7 +38,7 @@ export class MapContainer extends Component {
     <Map google={this.props.google}
         style={{width: '100%', height: '100%', position: 'relative'}}
         className={'map'}
-        zoom={14}>
+        zoom={7.1} initialCenter={{ lat: 56.4884, lng: 10.5233 }}>
 
         {coordsData.map(coord=>  
                                 <Marker key={Math.random()} onClick={this.onMarkerClick}
