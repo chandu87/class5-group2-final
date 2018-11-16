@@ -1,6 +1,8 @@
 import React from 'react';
 import queryString from 'querystring';
 import { Link } from "react-router-dom";
+import LoginContext from '../../contexts/login';
+
 
 class MentorSearch extends React.Component{
     constructor(props){
@@ -27,6 +29,7 @@ class MentorSearch extends React.Component{
     
     
     render(){
+        const contextType = LoginContext._currentValue;
         if(this.state.dataisLoaded){
             // console.log(this.state.data);
             return(
@@ -43,7 +46,9 @@ class MentorSearch extends React.Component{
                   <span>{item.availability}</span> <br />
                 </p>
                 <a href="#" className="btn btn-danger">Read more..</a>
-                <Link to={`/Mentors/edit/${item.id}`} target="_blank" className="btn btn-outline-danger btn-sm pull-right"> Edit</Link>                
+                    {contextType.isLoggedIn ? 
+                        <Link to={`/Mentors/edit/${item.id}`} target="_blank" className="btn btn-outline-danger btn-sm pull-right"> Edit</Link>                
+                    : ""} 
               </div>
               </div>
                 )}

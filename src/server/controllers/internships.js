@@ -112,3 +112,25 @@ export function deleteInternship(req, res) {
     res.send(result);
   });
 }
+
+export function searchInternship(req,res){
+  const searchName = `%${req.query.name}%`;
+  const searchCity = `%${req.query.location}%`;
+  console.log("locations length", req.query.location.length);
+  const sql = SqlString.format('SELECT * FROM internships WHERE (internship_title LIKE ? or internship_description LIKE ? ) AND location LIKE ? AND active = ?',  [searchName,searchName,searchCity,true]);
+  console.log(sql);
+
+  db.execute(sql,(err, result)=>{
+    if(err){
+        res.status(500).send(err);
+        return;
+    }
+      
+    if (result.length === 0) {
+      res.status(404).send('Not Found');
+      return;
+    }
+
+    res.send(result);
+  });
+}
