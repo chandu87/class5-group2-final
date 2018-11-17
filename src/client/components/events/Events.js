@@ -48,22 +48,16 @@ class Events extends React.Component {
         <div className="container">
           {/* { contextType.isLoggedIn ? this.renderAddNewEventButton() : "" }           */}
           { contextType.isLoggedIn ? <a className='btn btn-outline-danger add-event-btn' href="/Events/add">ADD NEW EVENT</a> : "" }          
-          <div className="btn-group events-btn" role="group">
+          {/* <div className="btn-group events-btn" role="group">
             <button className="btn btn-outline-danger active">Calender View</button>
             <button className="btn btn-outline-danger">Map View</button>
-          </div>
+          </div> */}
         </div>
         <br/>
         <h3>List of Events</h3>
           <div className="row">
-          <div className="col-md-6">
-              <EventsListView events={this.state.events} isLoggedIn = {contextType.isLoggedIn}/>
-          </div>
-          <div className="col-md-6">
-            {/* <Calendar /> */}
-            <Map events={this.state.events}/>
+          <Map events={this.state.events}/>
 
-          </div>
         </div>
       </div>
     );
