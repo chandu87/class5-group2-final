@@ -12,7 +12,7 @@ class EventsListView extends React.Component{
                 <div className="row">
                     <div className="list-group">
                     {events.map(item =>  (
-                            <div key={item.id} className="list-group-item list-group-item-action flex-column align-items-start">
+                            <div key={item.id} id={`class${item.id}`} className={item.id== this.props.activeEvent ? "list-group-item list-group-item-action flex-column align-items-start active" : "list-group-item list-group-item-action flex-column align-items-start"} >
                                 <div className="d-flex w-100 justify-content-between">
                                 <h5 className="mb-1">{item.event_name}</h5>
                                 <small>{item.event_language}</small>
