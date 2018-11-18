@@ -22,23 +22,17 @@ class MentorCard extends React.Component{
                                     <dd className="col-sm-9"> {item.last_name}</dd>
                                     <dt className="col-sm-3"> Email</dt>
                                     <dd className="col-sm-9"> {item.email}</dd>
-{ /*                                    <dt className="col-sm-3">Department</dt> 
+                                    <dt className="col-sm-3">Department</dt> 
                                     <dd className="col-sm-9">{item.department}</dd>
-                                    <dt className="col-sm-3">Internship Description</dt> 
-                                    <dd className="col-sm-9">{item.internship_description}</dd>
-                                    <dt className="col-sm-3">Organisation Description </dt> <dd className="col-sm-9"> {item.organisation_description}</dd>
-                                    <dt className="col-sm-3">Application Requirement </dt> <dd className="col-sm-9"> {item.application_requirements}</dd>
-                                    <dt className="col-sm-3">Internship Availability Schedule </dt> <dd className="col-sm-9"> {item.internship_availabiltiy_schedule}</dd>
-                                    <dt className="col-sm-3">Location </dt> <dd className="col-sm-9"> {item.location}</dd>
-                                    <dt className="col-sm-3">Internship Publish Date </dt> <dd className="col-sm-9"> {item.internship_add_date}</dd>
-                                    <dt className="col-sm-3">Internship Deadline</dt> <dd className="col-sm-9"> {item.internship_deadline}</dd>
-                                    <dt className="col-sm-3">Organisation Description </dt> <dd className="col-sm-9"> {item.organisation_description}</dd>
-                                    <dt className="col-sm-3">Contact Person </dt> <dd className="col-sm-9"> {item.contact_person}</dd>
-                                    <dt className="col-sm-3">Phone Contact </dt> <dd className="col-sm-9"> {item.phone_contact}</dd>
-                                    <dt className="col-sm-3">Email Contact </dt> <dd className="col-sm-9"> {item.email_contact}</dd>
-                                    <dt className="col-sm-3">Organization Address </dt> <dd className="col-sm-9"> {item.organisation_address}</dd>
-                                    <dt className="col-sm-3">Organization Website </dt> <dd className="col-sm-9"> {item.organisation_website}</dd>
-        */       }                                    
+                                    <dt className="col-sm-3">Gender</dt> 
+                                    <dd className="col-sm-9">{item.gender}</dd>
+                                    <dt className="col-sm-3">Mentor Description </dt> <dd className="col-sm-9"> {item.mentor_description}</dd>
+                                    <dt className="col-sm-3">Languages </dt> <dd className="col-sm-9"> {item.languages}</dd>
+                                    <dt className="col-sm-3">Availability </dt> <dd className="col-sm-9"> {item.availability}</dd>
+                                    <dt className="col-sm-3">Offering </dt> <dd className="col-sm-9"> {item.offering}</dd>
+                                    <dt className="col-sm-3">Area Location  </dt> <dd className="col-sm-9"> {item.area_location}</dd>
+                                    <dt className="col-sm-3">Preferred Meeting Place</dt> <dd className="col-sm-9"> {item.preferred_meeting_place}</dd>
+                                    <dt className="col-sm-3">Affiliation  </dt> <dd className="col-sm-9"> {item.affiliation}</dd>
                             </dl>
                         </div>
                     </div>

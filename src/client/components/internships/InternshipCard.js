@@ -32,7 +32,6 @@ class InternshipCard extends React.Component{
                                     <dt className="col-sm-3">Location </dt> <dd className="col-sm-9"> {item.location}</dd>
                                     <dt className="col-sm-3">Internship Publish Date </dt> <dd className="col-sm-9"> {item.internship_add_date}</dd>
                                     <dt className="col-sm-3">Internship Deadline</dt> <dd className="col-sm-9"> {item.internship_deadline}</dd>
-                                    <dt className="col-sm-3">Organisation Description </dt> <dd className="col-sm-9"> {item.organisation_description}</dd>
                                     <dt className="col-sm-3">Contact Person </dt> <dd className="col-sm-9"> {item.contact_person}</dd>
                                     <dt className="col-sm-3">Phone Contact </dt> <dd className="col-sm-9"> {item.phone_contact}</dd>
                                     <dt className="col-sm-3">Email Contact </dt> <dd className="col-sm-9"> {item.email_contact}</dd>

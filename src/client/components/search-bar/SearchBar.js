@@ -48,7 +48,7 @@ class SearchBar extends React.Component{
                                     value={this.state.data.table} onChange={this.updateField} required>
                                 <option value="">None</option>
                                 <option value="Events">Events</option>
-                                <option value="InternShips">InternShips</option>
+                                <option value="Internships">Internships</option>
                                 <option value="Mentors">Mentors</option>
                                 <option value="Networking">Networking</option>
                             </select>
