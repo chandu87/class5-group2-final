@@ -32,13 +32,16 @@ class InternshipSearch extends React.Component{
             return(
                 <div className="container">
                     {this.state.data.map((item)=>
-                        <InternshipCard internshipItem={item}/>
+                        <InternshipCard key={item.id} internshipItem={item}/>
                     )}
                 </div>
             );
         }
         else{
-            return("Data is Loading");
+            return(
+                <div className="container">
+                <h4>Data is Loading</h4>
+                </div>);
         }
     }
 }

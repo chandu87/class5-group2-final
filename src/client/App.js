@@ -58,7 +58,7 @@ class App extends Component {
               <Route exact path="/Internships/edit/:id" component={InternshipForms.EditInternship} />
               <Route exact path="/Internships/delete/:id" component={InternshipForms.DeleteInternship}/>
               <Route exact path="/Internships/details/:id" component={InternshipItemDetails}/>
-              <Route exact path="/Internshpis/search" component={InternshipSearch} />
+              <Route exact path="/Internships/search" component={InternshipSearch} />
               { /* Events Page*/}
               <Route exact path="/Events" component={Events} />
               <Route exact path="/Events/add" component={EventsForm.AddEvent} />
