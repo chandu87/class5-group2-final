@@ -14,9 +14,9 @@ const router = express.Router();
 
 router.get('/', listAllInternships);
 router.post('/', authenticatedRoute, createInternship);
+router.get("/search", searchInternship);
 router.get('/:id', getInternshipById);
 router.put('/:id', authenticatedRoute, updateInternship);
 router.delete('/:id', authenticatedRoute, deleteInternship);
-router.get("/search", searchInternship);
 
 export default router;
