@@ -26,7 +26,6 @@ import MentorForms from "./components/mentor-form";
 import MentorItemDetails from "./components/mentors/mentor-item-details";
 
 import Networking from "./components/networking/Networking";
-import NetworkingItemDetails from "./components/networking/Network-item-details";
 import NetworkForms from "./components/networking-form";
 import NetworkSearch from "./components/networking/NetworkSearch";
 
@@ -77,7 +76,6 @@ class App extends Component {
               { /* Networking Page*/}
               <Route exact path="/Networking" component={Networking} />
               <Route exact path="/Networking/add" component={NetworkForms.addNetwork}/>
-              <Route exact path="/Networking/details/:id" component={NetworkingItemDetails}/>
               <Route exact path="/Networking/edit/:id" component={NetworkForms.editNetwork}/>
               <Route exact path="/Networking/delete/:id" component={NetworkForms.deleteNetwork}/>
               <Route exact path="/Networking/search" component={NetworkSearch} />
