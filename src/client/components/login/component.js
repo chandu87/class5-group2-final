@@ -60,27 +60,33 @@ class Login extends Component {
   render() {
     return (
       <div className="container">
-        <form onSubmit={this.onSubmit}>
-          <label>
-            E-mail
-            <input
-              type="email"
-              name="email"
-              value={this.state.user.email}
-              onChange={this.onFieldChange}
-            />
-          </label>
-          <label>
-            Password
-            <input
-              type="password"
-              name="password"
-              value={this.state.user.password}
-              onChange={this.onFieldChange}
-            />
-          </label>
-          <button type="submit">Submit</button>
-        </form>
+
+        <form className="form-signin" onSubmit={this.onSubmit}>
+        <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="email" className="sr-only">Email address</label>
+        <input 
+          type="email" 
+          name="email" 
+          id="email" 
+          value={this.state.user.email} 
+          onChange={this.onFieldChange} 
+          className="form-control mb-2" 
+          placeholder="Email address" 
+          required="" 
+          autofocus="" />
+        <label for="inputPassword" className="sr-only">Password</label>
+        <input 
+          type="password" 
+          name="password" 
+          id="password" 
+          value={this.state.user.password} 
+          onChange={this.onFieldChange} 
+          className="form-control" 
+          placeholder="Password" 
+          required="" />
+        <button className="btn btn-lg btn-danger btn-block no-gutters" type="submit">Sign in</button>
+        </form>        
+
       </div>
     );
   }
