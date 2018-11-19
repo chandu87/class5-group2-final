@@ -19,7 +19,9 @@ export class MapContainer extends Component {
         activeEvent: ""
       };
       onMarkerClick = (props, marker, e) =>
-      {console.log(props.id);
+      {
+        console.log(props.id);
+        document.getElementById(`class${props.id}`).scrollIntoView();
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
