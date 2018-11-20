@@ -12,6 +12,30 @@ export function listAllNetworking(req, res){
       res.send(rows);
   })
 }
+
+export function searchNetwork(req,res){
+  const searchName = `%${req.query.name}%`;
+  const searchCity = `%${req.query.location}%`;
+  console.log("locations length", req.query.location.length);
+
+const sql = SqlString.format('SELECT * FROM networking WHERE (organisation_name LIKE ? or organisation_description LIKE ? ) AND organisation_city LIKE ? AND active = ?',  [searchName,searchName,searchCity,true]);
+console.log(sql);
+
+db.execute(sql,(err, result)=>{
+  if(err){
+      res.status(500).send(err);
+      return;
+  }
+    
+  if (result.length === 0) {
+    res.status(404).send('Not Found');
+    return;
+  }
+
+  res.send(result);
+})
+}
+
 export function createNetwork(req,res){
     const jsonData = req.body;
 const sql = SqlString.format('INSERT INTO networking SET ?', jsonData);
@@ -22,6 +46,7 @@ db.execute(sql,(err, result)=>{
         res.status(500).send(err);
         return;
     }
+    res.send(result);
 })
 }
 export function updateNetwork(req,res){
@@ -47,7 +72,7 @@ export function updateNetwork(req,res){
         return;
       }
   
-      res.send('success');
+      res.send(result);
     });
 
 }
@@ -74,7 +99,7 @@ export function deleteNetwork(req,res){
         return;
       }
   
-      res.send('success');
+      res.send(result);
     });
 }
 export function getNetworkById(req,res){

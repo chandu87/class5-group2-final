@@ -12,7 +12,7 @@ export function listAllEvents(req, res){
       res.send(rows);
   })
 }
-export function createEvents(req,res){
+export function createEvent(req,res){
     const jsonData = req.body;
 const sql = SqlString.format('INSERT INTO events SET ?', jsonData);
 console.log(sql);
@@ -22,7 +22,9 @@ db.execute(sql,(err, result)=>{
         res.status(500).send(err);
         return;
     }
+    res.send(result);
 })
+
 }
 export function updateEvent(req,res){
     const eventId = req.params.id;
@@ -47,7 +49,7 @@ export function updateEvent(req,res){
         return;
       }
   
-      res.send('success');
+      res.send(result);
     });
 
 }
@@ -74,7 +76,7 @@ export function deleteEvent(req,res){
         return;
       }
   
-      res.send('success');
+      res.send(result);
     });
 }
 export function getEventById(req,res){
@@ -99,4 +101,25 @@ export function getEventById(req,res){
   
       res.send(rows[0]);
     });
+}
+
+export function searchEvent(req, res){
+  const searchName = `%${req.query.name}%`;
+  const searchCity = `%${req.query.location}%`;
+
+  const sql = SqlString.format('SELECT * FROM events WHERE (event_name LIKE ? or event_type LIKE ? or event_agenda LIKE ? ) AND (event_city LIKE ? OR event_address LIKE ?) AND active = ?',
+                              [searchName,searchName,searchName,searchCity,searchCity,true]);
+  console.log(sql);
+
+      db.execute(sql, (err, rows)=>{
+        if(err){
+            res.status(500).send(err);
+              return;
+        }      
+        if (rows.length === 0) {
+        res.status(404).send('Not Found');
+        return;
+      }
+        res.send(rows);
+    }) 
 }

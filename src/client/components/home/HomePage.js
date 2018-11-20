@@ -3,8 +3,9 @@ import React from "react";
 class HomePage extends React.Component {
   render() {
     return (
-      <div className="home-page">
+      <div className="container-fluid home-page">
           <div className="jumbotron">
+            <div className="container">
             <h1 className="display-4">Welcome!</h1>
             <p className="lead">
               The goal for this project is to develop an online platform to
@@ -28,6 +29,7 @@ class HomePage extends React.Component {
                 Learn more
               </a>
             </p>
+          </div>
           </div>
       </div>
     );

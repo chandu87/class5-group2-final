@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";
+import NetworkCard from './NetworkCard';
+import LoginContext from '../../contexts/login';
 
 
 class Networking extends React.Component {
@@ -16,56 +16,34 @@ class Networking extends React.Component {
    componentDidMount() {
      fetch('/api/networking')
       .then(res => res.json())
-      .then(json => {
+      .then(data => {
         this.setState({
           isLoaded: true,
-          items: json,
+          items: data,
         })
       });
   }
 
   render() {
+    const contextType = LoginContext._currentValue;
+    console.log("Networking page",contextType.isLoggedIn);
 
     const { isLoaded, items } = this.state;
     console.log(items);
     if (!isLoaded) {
-      return <div> Loading.... </div>;
+      return <div className="container"> <h2>Loading.... </h2></div>;
     }
     else {
       return (
-        <div>
             <div className="container"> 
-              <div className="row">
-                <div className="col">
-                <h1>Networking</h1> <br />
+            <h1 className="">NETWORKING</h1>
+            {contextType.isLoggedIn ? 
+                <a className="btn btn-outline-danger btn-lg" href="/Networking/add">Add New Network</a>
+                : ""} 
                 {items.map(item => (
-                  <Link to={item.organisation_url} target="_blank" className="networking-item">
-                  <div className="card mb-4">
-                    <div className="card-header">
-                    <h2 className="card-title pricing-card-title"> {item.organisation_name}</h2>
-                    </div>
-                    <div className="card-body">
-                      <div className="row">
-                        <div className="col-md-8">
-                            <div><strong>Org. Address:</strong> {item.organisation_address}</div>
-                            <div><strong>Contact Person:</strong> {item.contact_person}</div>
-                            <div><strong>Contact Email:</strong> {item.contact_email}</div>
-                            <div><strong>Contact Number:</strong> {item.contact_phone}</div>
-                            <br />
-                            <a href="#" className="btn btn-danger">Read more..</a>
-                        </div>
-                        <div className="col-md-4">
-                          <img className="my-0 font-weight-normal networking-image" src={item.organisation_logo} width="100%" alt="Organization Logo"/>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  </Link>
+                  <NetworkCard key={item.id} networkItem={item}></NetworkCard>
                 ))}                                  
                 </div>
-              </div>
-            </div>
-        </div>
       );
     }
   }
