@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import NetworkCard from './NetworkCard';
 import LoginContext from '../../contexts/login';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 
 class Networking extends React.Component {
@@ -31,14 +32,18 @@ class Networking extends React.Component {
     const { isLoaded, items } = this.state;
     console.log(items);
     if (!isLoaded) {
-      return <div className="container"> <h2>Loading.... </h2></div>;
+      return <div className="container container-height"> 
+                <p className="text-center"><FontAwesomeIcon size="5x" icon="spinner" pulse/></p>
+                <h2 className="text-center">Loading</h2>
+
+             </div>;
     }
     else {
       return (
             <div className="container"> 
             <h1 className="">NETWORKING</h1>
             {contextType.isLoggedIn ? 
-                <a className="btn btn-outline-danger btn-lg" href="/Networking/add">Add Network</a>
+                <a className="btn btn-outline-danger btn-lg" href="/Networking/add"><FontAwesomeIcon icon="plus"/> Add Network</a>
                 : ""} 
                 {items.map(item => (
                   <NetworkCard key={item.id} networkItem={item} displayCardFooter={true}></NetworkCard>
