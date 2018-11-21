@@ -52,8 +52,9 @@ export class MapContainer extends Component {
                     ))
                   }
               </div>
+              <hr/>
           </div>
-          <div className="col-md-6 col-sm-12"> {/* Google map view container*/}
+          <div className="col-md-6 col-sm-12 list-group"> {/* Google map view container*/}
             <Map google={this.props.google}
                 style={{width: '100%', height: '100%', position: 'relative'}}
                 className={'map'}
