@@ -20,14 +20,14 @@ class EventsCard extends React.Component{
         console.log("Networking page",contextType.isLoggedIn);
     
         return(
-                            <div id={`class${item.id}`} className={item.id== this.props.activeEvent ? "list-group-item list-group-item-action flex-column align-items-start active" : "list-group-item list-group-item-action flex-column align-items-start"} >
+                            <div id={`class${item.id}`} className={item.id== this.props.activeEvent ? "list-group-item list-group-item-action flex-column align-items-start active" : "list-group-item list-group-item-action flex-column align-items-start card"} >
                                 <div className="d-flex w-100 justify-content-between">
                                     <h5 className="mb-1">{item.event_name}</h5>
                                     <small>{item.event_language}</small>
                                 </div>
-                                <small>Category : {item.event_type}</small>
+                                <small><strong>Category :</strong>{item.event_type}</small>
                                 <br/>
-                                <small><strong>From</strong> {item.event_start_date} - {item.event_start_hour}</small> 
+                                <small><strong>From :</strong> {item.event_start_date} - {item.event_start_hour}</small> 
                                 <br/>
                                 {this.state.showDetails ? "" : <div>
                                         <small><strong> To </strong>{item.event_end_date} - {item.event_end_hour}</small>
