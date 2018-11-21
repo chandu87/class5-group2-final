@@ -403,3 +403,15 @@ main{
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+/*
+  Make image non-responsive
+*/
+
+.img-non-responsive {
+  width: auto;
+}
+
+picture {
+  display: block;
+}

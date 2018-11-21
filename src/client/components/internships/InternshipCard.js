@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+import LoginContext from '../../contexts/login';
 
 class InternshipCard extends React.Component{
     render(){
+        const contextType = LoginContext._currentValue;
         const item = this.props.internshipItem;
         console.log('card details',item);
         return(
@@ -11,8 +14,8 @@ class InternshipCard extends React.Component{
                         </div>
                         <div className="card-body">
                             <div className="row mb-4">
-                                <div className="col-md-3">
-                                    <img className="my-0 font-weight-normal networking-image" src={item.internship_theme_image} width="100%" alt={item.application_requirements} />
+                                <div className="col-md-12">
+                                    <img className="my-0 font-weight-normal networking-image img-non-responsive" src={item.internship_theme_image} width="100%" alt={item.application_requirements} />
                                 </div>
                             </div>
                             <dl className="row">
@@ -39,6 +42,12 @@ class InternshipCard extends React.Component{
                                     <dt className="col-sm-3">Organization Website </dt> <dd className="col-sm-9"> {item.organisation_website}</dd>
                             </dl>
                         </div>
+                        {contextType.isLoggedIn ? 
+                            <div className="card-footer">
+                              <Link to={`/Internships/edit/${item.id}`} className="btn btn-outline-danger network-edit-button btn-sm"> Edit</Link>
+                              <Link to={`/Internships/delete/${item.id}`} className="btn btn-outline-danger btn-sm">Delete</Link>
+                            </div>
+                            : ""}          
                     </div>
             );
         }

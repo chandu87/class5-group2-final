@@ -248,7 +248,7 @@ class InternshipForm extends React.Component {
                     </div>
 
                     <button type="submit" className="btn btn-outline-danger btn-sm">Submit</button>
-                    <Link to={`/Networking`} className="btn btn-outline-danger btn-sm">Cancel</Link>
+                    <Link to={`/Internships`} className="btn btn-outline-danger btn-sm">Cancel</Link>
 
                 </form>
                 </div>

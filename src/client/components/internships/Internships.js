@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LoginContext from '../../contexts/login';
+import InternshipCard from "./InternshipCard";
 
 class Internships extends React.Component {
 
@@ -43,6 +44,8 @@ class Internships extends React.Component {
             : ""} 
 
             {internships.map(item => (
+              <InternshipCard key={item.id} internshipItem={item} />
+/*              
               <Link to={`/Internships/details/${item.id}`} key={item.id} className="card-as-link">
                 <div key={item.id} className="card mb-4">
           
@@ -52,19 +55,19 @@ class Internships extends React.Component {
                   </div>
                   <div className="card-body">
                     <div className="row">
-                        <div className="col-md-8">
+                        <div className="col-md-12">
+                            <picture className="mb-3">
+                              <img
+                              className="internship-image rounded img-non-responsive"
+                              src={item.internship_theme_image}
+                              alt={item.internship_title}
+                              />
+                            </picture>                  
                             <p className="card-text">{item.internship_description}</p>
                             <p className="card-text">Place : {item.location}</p>
                             <Link to={`/Internships/details/${item.id}`} className="btn btn-danger">
                               Read more...
                             </Link>
-                        </div>
-                        <div className="col-md-4">
-                            <img
-                              className="internship-image rounded"
-                              src={item.internship_theme_image}
-                              alt={item.internship_title}
-                            />
                         </div>
           
                     </div>
@@ -81,6 +84,7 @@ class Internships extends React.Component {
                 </div>
 
               </Link>
+*/              
             ))}
         </div>
       );
