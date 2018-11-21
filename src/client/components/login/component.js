@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NotificationManager } from 'react-notifications';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 class Login extends Component {
@@ -62,29 +63,36 @@ class Login extends Component {
       <div className="container">
 
         <form className="form-signin" onSubmit={this.onSubmit}>
-        <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="email" className="sr-only">Email address</label>
-        <input 
-          type="email" 
-          name="email" 
-          id="email" 
-          value={this.state.user.email} 
-          onChange={this.onFieldChange} 
-          className="form-control mb-2" 
-          placeholder="Email address" 
-          required="" 
-          autofocus="" />
-        <label for="inputPassword" className="sr-only">Password</label>
-        <input 
-          type="password" 
-          name="password" 
-          id="password" 
-          value={this.state.user.password} 
-          onChange={this.onFieldChange} 
-          className="form-control" 
-          placeholder="Password" 
-          required="" />
-        <button className="btn btn-lg btn-danger btn-block no-gutters" type="submit">Sign in</button>
+        <p className="display-4 text-center">LOGIN</p>
+        <p className="text-center"><FontAwesomeIcon size="5x" icon="sign-in-alt"/></p>
+        <div className="form-group row">
+          <label for="email">Email address</label>
+            <input 
+              type="email" 
+              name="email" 
+              id="email" 
+              value={this.state.user.email} 
+              onChange={this.onFieldChange} 
+              className="form-control mb-2" 
+              placeholder="Email address" 
+              required="" 
+              autofocus="" />
+          </div>
+
+        <div class="form-group row">
+          <label for="inputPassword">Password</label>
+          <input 
+              type="password" 
+              name="password" 
+              id="password" 
+              value={this.state.user.password} 
+              onChange={this.onFieldChange} 
+              className="form-control" 
+              placeholder="Password" 
+              required="" />
+        </div>
+
+        <button className="btn btn-lg btn-secondary btn-block no-gutters" type="submit">Log in</button>
         </form>        
 
       </div>
