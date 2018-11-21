@@ -7,9 +7,9 @@ import "@material/card/dist/mdc.card.min.css";
 import 'react-notifications/lib/notifications.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStroopwafel, faCoffee, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+import { faStroopwafel, faCoffee, faSignInAlt, faSearch, faSpinner, faPlus , faTrashAlt, faEdit, faCaretSquareDown, faCaretSquareUp, faMapMarkerAlt, faCaretSquareLeft} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faStroopwafel, faCoffee, faSignInAlt)
+library.add(faStroopwafel, faCoffee, faSignInAlt, faSearch, faSpinner, faPlus, faTrashAlt, faEdit, faCaretSquareDown, faCaretSquareUp, faMapMarkerAlt, faCaretSquareLeft);
 
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
