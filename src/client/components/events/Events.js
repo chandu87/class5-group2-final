@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from 'classnames';
 import Calendar from "./Calendar";
-import EventsListView from "./EventsListView.js";
 import Map from "./Map";
 import LoginContext from '../../contexts/login';
 
@@ -28,13 +27,6 @@ class Events extends React.Component {
     <a className={`btn btn-outline-danger add-event-btn ${classNames({ disabled: !this.context.isLoggedIn })}`} href="/Events/add">ADD NEW EVENT</a> 
   )
 
-  // renderAddNewEventButton = () => {
-  //  if (this.context.isLoggedIn) {
-  //    return <a className={`btn btn-outline-danger add-event-btn ${classNames({ disabled: !this.context.isLoggedIn })}`} href="/Events/add">ADD NEW EVENT</a> 
-  //  } else {
-  //    return null
-  //  }
-  // }
 
   //Read data using console
   //Display data using list
@@ -54,11 +46,8 @@ class Events extends React.Component {
           </div> */}
         </div>
         <br/>
-        <h3>List of Events</h3>
-          <div className="row">
-          <Map events={this.state.events}/>
+        <Map events={this.state.events}/>
 
-        </div>
       </div>
     );
   }

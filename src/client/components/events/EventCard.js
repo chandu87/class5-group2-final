@@ -1,6 +1,18 @@
 import React from 'react';
 
 class EventCard extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            showDetails : true
+        }
+    }
+    showDetails = ()=>{
+        this.setState({
+            showDetails : !this.state.showDetails
+        });
+    }
+
     render(){
         const item = this.props.eventsData;
         // console.log("-------------",item);
@@ -14,23 +26,28 @@ class EventCard extends React.Component{
             <div className="card-body">
               <div className="row">
                 <div className="col-md-8">
-                    <div><strong>Org. Address: </strong> {item.event_address}</div>
-                    <div><strong>City: </strong> {item.event_city}</div>
-                    <div><strong>Postal Code: </strong> {item.event_postal_code}</div>
-                    <div><strong>Contact Person:</strong> {item.contact_person}</div>
-                    <div><strong>Contact Email:</strong> {item.contact_email}</div>
-                    <div><strong>Contact Phone: </strong> {item.contact_phone}</div>
-                    <div><strong>Event URL: </strong> {item.event_URL}</div>
-                    <div><strong>Event Agenda: </strong> {item.event_agenda}</div>
-                    <div><strong>Start Date: </strong> {item.event_start_date}</div>
-                    <div><strong>Start Hour: </strong> {item.event_start_hour}</div>
-                    <div><strong>End Date: </strong> {item.event_end_date}</div>
-                    <div><strong>End Hour: </strong> {item.event_end_hour}</div>
-                    <div><strong>Even Geo lattitude: </strong> {item.event_geo_lat}</div>
-                    <div><strong>Event Geo langitude: </strong> {item.event_geo_lng}</div>
-                    <div><strong>Event Language: </strong> {item.event_language}</div>
-                    <div><strong>Event Type: </strong> {item.event_type}</div>
-                    <div><strong>Max participants: </strong> {item.max_participants}</div>
+                        <div><strong>Event Type: </strong> {item.event_type}</div>
+                        <div><strong>Event Agenda: </strong> {item.event_agenda}</div>
+                        <div><strong>Start Date: </strong> {item.event_start_date}</div>
+                        <div><strong>Start Hour: </strong> {item.event_start_hour}</div>
+                    {this.state.showDetails ? "" : <div>
+                        <div><strong>Postal Code: </strong> {item.event_postal_code}</div>
+                        <div><strong>Contact Person:</strong> {item.contact_person}</div>
+                        <div><strong>Contact Email:</strong> {item.contact_email}</div>
+                        <div><strong>Contact Phone: </strong> {item.contact_phone}</div>
+                        <div><strong>Event URL: </strong> {item.event_URL}</div>
+                        <div><strong>End Date: </strong> {item.event_end_date}</div>
+                        <div><strong>End Hour: </strong> {item.event_end_hour}</div>
+                        <div><strong>Org. Address: </strong> {item.event_address}</div>
+                        <div><strong>City: </strong> {item.event_city}</div>
+                        <div><strong>Even Geo lattitude: </strong> {item.event_geo_lat}</div>
+                        <div><strong>Event Geo langitude: </strong> {item.event_geo_lng}</div>
+                        <div><strong>Event Language: </strong> {item.event_language}</div>
+                        <div><strong>Max participants: </strong> {item.max_participants}</div>
+                    </div>}
+                    <br/>
+                    <button className="btn badge badge-danger" onClick={this.showDetails}>{this.state.showDetails ? "Read more..." : "Hide"}</button>
+
                 </div>
                 <div className="col-md-4">
                   <img className="my-0 font-weight-normal networking-image" src={item.event_theme_image} width="100%" alt="Organization Logo"/>

@@ -344,9 +344,10 @@ main {
 } */
 
 .list-group{
-  height: 82vh;
+  height: 95vh;
     overflow-y: scroll;
-    border: 1px solid rgba(156, 154, 154, 0.404);
+    padding: 5px;
+    /* border: 1px solid rgba(156, 154, 154, 0.404); */
 }
 .add-event-btn{
   margin-bottom : 2em;
@@ -370,15 +371,21 @@ main{
   margin-top: 5px;
 }
 
+.container-height{
+  min-height: 50vh;
+  margin-top: 5%;
+}
+
 /*
     Login CSS
 */
 
 .form-signin {
   width: 100%;
-  max-width: 330px;
-  padding: 15px;
+  max-width: 500px;
+  padding: 50px;
   margin: 0 auto;
+  background: #8bccee78;
 }
 .form-signin .checkbox {
   font-weight: 400;
@@ -412,6 +419,3 @@ main{
   width: auto;
 }
 
-picture {
-  display: block;
-}

@@ -5,19 +5,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "@material/card/dist/mdc.card.min.css";
 import 'react-notifications/lib/notifications.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStroopwafel, faCoffee, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faStroopwafel, faCoffee, faSignInAlt)
 
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Homepage from "./components/home/HomePage";
 
 import Internships from "./components/internships/Internships";
-import InternshipItemDetails from "./components/internships/Internship-item-details";
 import InternshipForms from "./components/internship-form";
 import InternshipSearch from "./components/internships/InternshipSearch";
 
 import Events from "./components/events/Events";
 import EventsForm from './components/events-form';
-import EventDetailedView from "./components/events/EventDetailedView";
 import EventSearch from "./components/events/EventSearch";
 
 import Mentors from "./components/mentors/Mentors";
@@ -56,13 +59,11 @@ class App extends Component {
               <Route exact path="/Internships/add" component={InternshipForms.AddInternship} />
               <Route exact path="/Internships/edit/:id" component={InternshipForms.EditInternship} />
               <Route exact path="/Internships/delete/:id" component={InternshipForms.DeleteInternship}/>
-              <Route exact path="/Internships/details/:id" component={InternshipItemDetails}/>
               <Route exact path="/Internships/search" component={InternshipSearch} />
               { /* Events Page*/}
               <Route exact path="/Events" component={Events} />
               <Route exact path="/Events/add" component={EventsForm.AddEvent} />
               <Route exact path="/Events/edit/:id" component={EventsForm.EditEvent} />
-              <Route exact path="/Events/details/:id" component={EventDetailedView} />
               <Route exact path="/Events/delete/:id" component={EventsForm.DeleteEvent}/>
               <Route exact path="/Events/search" component={EventSearch} />
 
