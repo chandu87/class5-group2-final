@@ -49,7 +49,7 @@ class NetworkCard extends React.Component{
                             </div>
                         </div>
                         <div className="card-footer">
-                            { contextType.isLoggedIn ?  <div className="row network-edit-button">
+                            { contextType.isLoggedIn & this.props.displayCardFooter ?  <div className="row network-edit-button">
                             <a href={`/Networking/edit/${item.id}`} className="btn btn-outline-danger btn-sm "> Edit</a>
                             <a href={`/Networking/delete/${item.id}`} className="btn btn-outline-danger btn-sm"> Delete</a>                        
                         </div> : "" }

@@ -38,10 +38,10 @@ class Networking extends React.Component {
             <div className="container"> 
             <h1 className="">NETWORKING</h1>
             {contextType.isLoggedIn ? 
-                <a className="btn btn-outline-danger btn-lg" href="/Networking/add">Add New Network</a>
+                <a className="btn btn-outline-danger btn-lg" href="/Networking/add">Add Network</a>
                 : ""} 
                 {items.map(item => (
-                  <NetworkCard key={item.id} networkItem={item}></NetworkCard>
+                  <NetworkCard key={item.id} networkItem={item} displayCardFooter={true}></NetworkCard>
                 ))}                                  
                 </div>
       );
