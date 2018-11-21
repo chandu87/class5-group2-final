@@ -7,7 +7,8 @@ class InternshipSearch extends React.Component{
         super(props);
         this.state={
             data : {},
-            dataIsLoaded: false
+            dataIsLoaded: false,
+            statusText: " Data Loading"
         }
     }
     componentDidMount(){
@@ -22,6 +23,12 @@ class InternshipSearch extends React.Component{
                     dataisLoaded : true
                 })
             })
+            .catch(err=>{
+                console.log(err);
+                this.setState({
+                    statusText : "No matches found. Please search again"
+                })
+            })
         }
     
     
@@ -31,16 +38,19 @@ class InternshipSearch extends React.Component{
              console.log(this.state.data);
             return(
                 <div className="container">
+                <h5 style={{textAlign: "center"}}>Results Found : <strong>{this.state.data.length}</strong></h5>
+                <hr/>
                     {this.state.data.map((item)=>
-                        <InternshipCard key={item.id} internshipItem={item}/>
+                        <InternshipCard key={item.id} internshipItem={item} displayFooter={true}/>
                     )}
                 </div>
             );
         }
         else{
             return(
-                <div className="container">
-                <h4>Data is Loading</h4>
+                <div className="container" style={{minHeight : "30vh"}}>
+                    <h5 style={{textAlign: "center", marginTop: "10%"}}>{this.state.statusText}</h5>
+                    <hr/>
                 </div>);
         }
     }
