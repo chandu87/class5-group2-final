@@ -93,8 +93,9 @@ class Login extends Component {
         </div>
 
         <button className="btn btn-lg btn-secondary btn-block no-gutters" type="submit">Log in</button>
-        </form>        
+        <p class="mt-5 mb-3 text-muted text-center">© 2018-2019</p>
 
+        </form>        
       </div>
     );
   }
