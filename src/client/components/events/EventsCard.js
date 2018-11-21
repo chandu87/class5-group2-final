@@ -20,7 +20,7 @@ class EventsCard extends React.Component{
         console.log("Networking page",contextType.isLoggedIn);
     
         return(
-                            <div id={`class${item.id}`} className={item.id== this.props.activeEvent ? "list-group-item list-group-item-action flex-column align-items-start active" : "list-group-item list-group-item-action flex-column align-items-start card"} >
+                            <div id={`class${item.id}`} className={item.id== this.props.activeEvent ? "list-group-item list-group-item-action flex-column align-items-start card active" : "list-group-item list-group-item-action flex-column align-items-start card"} >
                                 <div className="d-flex w-100 justify-content-between">
                                     <h5 className="mb-1">{item.event_name}</h5>
                                     <small>{item.event_language}</small>
