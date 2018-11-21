@@ -11,7 +11,6 @@ import Footer from "./components/footer/Footer";
 import Homepage from "./components/home/HomePage";
 
 import Internships from "./components/internships/Internships";
-import InternshipItemDetails from "./components/internships/Internship-item-details";
 import InternshipForms from "./components/internship-form";
 import InternshipSearch from "./components/internships/InternshipSearch";
 
@@ -55,7 +54,6 @@ class App extends Component {
               <Route exact path="/Internships/add" component={InternshipForms.AddInternship} />
               <Route exact path="/Internships/edit/:id" component={InternshipForms.EditInternship} />
               <Route exact path="/Internships/delete/:id" component={InternshipForms.DeleteInternship}/>
-              <Route exact path="/Internships/details/:id" component={InternshipItemDetails}/>
               <Route exact path="/Internships/search" component={InternshipSearch} />
               { /* Events Page*/}
               <Route exact path="/Events" component={Events} />
