@@ -46,8 +46,7 @@ class Events extends React.Component {
           </div> */}
         </div>
         <br/>
-        <h3>List of Events</h3>
-          <Map events={this.state.events}/>
+        <Map events={this.state.events}/>
 
       </div>
     );
