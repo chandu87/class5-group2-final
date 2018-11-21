@@ -224,8 +224,7 @@ class EventsForm extends React.Component{
                 <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Event`}</h1>
                 <br/>
                 <div>
-                    <a className="col-md-2 btn btn-outline-danger btn-sm" href={`/Events/edit/${this.props.match.params.id}`}>Edit</a>
-                    <a className="col-md-2 btn btn-outline-danger btn-sm" href={`/Events/delete/${this.props.match.params.id}`}>Delete</a>
+                    <a className="btn btn-outline-danger btn-sm" href={`/Events/edit/${this.props.match.params.id}`}>Edit</a>
                     <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Events/add">Add New Event</a>
                     <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Events">Go back to Events</a>
                 </div>

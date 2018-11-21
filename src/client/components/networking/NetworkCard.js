@@ -11,7 +11,7 @@ class NetworkCard extends React.Component{
     }
     showDetails = ()=>{
         this.setState({
-showDetails : !this.state.showDetails
+            showDetails : !this.state.showDetails
         });
     }
     render(){
