@@ -377,9 +377,10 @@ main{
 
 .form-signin {
   width: 100%;
-  max-width: 330px;
-  padding: 15px;
+  max-width: 500px;
+  padding: 50px;
   margin: 0 auto;
+  background: #8bccee78;
 }
 .form-signin .checkbox {
   font-weight: 400;
@@ -403,4 +404,8 @@ main{
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.container-height{
+  min-height: 50vh;
+  margin-top: 5%;
 }

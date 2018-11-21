@@ -5,6 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "@material/card/dist/mdc.card.min.css";
 import 'react-notifications/lib/notifications.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStroopwafel, faCoffee, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faStroopwafel, faCoffee, faSignInAlt)
 
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
