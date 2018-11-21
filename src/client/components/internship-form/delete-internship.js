@@ -68,7 +68,7 @@ class DeleteInternship extends React.Component {
                             <button className="btn btn-outline-danger col-md-3" onClick={this.DeleteInternship}>YES</button>
                             <a  href={`/Internships`} className="btn btn-outline-danger col-md-3">NO</a>
                         </div>
-                        <InternshipCard internshipItem={this.state.internshipData}/>
+                        <InternshipCard internshipItem={this.state.internshipData} displayFooter={false}/>
                     </div>        
                 );
         }
