@@ -312,6 +312,10 @@ main {
  .card-header{
   background-color: #f1e2e240;
  }
+ .card-title{
+  font-size: 1.5rem;
+
+ }
 .card-as-link,
 .card-as-link:hover, 
 .networking-item,
@@ -327,7 +331,9 @@ main {
 }
 .internship-image, .networking-image{
   height: 10vw;
-  width: 100%;
+  /* width: 100%; */
+  max-width: 350px;
+  float: left;
 }
 .card-footer{
   background-color: rgba(231, 222, 222, 0.14);
