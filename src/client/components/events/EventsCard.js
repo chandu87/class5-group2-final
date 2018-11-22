@@ -27,25 +27,40 @@ class EventsCard extends React.Component{
                                     <h5 className="mb-1">{item.event_name}</h5>
                                     <small>{item.event_language}</small>
                                 </div>
-                                <small><strong>Category :</strong>{item.event_type}</small>
-                                <br/>
-                                <small><strong>From :</strong> {item.event_start_date} - {item.event_start_hour}</small> 
-                                <br/>
-                                {this.state.showDetails ? "" : <div>
-                                        <small><strong> To </strong>{item.event_end_date} - {item.event_end_hour}</small>
-                                        <div><small><strong>Agenda : </strong> {item.event_agenda}</small></div>
-                                        <div><small><strong>Org. Address: </strong> {item.event_address}</small></div>
-                                        <div><small><strong>City: </strong> {item.event_city}</small></div>
-                                        <div><small><strong>Postal Code: </strong> {item.event_postal_code}</small></div>
-                                        <div><small><strong>Contact Person:</strong> {item.contact_person}</small></div>
-                                        <div><small><strong>Contact Email:</strong> {item.contact_email}</small></div>
-                                        <div><small><strong>Contact Phone: </strong> {item.contact_phone}</small></div>
-                                        <div><small><strong>Event URL: </strong> {item.event_URL}</small></div>
-                                        <div><small><strong>Max participants: </strong> {item.max_participants}</small></div>
+                                <dl className="row">
+                                    <dt className="col-sm-3">Category</dt> 
+                                    <dd className="col-sm-9"> {item.event_type}</dd>
+                                    <dt className="col-sm-3">From </dt> 
+                                    <dd className="col-sm-9"> {item.event_start_date} - {item.event_start_hour}</dd>
+                                </dl>
+                                {this.state.showDetails ? "" : 
+                                    <dl className="row">
+                                        <dt className="col-sm-3">To </dt> 
+                                        <dd className="col-sm-9"> {item.event_end_date} - {item.event_end_hour}</dd>
+                                        <dt className="col-sm-3">Agenda</dt> 
+                                        <dd className="col-sm-9"> {item.event_agenda}</dd>
+                                        <dt className="col-sm-3">Max participants</dt> 
+                                        <dd className="col-sm-9"> {item.max_participants}</dd>
+                                        <hr className="hr-style2"/>
+                                        <dt className="col-sm-3">CONTACT</dt> 
+                                        <dd className="col-sm-9"> </dd>
+                                        <dt className="col-sm-3">Address</dt> 
+                                        <dd className="col-sm-9"> {item.event_address}</dd>
+                                        <dt className="col-sm-3">City</dt> 
+                                        <dd className="col-sm-9"> {item.event_city}</dd>
+                                        <dt className="col-sm-3">Postal Code</dt> 
+                                        <dd className="col-sm-9"> {item.event_postal_code}</dd>
+                                        <dt className="col-sm-3">Person</dt> 
+                                        <dd className="col-sm-9"> {item.contact_person}</dd>
+                                        <dt className="col-sm-3">Email</dt> 
+                                        <dd className="col-sm-9"> {item.contact_email}</dd>
+                                        <dt className="col-sm-3">Phone</dt> 
+                                        <dd className="col-sm-9"> {item.contact_phone}</dd>
+
                                         <div className="">
                                             <img className="my-0 font-weight-normal networking-image" src={item.event_theme_image} alt="Organization Logo"/>
                                         </div>
-                                    </div>
+                                    </dl>
                                 }
                                 <div className="d-flex w-100 justify-content-between">
                                 {this.state.showDetails ? 
