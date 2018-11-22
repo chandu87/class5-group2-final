@@ -1,5 +1,7 @@
 import React from 'react';
 import NetworkCard from '../networking/NetworkCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 class networkingForm extends React.Component {
     constructor(props) {
@@ -154,9 +156,9 @@ class networkingForm extends React.Component {
                 <div className="container">
                     <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Network`}</h1>
                     <br/>
-                    <button className="btn btn-outline-danger btn-sm" onClick={this.displaySubmitForm}> Edit</button>
-                    <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Networking/add">Add New Network</a>
-                    <a href={`/Networking`} className="btn btn-outline-danger btn-sm network-edit-button">Go Back to Networks</a>
+                    <button className="btn btn-outline-danger btn-sm" onClick={this.displaySubmitForm}><FontAwesomeIcon icon="edit"/> Edit</button>
+                    <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Networking/add"><FontAwesomeIcon icon="plus"/> Add New</a>
+                    <a href={`/Networking`} className="btn btn-outline-danger btn-sm network-edit-button"><FontAwesomeIcon icon="caret-square-left"/> Go Back</a>
                     <NetworkCard networkItem={this.state.networkData}/>
                 </div>);
         }
