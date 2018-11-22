@@ -19,7 +19,7 @@ class Header extends React.Component {
                     <div className="row">
                             <div className="col-12 col-sm-12 col-md-1 col-lg-3">
                                 <div className="siteLogo">
-                                <a href="#link"><img src={logo} width="50px" height="60px" alt="Thread Logo" /></a>
+                                <a href="/"><img src={logo} width="50px" height="60px" alt="Thread Logo" /></a>
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-11 col-lg-9">

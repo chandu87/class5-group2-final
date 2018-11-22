@@ -312,6 +312,10 @@ main {
  .card-header{
   background-color: #f1e2e240;
  }
+ .card-title{
+  font-size: 1.5rem;
+
+ }
 .card-as-link,
 .card-as-link:hover, 
 .networking-item,
@@ -327,7 +331,9 @@ main {
 }
 .internship-image, .networking-image{
   height: 10vw;
-  width: 100%;
+  /* width: 100%; */
+  max-width: 350px;
+  float: left;
 }
 .card-footer{
   background-color: rgba(231, 222, 222, 0.14);
@@ -408,4 +414,18 @@ main{
 .container-height{
   min-height: 50vh;
   margin-top: 5%;
+}
+.hr-style1{
+	height: 10px;
+	border: 0;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+.hr-style2{
+  width: 70%;
+  border: 0; 
+  height: 2px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);  
 }
