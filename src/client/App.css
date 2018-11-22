@@ -377,6 +377,11 @@ main{
   margin-top: 5px;
 }
 
+.container-height{
+  min-height: 50vh;
+  margin-top: 5%;
+}
+
 /*
     Login CSS
 */
@@ -411,6 +416,15 @@ main{
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+/*
+  Make image non-responsive
+*/
+
+.img-non-responsive {
+  width: auto;
+}
+
 .container-height{
   min-height: 50vh;
   margin-top: 5%;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LoginContext from '../../contexts/login';
-import InternshipCard from './InternshipCard';
+import InternshipCard from "./InternshipCard";
 
 class Internships extends React.Component {
 
