@@ -26,8 +26,10 @@ class NetworkCard extends React.Component{
                         <h2 className="card-title pricing-card-title"> {item.organisation_name}</h2>
                         </div>
                         <div className="card-body">
+{/*                         <img className="my-0 font-weight-normal networking-image" src={item.organisation_logo} height="100px" alt="Organization Logo"/> */}
+
                             <div className="row">
-                                <div className="col-md-8">
+                                <div className="col-md-8 col-sm-12">
                                 <dl className="row">
                                         <dt className="col-sm-3">Organisation City</dt> 
                                         <dd className="col-sm-9"> {item.organisation_city}</dd>
@@ -52,13 +54,16 @@ class NetworkCard extends React.Component{
                                         <dd className="col-sm-9"> <a href={item.organisation_url} target="blank">Click here</a></dd>
                                     </dl>
                                     }
-                                    {this.state.showDetails ? 
+                                 
+                                </div>
+                                <div className="col-md-4 col-sm-12">
+                                <img className="my-0 font-weight-normal networking-image" src={item.organisation_logo} alt="Organization Logo"/>
+                                </div>
+                                <div className="col-md-3">
+                                {this.state.showDetails ? 
                                     <button className="btn btn-sm btn-outline-danger" onClick={this.showDetails}>Read more <FontAwesomeIcon icon="caret-square-down"/></button> :
                                     <button className="btn btn-sm btn-outline-danger" onClick={this.showDetails}>Hide <FontAwesomeIcon icon="caret-square-up"/></button> 
                                     }
-                                </div>
-                                <div className="col-md-4">
-                                <img className="my-0 font-weight-normal networking-image" src={item.organisation_logo} width="100%" alt="Organization Logo"/>
                                 </div>
                             </div>
                         </div>
