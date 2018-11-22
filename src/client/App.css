@@ -435,7 +435,7 @@ main{
   box-shadow: 0 10px 10px -10px #8c8b8b inset;
 }
 .hr-style2{
-  width: 70%;
+  width: 85%;
   border: 0; 
   height: 2px; 
   background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
