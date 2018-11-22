@@ -66,7 +66,7 @@ class Login extends Component {
         <p className="display-4 text-center">LOGIN</p>
         <p className="text-center"><FontAwesomeIcon size="5x" icon="sign-in-alt"/></p>
         <div className="form-group row">
-          <label for="email">Email address</label>
+          <label htmlFor="email">Email address</label>
             <input 
               type="email" 
               name="email" 
@@ -76,11 +76,11 @@ class Login extends Component {
               className="form-control mb-2" 
               placeholder="Email address" 
               required="" 
-              autofocus="" />
+              autoFocus="" />
           </div>
 
-        <div class="form-group row">
-          <label for="inputPassword">Password</label>
+        <div className="form-group row">
+          <label htmlFor="inputPassword">Password</label>
           <input 
               type="password" 
               name="password" 
@@ -93,7 +93,7 @@ class Login extends Component {
         </div>
 
         <button className="btn btn-lg btn-secondary btn-block no-gutters" type="submit">Log in</button>
-        <p class="mt-5 mb-3 text-muted text-center">© 2018-2019</p>
+        <p className="mt-5 mb-3 text-muted text-center">© 2018-2019</p>
 
         </form>        
       </div>
