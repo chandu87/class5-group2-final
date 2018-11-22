@@ -2,6 +2,8 @@ import React from 'react';
 import EventCard from '../events/EventCard';
 
 import { protectedFetch } from '../../lib/auth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 class EventsForm extends React.Component{
     constructor(props){
@@ -224,9 +226,9 @@ class EventsForm extends React.Component{
                 <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Event`}</h1>
                 <br/>
                 <div>
-                    <a className="btn btn-outline-danger btn-sm" href={`/Events/edit/${this.props.match.params.id}`}>Edit</a>
-                    <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Events/add">Add New Event</a>
-                    <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Events">Go back to Events</a>
+                    <a className="btn btn-outline-danger btn-sm" href={`/Events/edit/${this.props.match.params.id}`}><FontAwesomeIcon icon="edit"/> Edit</a>
+                    <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Events/add"><FontAwesomeIcon icon="plus"/> Add Event</a>
+                    <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Events"><FontAwesomeIcon icon="caret-square-left"/> Go back</a>
                 </div>
                 <EventCard eventsData = {this.state.eventsData}/>
 

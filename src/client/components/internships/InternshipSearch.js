@@ -1,6 +1,8 @@
 import React from 'react';
 import InternshipCard from "./InternshipCard";
 import queryString from 'querystring';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 class InternshipSearch extends React.Component{
     constructor(props){
@@ -38,8 +40,8 @@ class InternshipSearch extends React.Component{
              console.log(this.state.data);
             return(
                 <div className="container">
-                <h5 style={{textAlign: "center"}}>Results Found : <strong>{this.state.data.length}</strong></h5>
-                <hr/>
+                <h5 className="text-center">Results Found : <strong>{this.state.data.length}</strong></h5>
+                <hr className="hr-style2"/>
                     {this.state.data.map((item)=>
                         <InternshipCard key={item.id} internshipItem={item} displayFooter={true}/>
                     )}
@@ -48,9 +50,10 @@ class InternshipSearch extends React.Component{
         }
         else{
             return(
-                <div className="container" style={{minHeight : "30vh"}}>
-                    <h5 style={{textAlign: "center", marginTop: "10%"}}>{this.state.statusText}</h5>
-                    <hr/>
+                <div className="container container-height">
+                    <h5 className="text-center">{this.state.statusText}</h5>                    
+                    <p className="text-center"><FontAwesomeIcon size="3x" icon="search"/></p>
+                    <hr className="hr-style2"/>
                 </div>);
         }
     }

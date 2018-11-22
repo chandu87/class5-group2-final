@@ -1,5 +1,8 @@
 import React from 'react';
 import EventCard from '../events/EventCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import LoadingSpinner from '../extra/LoadingSpinner';
+
 
 class DeleteEvent extends React.Component {
     state = {
@@ -49,9 +52,7 @@ class DeleteEvent extends React.Component {
     render() {
         if(this.state.isLoading){
             return(     
-                    <div className="container">
-                        <h2>{this.state.message}</h2>
-                    </div>
+                <LoadingSpinner/> 
                 );
         }
         else if(!this.state.isActive){
@@ -59,9 +60,7 @@ class DeleteEvent extends React.Component {
                 <div className="container">
                     <h3>Event Successfully Deleted</h3>
                     <br/>
-                    <a href={`/Events`} className="btn btn-outline-danger btn-sm">Go Back to Events</a>
-                    <a className="btn btn-outline-danger btn-sm" href="/Events/add">Add New Event</a>
-
+                    <a href={`/Events`} className="btn btn-outline-danger btn-sm"><FontAwesomeIcon icon="caret-square-left"/> Go Back</a>
                 </div>);
         }
         else {

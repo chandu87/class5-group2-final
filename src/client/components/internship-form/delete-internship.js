@@ -1,7 +1,7 @@
 import React from 'react';
 import InternshipForm from './internship-form';
 import InternshipCard from '../internships/InternshipCard';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LoadingSpinner from '../extra/LoadingSpinner';
 
 
