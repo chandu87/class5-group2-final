@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import LoginContext from '../../contexts/login';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 class InternshipCard extends React.Component{
     constructor(props){
@@ -58,7 +60,10 @@ class InternshipCard extends React.Component{
 
                         <div className="row">
                             <div className="col-md-12">
-                            <button className="btn btn-sm btn-outline-danger" onClick={this.showDetails}>{this.state.showDetails ? "Read more..." : "Hide"} </button>
+                            {this.state.showDetails ? 
+                                    <button className="btn btn-sm btn-outline-danger" onClick={this.showDetails}>Read more <FontAwesomeIcon icon="caret-square-down"/></button> :
+                                    <button className="btn btn-sm btn-outline-danger" onClick={this.showDetails}>Hide <FontAwesomeIcon icon="caret-square-up"/></button> 
+                                    }
                             </div>
                         </div>                                
 
@@ -67,8 +72,8 @@ class InternshipCard extends React.Component{
                     {contextType.isLoggedIn & this.props.displayFooter ? 
                     <div className="card-footer">
                         <div className="network-edit-button">
-                            <Link to={`/Internships/edit/${item.id}`} className="btn btn-outline-danger btn-sm"> Edit</Link>
-                            <Link to={`/Internships/delete/${item.id}`} className="btn btn-outline-danger btn-sm">Delete</Link>
+                            <Link to={`/Internships/edit/${item.id}`} className="btn btn-outline-danger btn-sm"><FontAwesomeIcon icon="edit"/> Edit</Link>
+                            <Link to={`/Internships/delete/${item.id}`} className="btn btn-outline-danger btn-sm"><FontAwesomeIcon icon="trash-alt"/> Delete</Link>
                         </div>
                     </div>
                     : ""} 

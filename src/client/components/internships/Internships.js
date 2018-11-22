@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LoginContext from '../../contexts/login';
 import InternshipCard from "./InternshipCard";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import LoadingSpinner from '../extra/LoadingSpinner';
+
 
 class Internships extends React.Component {
 
@@ -33,14 +36,14 @@ class Internships extends React.Component {
 
     const { internships } = this.state;
     if (internships.length <= 0) {
-      return <div>Loading ...</div>;
+      return <LoadingSpinner/>;
     } else {
       return (
         <div className="container"> 
         <h1>Internships</h1> 
         <br/>
         {contextType.isLoggedIn ? 
-            <Link className="btn btn-outline-danger btn-lg mentor-add-button" to="/Internships/add">Add Internship</Link>
+            <Link className="btn btn-outline-danger btn-lg mentor-add-button" to="/Internships/add"><FontAwesomeIcon icon="plus"/> Add Internship</Link>
             : ""} 
 
             {internships.map(item => (         

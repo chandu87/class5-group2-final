@@ -1,5 +1,7 @@
 import React from 'react';
 import InternshipForm from './internship-form';
+import LoadingSpinner from '../extra/LoadingSpinner';
+
 
 class EditInternship extends React.Component {
     state = {
@@ -30,9 +32,7 @@ class EditInternship extends React.Component {
 
     render() {
         return (
-            this.state.isLoading ? 
-                <div>{this.state.message}</div>
-                :
+            this.state.isLoading ? <LoadingSpinner/>  :
                 <InternshipForm {...this.props} internshipData={this.state.internshipData} id={this.props.match.params.id} isEditing={true} />
         )
     }
