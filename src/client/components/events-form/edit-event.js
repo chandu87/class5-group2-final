@@ -1,5 +1,6 @@
 import React from 'react';
 import EventsForm from './events-form';
+import LoadingSpinner from '../extra/LoadingSpinner';
 
 class EditEvent extends React.Component{
     state = {
@@ -31,7 +32,7 @@ class EditEvent extends React.Component{
     render(){
         return( 
             this.state.isLoading ? 
-            <div>{this.state.message}</div>
+            <LoadingSpinner/>
             :            
             <EventsForm {...this.props} eventsData={this.state.eventsData} id={this.props.match.params.id} isEditing={true}/>);
     }

@@ -1,5 +1,7 @@
 import React from 'react';
 import LoginContext from '../../contexts/login';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 class EventsCard extends React.Component{
     constructor(props){
@@ -41,16 +43,21 @@ class EventsCard extends React.Component{
                                         <div><small><strong>Event URL: </strong> {item.event_URL}</small></div>
                                         <div><small><strong>Max participants: </strong> {item.max_participants}</small></div>
                                         <div className="">
-                                            <img className="my-0 font-weight-normal networking-image" src={item.event_theme_image} width="100%" alt="Organization Logo"/>
+                                            <img className="my-0 font-weight-normal networking-image" src={item.event_theme_image} alt="Organization Logo"/>
                                         </div>
                                     </div>
                                 }
                                 <div className="d-flex w-100 justify-content-between">
-                                <button className="btn badge badge-danger" onClick={this.showDetails}>{this.state.showDetails ? "Read more..." : "Hide"}</button>
+                                {this.state.showDetails ? 
+                                    <button className="btn badge badge-danger" onClick={this.showDetails}>Read more <FontAwesomeIcon icon="caret-square-down"/></button> :
+                                    <button className="btn badge badge-danger" onClick={this.showDetails}>Hide <FontAwesomeIcon icon="caret-square-up"/></button> 
+                                    }
+
+                                {/* <button className="btn badge badge-danger" onClick={this.showDetails}>{this.state.showDetails ? "Read more..." : "Hide"}</button> */}
 
                                             {contextType.isLoggedIn ? <div>
-                                                <a href={`/Events/edit/${item.id}`} className="btn badge badge-danger">Edit</a>
-                                                <a href={`/Events/delete/${item.id}`} className="btn badge badge-danger">Delete</a>
+                                                <a href={`/Events/edit/${item.id}`} className="btn badge badge-danger"><FontAwesomeIcon icon="edit"/> Edit</a>
+                                                <a href={`/Events/delete/${item.id}`} className="btn badge badge-danger"><FontAwesomeIcon icon="trash-alt"/> Delete</a>
                                                 </div> : ""}
                                 </div>
 

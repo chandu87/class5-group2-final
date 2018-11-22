@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import LoginContext from '../../contexts/login';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 class InternshipCard extends React.Component{
