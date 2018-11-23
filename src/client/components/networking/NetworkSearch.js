@@ -43,8 +43,8 @@ class NetworkSearch extends React.Component{
             // console.log(this.state.data);
             return(
             <div className="container">
-                <h5 style={{textAlign: "center"}}>Results Found : <strong>{this.state.data.length}</strong></h5>
-                <hr className="hr-style1"/>
+                <h5 className="text-center">Results Found : <strong>{this.state.data.length}</strong></h5>
+                <hr className="hr-style2"/>
                 {this.state.data.map((item)=>
                     <NetworkCard networkItem={item} displayCardFooter={true}/>
                 )}
@@ -53,9 +53,8 @@ class NetworkSearch extends React.Component{
         else{
             return( 
                 <div className="container container-height">
-                    <h5 style={{textAlign: "center", marginTop: "10%"}}>{this.state.statusText}</h5>
+                    <h5 className="text-center">{this.state.statusText}</h5>
                     <p className="text-center"><FontAwesomeIcon size="3x" icon="search"/></p>
-
                     <hr className="hr-style2"/>
                 </div>
                 );

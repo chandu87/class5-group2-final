@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class EventCard extends React.Component{
     constructor(props){
@@ -46,7 +47,10 @@ class EventCard extends React.Component{
                         <div><strong>Max participants: </strong> {item.max_participants}</div>
                     </div>}
                     <br/>
-                    <button className="btn badge badge-danger" onClick={this.showDetails}>{this.state.showDetails ? "Read more..." : "Hide"}</button>
+                    {this.state.showDetails ? 
+                                    <button className="btn btn-sm btn-outline-danger" onClick={this.showDetails}>Read more <FontAwesomeIcon icon="caret-square-down"/></button> :
+                                    <button className="btn btn-sm btn-outline-danger" onClick={this.showDetails}>Hide <FontAwesomeIcon icon="caret-square-up"/></button> 
+                                    }
 
                 </div>
                 <div className="col-md-4">

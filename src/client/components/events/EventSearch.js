@@ -1,6 +1,8 @@
 import React from 'react';
 import queryString from 'querystring';
 import EventCard from './EventCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 
 class EventSearch extends React.Component{
@@ -38,7 +40,8 @@ class EventSearch extends React.Component{
             // console.log(this.state.data);
             return(
             <div className="container">
-                <h5>{this.state.data.length} results found</h5>
+                <h5 className="text-center">Results Found : <strong>{this.state.data.length}</strong></h5>
+                <hr className="hr-style2"/>
                 {this.state.data.map((item)=>
                     <EventCard key={item.id} eventsData={item}/>
                 )}
@@ -46,8 +49,10 @@ class EventSearch extends React.Component{
         }
         else{
             return(
-                <div className="container">
-                    <h3>{this.state.statusText}</h3>
+                <div className="container container-height">
+                    <h5 className="text-center">{this.state.statusText}</h5>
+                    <p className="text-center"><FontAwesomeIcon size="3x" icon="search"/></p>
+                    <hr className="hr-style2"/>
                 </div>);
         }
     }
