@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import LoginContext from '../../contexts/login';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ReactImageFallback from "react-image-fallback";
 
 class InternshipCard extends React.Component{
     constructor(props){
@@ -29,7 +30,12 @@ class InternshipCard extends React.Component{
                     <div className="card-body">
                         <div className="row mb-4">
                             <div className="col-md-12">
-                                <img className="my-0 font-weight-normal networking-image img-non-responsive" src={item.internship_theme_image} width="100%" alt={item.application_requirements} />
+                                <ReactImageFallback
+                                    src={item.internship_theme_image}
+                                    fallbackImage="https://pbs.twimg.com/media/Dq77xWMV4AAGBly.jpg"
+                                    initialImage="loader.gif"
+                                    alt={item.application_requirements}
+                                    className="my-0 font-weight-normal networking-image img-non-responsive" />
                             </div>
                         </div>
                         <div className="row">
