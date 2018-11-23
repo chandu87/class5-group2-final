@@ -60,11 +60,13 @@ class InternshipCard extends React.Component{
                             <dt className="col-sm-3">Internship Publish Date </dt> <dd className="col-sm-9"> {item.internship_add_date}</dd>
                             <dt className="col-sm-3">Internship Deadline</dt> <dd className="col-sm-9"> {item.internship_deadline}</dd>
                             <dt className="col-sm-3">Contact Person </dt> <dd className="col-sm-9"> {item.contact_person}</dd>
-                            <dt className="col-sm-3">Phone Contact </dt> <dd className="col-sm-9"> {item.phone_contact}</dd>
-                            <dt className="col-sm-3">Email Contact </dt> <dd className="col-sm-9"> {item.email_contact}</dd>
+                            <dt className="col-sm-3">Phone Contact </dt> 
+                            <dd className="col-sm-9"><a href={"tel:" + item.phone_contact}>{item.phone_contact}</a></dd>
+                            <dt className="col-sm-3">Email Contact </dt>
+                            <dd className="col-sm-9"><a href={"mailto:" + item.email_contact}> {item.email_contact}</a></dd>
                             <dt className="col-sm-3">Organization Address </dt> <dd className="col-sm-9"> {item.organisation_address}</dd>
                             <dt className="col-sm-3">Organization Website </dt> 
-                            <dd className="col-sm-9"> <Link to={item.organisation_website} target="_blank">Open link</Link></dd>
+                            <dd className="col-sm-9"> <a href={item.organisation_website} target="blank">Open link</a></dd>
                         </dl>}
 
                         <div className="row">
