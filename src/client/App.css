@@ -323,11 +323,16 @@ main {
    text-decoration: none;
 }
 .home-page{
-  background-image: url('./components/home/thread-event-lecture.jpg'); 
-  /* height: 80vh; */
+  min-height: 60vh;
+  
 }
-.home-page .jumbotron{
-  background-color: #eee9efbd; 
+.home-page .jumbo-image{
+  background-color: #b3b1b3bd; 
+  background-image: url('./components/home/thread-event-lecture.jpg');
+  min-height: 60vh;
+}
+.home-page img{
+  width:100%;
 }
 .internship-image, .networking-image{
   height: 10vw;
