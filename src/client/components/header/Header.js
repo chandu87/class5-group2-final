@@ -36,7 +36,7 @@ class Header extends React.Component {
                                                 <span className="icon material-icons md-36 md-dark">date_range</span>
                                                 <Link to="/Events" className="menuLink nav-link"> Events </Link></li>
                                             <li className="nav-item iconMentors">
-                                                <span className="icon material-icons md-36 md-dark">accessibility_new</span>
+                                                <span className="icon material-icons md-36 md-dark">school</span>
                                                 <Link to="/Mentors" className="menuLink nav-link"> Mentors </Link></li>
                                             <li className="nav-item iconNetwork">
                                                 <span className="icon material-icons md-36 md-dark">people</span>
