@@ -62,7 +62,7 @@ class Mentors extends React.Component {
                       <span>{item.availability}</span> <br />
                     </p>
                     <Link to={`/Mentors/details/${item.id}`} className="btn btn-sm btn-outline-danger"><FontAwesomeIcon icon="caret-square-down" /> Read more..</Link>
-
+                  
                     {contextType.isLoggedIn ? 
                       <span>
                         <Link to={`/Mentors/delete/${item.id}`} className="btn btn-outline-danger btn-sm pull-right"><FontAwesomeIcon icon="trash-alt" /> Delete</Link>                
