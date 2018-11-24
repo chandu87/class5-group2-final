@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import MentorCard from './MentorCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import LoadingSpinner from '../extra/LoadingSpinner';
 
 class MentorItemDetails extends React.Component{
     constructor(props){
@@ -23,7 +25,7 @@ class MentorItemDetails extends React.Component{
         if(!this.state.isLoading && this.state.isActive){
         return(
                     <div className="container">
-                        <Link to={`/Mentors`} className="btn btn-outline-danger btn-sm mb-4">Go back to Mentors</Link>
+                        <Link to={`/Mentors`} className="btn btn-outline-danger btn-sm mb-4"><FontAwesomeIcon icon="caret-square-left"/> Go back</Link>
                         <MentorCard mentorItem={this.state.itemDetailedData}/>
                     </div>
                 );
@@ -32,11 +34,11 @@ class MentorItemDetails extends React.Component{
                         <div className="container">
                             <h4>Item Successfully deleted</h4>
                             <br/>
-                            <Link to="/Mentors"> Go Back</Link>
+                            <Link to="/Mentors"><FontAwesomeIcon icon="caret-square-left"/> Go Back</Link>
                         </div>);
             }
             else{
-                return(<li>Is loading . . . . .</li>);
+                return(<LoadingSpinner/>);
             }
     }
 }

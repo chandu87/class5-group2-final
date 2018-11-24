@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LoginContext from '../../contexts/login';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import LoadingSpinner from '../extra/LoadingSpinner';
 import './Mentors.css';
 
 class Mentors extends React.Component {
@@ -32,7 +33,7 @@ class Mentors extends React.Component {
 
     const { isLoaded, items } = this.state;
     if (!isLoaded) {
-      return <div> Loading.... </div>;
+      return <LoadingSpinner/>;
     }
     else {
       return (
@@ -40,9 +41,10 @@ class Mentors extends React.Component {
           <div className="container"> 
           <div className="row">
           <div className="col">
-          <h1>Mentors</h1> <br />
+          <h1 className="text-center text-uppercase text-secondary mb-0">Mentors</h1>
+          <hr className="hr-style2"/>
           {contextType.isLoggedIn ? 
-            <Link className="btn btn-outline-danger btn-lg btn-block mentor-add-button" to="/Mentors/add">Add New Mentor</Link>
+            <Link className="btn btn-outline-danger btn-lg mentor-add-button" to="/Mentors/add"><FontAwesomeIcon icon="plus"/> Add Mentor</Link>
             : ""} 
           
             <div className="card-columns">
@@ -57,12 +59,12 @@ class Mentors extends React.Component {
                   <strong>Availability</strong><br />
                   <span>{item.availability}</span> <br />
                 </p>
-                <Link to={`/Mentors/details/${item.id}`} className="btn btn-danger">Read more..</Link>
+                <Link to={`/Mentors/details/${item.id}`} className="btn btn-sm btn-danger">Read more..</Link>
 
                 {contextType.isLoggedIn ? 
                   <span>
-                    <Link to={`/Mentors/delete/${item.id}`} className="btn btn-outline-danger btn-sm pull-right"> Delete</Link>                
-                    <Link to={`/Mentors/edit/${item.id}`} className="btn btn-outline-danger btn-sm pull-right"> Edit</Link>
+                    <Link to={`/Mentors/delete/${item.id}`} className="btn btn-outline-danger btn-sm pull-right"><FontAwesomeIcon icon="trash-alt" /> Delete</Link>                
+                    <Link to={`/Mentors/edit/${item.id}`} className="btn btn-outline-danger btn-sm pull-right"> <FontAwesomeIcon icon="edit" /> Edit</Link>
                   </span> : ""} 
 
               </div>

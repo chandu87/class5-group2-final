@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import MentorCard from '../mentors/MentorCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 class MentorForm extends React.Component {
     constructor(props) {
@@ -78,7 +80,7 @@ class MentorForm extends React.Component {
                 <div className="container">
                 <form onSubmit={this.submitForm}>
                     <div className='form-group card px-lg-5'>
-                        <h2 className='card-header mt-4'>
+                        <h2 className='mt-4'>
                             {`${this.props.isEditing ? "Edit" : "Add"} Mentor`}
                         </h2>
                         <div className='row mt-4'>
@@ -176,12 +178,12 @@ class MentorForm extends React.Component {
 
                         <div className="form-group form-check">
                             <input type="checkbox" name="active" value={this.state.mentorData.active} onChange={this.updateField} className="form-check-input" id="checkActiveStatus" required/>
-                            <label className="form-check-label" htmlFor="checkActiveStatus">Agree to make data active</label>
+                            <label className="form-check-label" htmlFor="checkActiveStatus">Agree to submit data</label>
                         </div>
 
                         <div className='mb-4 mt-3'>
-                            <button className='btn btn-warning' type="submit">Submit</button>
-                            <Link to="/Mentors" className='btn btn-primary ml-4' type="cancel">Cancel</Link>
+                            <button className='btn btn-outline-danger btn-sm' type="submit">Submit</button>
+                            <Link to="/Mentors" className='btn btn-outline-danger btn-sm' type="cancel">Cancel</Link>
                         </div>
 
                     </div>
@@ -194,9 +196,9 @@ class MentorForm extends React.Component {
                 <div className="container">
                     <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Mentor`}</h1>
                     <br/>
-                    <button className="btn btn-outline-danger btn-sm mb-4" onClick={this.displaySubmitForm}> Edit</button> 
-                    <Link to="/Mentors/add" className="btn btn-outline-danger btn-sm mb-4 pull-right">Add New Mentor</Link>
-                    <Link to={`/Mentors`} className="btn btn-outline-danger btn-sm mb-4 pull-right">Go Back to Mentor</Link>
+                    <button className="btn btn-outline-danger btn-sm mb-4" onClick={this.displaySubmitForm}><FontAwesomeIcon icon="edit"/> Edit</button> 
+                    <Link to="/Mentors/add" className="btn btn-outline-danger btn-sm mb-4 pull-right"><FontAwesomeIcon icon="plus"/> Add New</Link>
+                    <Link to={`/Mentors`} className="btn btn-outline-danger btn-sm mb-4 pull-right"><FontAwesomeIcon icon="caret-square-left"/>  Go Back</Link>
                     <MentorCard mentorItem={this.state.mentorData}/>
                 </div>                
 
