@@ -1,6 +1,9 @@
 import React from 'react';
 import InternshipForm from './internship-form';
 import InternshipCard from '../internships/InternshipCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import LoadingSpinner from '../extra/LoadingSpinner';
+
 
 class DeleteInternship extends React.Component {
     state = {
@@ -49,14 +52,13 @@ class DeleteInternship extends React.Component {
 
     render() {
         if(this.state.isLoading){
-            return(                <div>{this.state.message}</div>
-                );
+            return( <LoadingSpinner/>  );
         }
         else if(!this.state.isActive){
             return(
                 <div className="container">
                     <h3>Internship Successfully Deleted</h3>
-                    <a href={`/Internships`} className="btn btn-outline-danger btn-sm">Go Back to Internships</a>
+                    <a href={`/Internships`} className="btn btn-outline-danger btn-sm"><FontAwesomeIcon icon="caret-square-left"/> Go Back</a>
                 </div>);
         }
 
@@ -68,7 +70,7 @@ class DeleteInternship extends React.Component {
                             <button className="btn btn-outline-danger col-md-3" onClick={this.DeleteInternship}>YES</button>
                             <a  href={`/Internships`} className="btn btn-outline-danger col-md-3">NO</a>
                         </div>
-                        <InternshipCard internshipItem={this.state.internshipData}/>
+                        <InternshipCard internshipItem={this.state.internshipData} displayFooter={false}/>
                     </div>        
                 );
         }

@@ -1,11 +1,11 @@
 import React from 'react';
 import NetworkingForm from './networking-form';
 import NetworkCard from '../networking/NetworkCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class DeleteNetwork extends React.Component {
     state = {
         isLoading: true,
-        message: 'Hang in there...',
         networkData: null,
         isActive : true
     }
@@ -48,14 +48,19 @@ class DeleteNetwork extends React.Component {
 
     render() {
         if(this.state.isLoading){
-            return(                <div>{this.state.message}</div>
+            return(             
+                <div className="container container-height">
+                    <p className="text-center"><FontAwesomeIcon size="5x" icon="spinner" pulse/></p>
+                    <h2 className="text-center">Loading</h2>
+                <hr className="hr-style2"/>
+            </div>
                 );
         }
         else if(!this.state.isActive){
             return(
                 <div className="container">
                     <h3>Network Successfully Deleted</h3>
-                    <a href={`/Networking`} className="btn btn-outline-danger btn-sm">Go Back to Networks</a>
+                    <a href={`/Networking`} className="btn btn-outline-danger btn-sm"><FontAwesomeIcon icon="caret-square-left"/> Go Back</a>
                 </div>);
         }
 

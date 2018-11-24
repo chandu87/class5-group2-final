@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NotificationManager } from 'react-notifications';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 class Login extends Component {
@@ -60,27 +61,41 @@ class Login extends Component {
   render() {
     return (
       <div className="container">
-        <form onSubmit={this.onSubmit}>
-          <label>
-            E-mail
-            <input
-              type="email"
-              name="email"
-              value={this.state.user.email}
-              onChange={this.onFieldChange}
-            />
-          </label>
-          <label>
-            Password
-            <input
-              type="password"
-              name="password"
-              value={this.state.user.password}
-              onChange={this.onFieldChange}
-            />
-          </label>
-          <button type="submit">Submit</button>
-        </form>
+
+        <form className="form-signin" onSubmit={this.onSubmit}>
+        <p className="display-4 text-center">LOGIN</p>
+        <p className="text-center"><FontAwesomeIcon size="5x" icon="sign-in-alt"/></p>
+        <div className="form-group row">
+          <label htmlFor="email">Email address</label>
+            <input 
+              type="email" 
+              name="email" 
+              id="email" 
+              value={this.state.user.email} 
+              onChange={this.onFieldChange} 
+              className="form-control mb-2" 
+              placeholder="Email address" 
+              required="" 
+              autoFocus="" />
+          </div>
+
+        <div className="form-group row">
+          <label htmlFor="inputPassword">Password</label>
+          <input 
+              type="password" 
+              name="password" 
+              id="password" 
+              value={this.state.user.password} 
+              onChange={this.onFieldChange} 
+              className="form-control" 
+              placeholder="Password" 
+              required="" />
+        </div>
+
+        <button className="btn btn-lg btn-secondary btn-block no-gutters event-btn" type="submit">Log in</button>
+        <p className="mt-5 mb-3 text-muted text-center">© 2018-2019</p>
+
+        </form>        
       </div>
     );
   }

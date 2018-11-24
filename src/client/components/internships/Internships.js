@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LoginContext from '../../contexts/login';
+import InternshipCard from "./InternshipCard";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import LoadingSpinner from '../extra/LoadingSpinner';
+
 
 class Internships extends React.Component {
 
@@ -32,55 +36,18 @@ class Internships extends React.Component {
 
     const { internships } = this.state;
     if (internships.length <= 0) {
-      return <div>Loading ...</div>;
+      return <LoadingSpinner/>;
     } else {
       return (
         <div className="container"> 
-        <h1>Internships</h1> 
-        <br/>
+        <h1 className="text-center text-uppercase text-secondary mb-0">Internships</h1>
+        <hr className="hr-style2"/> 
         {contextType.isLoggedIn ? 
-            <Link className="btn btn-outline-danger btn-lg btn-block mentor-add-button" to="/Internships/add">Add Internship</Link>
+            <Link className="btn btn-outline-danger btn-large-mobile no-gutters mb-3" to="/Internships/add"><FontAwesomeIcon icon="plus"/> Add Internship</Link>
             : ""} 
 
-            {internships.map(item => (
-              <Link to={`/Internships/details/${item.id}`} key={item.id} className="card-as-link">
-                <div key={item.id} className="card mb-4">
-          
-                  <div className="card-header">
-                  <h5 className="card-title">{item.internship_title}</h5>
-                
-                  </div>
-                  <div className="card-body">
-                    <div className="row">
-                        <div className="col-md-8">
-                            <p className="card-text">{item.internship_description}</p>
-                            <p className="card-text">Place : {item.location}</p>
-                            <Link to={`/Internships/details/${item.id}`} className="btn btn-danger">
-                              Read more...
-                            </Link>
-                        </div>
-                        <div className="col-md-4">
-                            <img
-                              className="internship-image rounded"
-                              src={item.internship_theme_image}
-                              alt={item.internship_title}
-                            />
-                        </div>
-          
-                    </div>
-          
-                  </div>
-
-                  {contextType.isLoggedIn ? 
-                  <div className="card-footer">
-                    <Link to={`/Internships/edit/${item.id}`} className="btn btn-outline-danger network-edit-button btn-sm"> Edit</Link>
-                    <Link to={`/Internships/delete/${item.id}`} className="btn btn-outline-danger btn-sm">Delete</Link>
-                  </div>
-                  : ""} 
-
-                </div>
-
-              </Link>
+            {internships.map(item => (         
+              <InternshipCard key={item.id} internshipItem={item} displayFooter={true}/>
             ))}
         </div>
       );

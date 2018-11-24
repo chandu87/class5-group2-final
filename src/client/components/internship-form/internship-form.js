@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import InternshipCard from '../internships/InternshipCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class InternshipForm extends React.Component {
     constructor(props) {
@@ -248,7 +249,7 @@ class InternshipForm extends React.Component {
                     </div>
 
                     <button type="submit" className="btn btn-outline-danger btn-sm">Submit</button>
-                    <Link to={`/Networking`} className="btn btn-outline-danger btn-sm">Cancel</Link>
+                    <Link to={`/Internships`} className="btn btn-outline-danger btn-sm">Cancel</Link>
 
                 </form>
                 </div>
@@ -259,10 +260,10 @@ class InternshipForm extends React.Component {
                 <div className="container">
                     <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Internship`}</h1>
                     <br/>
-                    <button className="btn btn-outline-danger btn-sm mb-4" onClick={this.displaySubmitForm}> Edit</button> 
-                    <Link to="/Internships/add" className="btn btn-outline-danger btn-sm mb-4 pull-right">Add New Internship</Link>
-                    <Link to={`/Internships`} className="btn btn-outline-danger btn-sm mb-4 pull-right">Go Back to Internships</Link>
-                    <InternshipCard internshipItem={this.state.internshipData}/>
+                    <button className="btn btn-outline-danger btn-sm mb-4" onClick={this.displaySubmitForm}><FontAwesomeIcon icon="edit"/> Edit</button> 
+                    <Link to="/Internships/add" className="btn btn-outline-danger btn-sm mb-4 pull-right"><FontAwesomeIcon icon="plus"/> Add New</Link>
+                    <Link to={`/Internships`} className="btn btn-outline-danger btn-sm mb-4 pull-right"><FontAwesomeIcon icon="caret-square-left"/> Go Back</Link>
+                    <InternshipCard internshipItem={this.state.internshipData} displayFooter={false}/>
                 </div>                
 
             )

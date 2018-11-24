@@ -19,7 +19,7 @@ class Header extends React.Component {
                     <div className="row">
                             <div className="col-12 col-sm-12 col-md-1 col-lg-3">
                                 <div className="siteLogo">
-                                <a href="#link"><img src={logo} width="50px" height="60px" alt="Thread Logo" /></a>
+                                <a href="/"><img src={logo} width="50px" height="60px" alt="Thread Logo" /></a>
                                 </div>
                             </div>
                             <div className="col-12 col-sm-12 col-md-11 col-lg-9">
@@ -36,7 +36,7 @@ class Header extends React.Component {
                                                 <span className="icon material-icons md-36 md-dark">date_range</span>
                                                 <Link to="/Events" className="menuLink nav-link"> Events </Link></li>
                                             <li className="nav-item iconMentors">
-                                                <span className="icon material-icons md-36 md-dark">accessibility_new</span>
+                                                <span className="icon material-icons md-36 md-dark">school</span>
                                                 <Link to="/Mentors" className="menuLink nav-link"> Mentors </Link></li>
                                             <li className="nav-item iconNetwork">
                                                 <span className="icon material-icons md-36 md-dark">people</span>
