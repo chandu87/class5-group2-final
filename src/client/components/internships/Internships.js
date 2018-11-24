@@ -43,7 +43,7 @@ class Internships extends React.Component {
         <h1>Internships</h1> 
         <br/>
         {contextType.isLoggedIn ? 
-            <Link className="btn btn-outline-danger btn-lg mentor-add-button" to="/Internships/add"><FontAwesomeIcon icon="plus"/> Add Internship</Link>
+            <Link className="btn btn-outline-danger btn-large-mobile no-gutters mb-3" to="/Internships/add"><FontAwesomeIcon icon="plus"/> Add Internship</Link>
             : ""} 
 
             {internships.map(item => (         

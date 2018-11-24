@@ -41,9 +41,10 @@ class Networking extends React.Component {
     else {
       return (
             <div className="container"> 
-            <h1 className="">NETWORKING</h1>
+            <h1 className="">Networking</h1>
+            <br />
             {contextType.isLoggedIn ? 
-                <a className="btn btn-outline-danger btn-lg" href="/Networking/add"><FontAwesomeIcon icon="plus"/> Add Network</a>
+                <a className="btn btn-outline-danger btn-large-mobile no-gutters mb-3" href="/Networking/add"><FontAwesomeIcon icon="plus"/> Add Network</a>
                 : ""} 
                 {items.map(item => (
                   <NetworkCard key={item.id} networkItem={item} displayCardFooter={true}></NetworkCard>

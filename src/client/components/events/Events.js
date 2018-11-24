@@ -43,18 +43,17 @@ class Events extends React.Component {
     else{
         return (
           <div className="container">
-          <h1>Events</h1>
-            <div className="container">
-              {/* { contextType.isLoggedIn ? this.renderAddNewEventButton() : "" }           */}
-              { contextType.isLoggedIn ? <a className='btn btn-outline-danger add-event-btn' href="/Events/add"><FontAwesomeIcon icon="plus"/> ADD EVENT</a> : "" }          
-              {/* <div className="btn-group events-btn" role="group">
-                <button className="btn btn-outline-danger active">Calender View</button>
-                <button className="btn btn-outline-danger">Map View</button>
-              </div> */}
-            </div>
-            <br/>
-            <Map events={this.state.events}/>
-
+            <h1>Events</h1>
+            <br />
+                {/* { contextType.isLoggedIn ? this.renderAddNewEventButton() : "" }           */}
+                { contextType.isLoggedIn ? <a className='btn btn-outline-danger add-event-btn btn-large-mobile no-gutters mb-3' href="/Events/add"><FontAwesomeIcon icon="plus"/> ADD EVENT</a> : "" }          
+                {/* <div className="btn-group events-btn" role="group">
+                  <button className="btn btn-outline-danger active">Calender View</button>
+                  <button className="btn btn-outline-danger">Map View</button>
+                </div> */}
+              <br/>
+              
+              <Map events={this.state.events}/>
           </div>
         );
       }

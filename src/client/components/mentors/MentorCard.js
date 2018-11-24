@@ -11,8 +11,8 @@ class MentorCard extends React.Component{
                         </div>
                         <div className="card-body">
                             <div className="row mb-4">
-                                <div className="col-md-3">
-                                    <img className="my-0 font-weight-normal networking-image" src={item.profile_picture} width="100%" alt={item.offering} />
+                                <div className="col-md-12">
+                                    <img className="my-0 font-weight-normal networking-image img-non-responsive" src={item.profile_picture} width="100%" alt={item.offering} />
                                 </div>
                             </div>
                             <dl className="row">
@@ -21,9 +21,7 @@ class MentorCard extends React.Component{
                                     <dt className="col-sm-3">Last Name</dt> 
                                     <dd className="col-sm-9"> {item.last_name}</dd>
                                     <dt className="col-sm-3"> Email</dt>
-                                    <dd className="col-sm-9"> {item.email}</dd>
-                                    <dt className="col-sm-3">Department</dt> 
-                                    <dd className="col-sm-9">{item.department}</dd>
+                                    <dd className="col-sm-9"> <a href={"mailto:" + item.email}>{item.email}</a></dd>
                                     <dt className="col-sm-3">Gender</dt> 
                                     <dd className="col-sm-9">{item.gender}</dd>
                                     <dt className="col-sm-3">Mentor Description </dt> <dd className="col-sm-9"> {item.mentor_description}</dd>
