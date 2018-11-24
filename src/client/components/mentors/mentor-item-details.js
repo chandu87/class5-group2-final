@@ -1,12 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import MentorCard from './MentorCard';
-<<<<<<< HEAD
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-=======
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LoadingSpinner from '../extra/LoadingSpinner';
->>>>>>> chandu/master
 
 class MentorItemDetails extends React.Component{
     constructor(props){
@@ -29,11 +25,7 @@ class MentorItemDetails extends React.Component{
         if(!this.state.isLoading && this.state.isActive){
         return(
                     <div className="container">
-<<<<<<< HEAD
-                        <Link to={`/Mentors`} className="btn btn-outline-danger btn-sm mb-4"><FontAwesomeIcon icon="caret-square-left"/> Go back to Mentors</Link>
-=======
                         <Link to={`/Mentors`} className="btn btn-outline-danger btn-sm mb-4"><FontAwesomeIcon icon="caret-square-left"/> Go back</Link>
->>>>>>> chandu/master
                         <MentorCard mentorItem={this.state.itemDetailedData}/>
                     </div>
                 );
