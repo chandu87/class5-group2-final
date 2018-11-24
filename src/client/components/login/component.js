@@ -92,7 +92,7 @@ class Login extends Component {
               required="" />
         </div>
 
-        <button className="btn btn-lg btn-secondary btn-block no-gutters" type="submit">Log in</button>
+        <button className="btn btn-lg btn-secondary btn-block no-gutters event-btn" type="submit">Log in</button>
         <p className="mt-5 mb-3 text-muted text-center">© 2018-2019</p>
 
         </form>        
