@@ -2,6 +2,7 @@ import React from 'react';
 import queryString from 'querystring';
 import { Link } from "react-router-dom";
 import LoginContext from '../../contexts/login';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 class MentorSearch extends React.Component{
@@ -9,7 +10,8 @@ class MentorSearch extends React.Component{
         super(props);
         this.state={
             data : {},
-            dataIsLoaded: false
+            dataIsLoaded: false,
+            statusText: " Data Loading"
         }
     }
     componentDidMount(){
@@ -24,6 +26,13 @@ class MentorSearch extends React.Component{
                     dataisLoaded : true
                 })
             })
+            .catch(err=>{
+                console.log(err);
+                this.setState({
+                    statusText : "No matches found. Please search again"
+                })
+            })
+    
         }
     
     
@@ -34,6 +43,9 @@ class MentorSearch extends React.Component{
             // console.log(this.state.data);
             return(
             <div className="container">
+                <h5 className="text-center">Results Found : <strong>{this.state.data.length}</strong></h5>
+                <hr className="hr-style2"/>
+
             <div className="card-columns">
                 {this.state.data.map((item)=>
               <div key={item.id} className="card">
@@ -46,8 +58,10 @@ class MentorSearch extends React.Component{
                   <span>{item.availability}</span> <br />
                 </p>
                 <a href="#" className="btn btn-danger">Read more..</a>
-                    {contextType.isLoggedIn ? 
-                        <Link to={`/Mentors/edit/${item.id}`} target="_blank" className="btn btn-outline-danger btn-sm pull-right"> Edit</Link>                
+                    {contextType.isLoggedIn ? <span>
+                    <Link to={`/Mentors/delete/${item.id}`} className="btn btn-outline-danger btn-sm pull-right"> Delete</Link>                
+                    <Link to={`/Mentors/edit/${item.id}`} className="btn btn-outline-danger btn-sm pull-right"> Edit</Link>
+                    </span>
                     : ""} 
               </div>
               </div>
@@ -57,7 +71,13 @@ class MentorSearch extends React.Component{
             </div>);
         }
         else{
-            return("Data is Loading");
+            return(               
+             <div className="container container-height">
+                <h5 className="text-center">{this.state.statusText}</h5>
+                <p className="text-center"><FontAwesomeIcon size="3x" icon="search"/></p>
+                <hr className="hr-style2"/>
+            </div>
+            );
         }
     }
 }

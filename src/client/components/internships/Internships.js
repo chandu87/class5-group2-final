@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LoginContext from '../../contexts/login';
 import InternshipCard from "./InternshipCard";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LoadingSpinner from '../extra/LoadingSpinner';
 
 
@@ -40,8 +40,8 @@ class Internships extends React.Component {
     } else {
       return (
         <div className="container"> 
-        <h1>Internships</h1> 
-        <br/>
+        <h1 className="text-center text-uppercase text-secondary mb-0">Internships</h1>
+        <hr className="hr-style2"/> 
         {contextType.isLoggedIn ? 
             <Link className="btn btn-outline-danger btn-large-mobile no-gutters mb-3" to="/Internships/add"><FontAwesomeIcon icon="plus"/> Add Internship</Link>
             : ""} 

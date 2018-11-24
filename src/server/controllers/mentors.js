@@ -133,6 +133,6 @@ export function listAllMentors(req, res) {
         return;
       }
   
-      res.send('success');
+      res.send(result);
     });
   }

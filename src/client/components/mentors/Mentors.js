@@ -33,7 +33,7 @@ class Mentors extends React.Component {
     console.log("Mentors page",contextType.isLoggedIn);
 
     const { isLoaded, items } = this.state;
-    if (items.length <= 0) {
+    if (!isLoaded) {
       return <LoadingSpinner/>;
     }
     else {
@@ -42,7 +42,9 @@ class Mentors extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col">
-              <h1>Mentors</h1> <br />
+              <h1 className="text-center text-uppercase text-secondary mb-0">Mentors</h1>
+              <hr className="hr-style2"/>
+
               {contextType.isLoggedIn ? 
                 <Link className="btn btn-outline-danger btn-large-mobile no-gutters mb-3" to="/Mentors/add"><FontAwesomeIcon icon="plus"/> Add New Mentor</Link>
                 : ""} 

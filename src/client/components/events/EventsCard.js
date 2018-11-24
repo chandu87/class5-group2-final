@@ -64,15 +64,15 @@ class EventsCard extends React.Component{
                                 }
                                 <div className="d-flex w-100 justify-content-between">
                                 {this.state.showDetails ? 
-                                    <button className="btn badge badge-danger" onClick={this.showDetails}>Read more <FontAwesomeIcon icon="caret-square-down"/></button> :
+                                    <button className="btn badge badge-danger event-btn" onClick={this.showDetails}>Read more <FontAwesomeIcon icon="caret-square-down"/></button> :
                                     <button className="btn badge badge-danger" onClick={this.showDetails}>Hide <FontAwesomeIcon icon="caret-square-up"/></button> 
                                     }
 
                                 {/* <button className="btn badge badge-danger" onClick={this.showDetails}>{this.state.showDetails ? "Read more..." : "Hide"}</button> */}
 
                                             {contextType.isLoggedIn ? <div>
-                                                <a href={`/Events/edit/${item.id}`} className="btn badge badge-danger"><FontAwesomeIcon icon="edit"/> Edit</a>
-                                                <a href={`/Events/delete/${item.id}`} className="btn badge badge-danger"><FontAwesomeIcon icon="trash-alt"/> Delete</a>
+                                                <a href={`/Events/edit/${item.id}`} className="btn badge badge-danger event-btn"><FontAwesomeIcon icon="edit"/> Edit</a>
+                                                <a href={`/Events/delete/${item.id}`} className="btn badge badge-danger event-btn"><FontAwesomeIcon icon="trash-alt"/> Delete</a>
                                                 </div> : ""}
                                 </div>
 
