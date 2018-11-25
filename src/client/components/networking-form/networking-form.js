@@ -76,10 +76,12 @@ class networkingForm extends React.Component {
         if(this.state.displaySubmitForm){
             return(
                 <div className="container">
-                <form onSubmit={this.submitForm}>       
-                    <h2>
+                <div className="form-container">
+                <form className="form-submit" onSubmit={this.submitForm}>       
+                    <h2 className="form-h2 text-center">
                         {`${this.props.isEditing ? "Edit" : "Add"} Network`}
                     </h2>
+                    <hr className="hr-style3"/>
                     <div className="form-group">
                         <label htmlFor="organisation_name">Organisation name *</label>
                         <input type="text" name="organisation_name" value={this.state.networkData.organisation_name} onChange={this.updateField} className="form-control" id="organisation_name" aria-describedby="nameHelp" placeholder="Enter Name" required/>
@@ -141,13 +143,14 @@ class networkingForm extends React.Component {
                     </div>
                     <div className="form-check">
                         <input type="checkbox" name="active" value={this.state.networkData.active} onChange={this.updateField} className="form-check-input" id="checkActiveStatus" required/>
-                        <label className="form-check-label" htmlFor="checkActiveStatus">Agree to make data active</label>
+                        <label className="form-check-label" htmlFor="checkActiveStatus">Agree to Submit data</label>
                     </div>
                     <br/>
                     <button type="submit" className="btn btn-outline-danger btn-sm">Submit</button>
                     <a href={`/Networking`} className="btn btn-outline-danger btn-sm">Cancel</a>
     
                 </form>
+                </div>
                 </div>
             );
         }
@@ -156,9 +159,9 @@ class networkingForm extends React.Component {
                 <div className="container">
                     <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Network`}</h1>
                     <br/>
-                    <button className="btn btn-outline-danger btn-sm" onClick={this.displaySubmitForm}><FontAwesomeIcon icon="edit"/> Edit</button>
                     <a className="btn btn-outline-danger btn-sm network-edit-button" href="/Networking/add"><FontAwesomeIcon icon="plus"/> Add New</a>
-                    <a href={`/Networking`} className="btn btn-outline-danger btn-sm network-edit-button"><FontAwesomeIcon icon="caret-square-left"/> Go Back</a>
+                    <button className="btn btn-outline-danger btn-sm network-edit-button" onClick={this.displaySubmitForm}><FontAwesomeIcon icon="edit"/> Edit</button>
+                    <a href={`/Networking`} className="btn btn-outline-danger btn-sm"><FontAwesomeIcon icon="caret-square-left"/> Go Back</a>
                     <NetworkCard networkItem={this.state.networkData}/>
                 </div>);
         }
