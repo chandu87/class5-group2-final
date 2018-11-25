@@ -42,10 +42,9 @@ class Networking extends React.Component {
       return (
             <div className="container"> 
             <h1 className="text-center text-uppercase text-secondary mb-0">NETWORKING</h1>
-            {/* <hr class="star-dark mb-5"></hr> */}
             <hr className="hr-style2"/>
             {contextType.isLoggedIn ? 
-                <a className="btn btn-outline-danger btn-lg mentor-add-button" href="/Networking/add"><FontAwesomeIcon icon="plus"/> Add Network</a>
+                <a className="btn btn-outline-danger btn-large-mobile no-gutters mb-3" href="/Networking/add"><FontAwesomeIcon icon="plus"/> Add Network</a>
                 : ""} 
                 {items.map(item => (
                   <NetworkCard key={item.id} networkItem={item} displayCardFooter={true}></NetworkCard>

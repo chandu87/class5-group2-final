@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import MentorCard from '../mentors/MentorCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
 class MentorForm extends React.Component {
     constructor(props) {
         super(props);
