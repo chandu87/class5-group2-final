@@ -26,7 +26,7 @@ class SearchBar extends React.Component{
         return(
             <form action={`/${this.state.data.table}/search`}>
             <div className="container search-bar">
-                <div className="form-row align-items-center">
+                <div className="form-row search-form align-items-center">
                     <div className="col-md-4">
                         <label className="sr-only" htmlFor="inlineFormInput">Name</label>
                         <input type="text" className="form-control mb-3" name="name" 
