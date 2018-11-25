@@ -45,6 +45,17 @@ class Mentors extends React.Component {
               <h1 className="text-center text-uppercase text-secondary mb-0">Mentors</h1>
               <hr className="hr-style2"/>
 
+            {/* {items.map(item => (
+              <div key={item.id} className="card">
+              <img className="card-img-top mentor-image" src={item.profile_picture} alt={item.first_name + " "+ item.last_name} />
+              <div className="card-body">
+                <h5 className="card-title">{item.first_name + " "+ item.last_name}</h5>
+                <p className="card-text"><strong>Services</strong><br />
+                  <span>{item.offering}</span> <br />
+                  <strong>Availability</strong><br />
+                  <span>{item.availability}</span> <br />
+                </p>
+                <Link to={`/Mentors/details/${item.id}`} className="btn btn-sm btn-outline-danger">Read more..</Link> */}
               {contextType.isLoggedIn ? 
                 <Link className="btn btn-outline-danger btn-large-mobile no-gutters mb-3" to="/Mentors/add"><FontAwesomeIcon icon="plus"/> Add New Mentor</Link>
                 : ""} 

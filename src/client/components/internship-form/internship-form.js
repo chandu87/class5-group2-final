@@ -85,11 +85,12 @@ class InternshipForm extends React.Component {
     render () {
         if(this.state.displaySubmitForm) {
             return (
-                <div className="container"> 
-                <form onSubmit={this.submitForm}>
-                    <h2>
+                <div className="container form-container"> 
+                <form className="form-submit" onSubmit={this.submitForm}>
+                    <h2 className="form-h2 text-center">
                         {`${this.props.isEditing ? "Edit" : "Add"} Internship`}
                     </h2>
+                    <hr className="hr-style3"/>
 
                     <div className="form-group">
                         <label htmlFor="internship_title">
@@ -245,7 +246,7 @@ class InternshipForm extends React.Component {
     
                     <div className="form-group form-check">
                         <input type="checkbox" name="active" value={this.state.internshipData.active} onChange={this.updateField} className="form-check-input" id="checkActiveStatus" required/>
-                        <label className="form-check-label" htmlFor="checkActiveStatus">Agree to make data active</label>
+                        <label className="form-check-label" htmlFor="checkActiveStatus">Agree to Submit data</label>
                     </div>
 
                     <button type="submit" className="btn btn-outline-danger btn-sm">Submit</button>
@@ -260,9 +261,9 @@ class InternshipForm extends React.Component {
                 <div className="container">
                     <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Internship`}</h1>
                     <br/>
-                    <button className="btn btn-outline-danger btn-sm mb-4" onClick={this.displaySubmitForm}><FontAwesomeIcon icon="edit"/> Edit</button> 
                     <Link to="/Internships/add" className="btn btn-outline-danger btn-sm mb-4 pull-right"><FontAwesomeIcon icon="plus"/> Add New</Link>
-                    <Link to={`/Internships`} className="btn btn-outline-danger btn-sm mb-4 pull-right"><FontAwesomeIcon icon="caret-square-left"/> Go Back</Link>
+                    <button className="btn btn-outline-danger btn-sm mb-4 pull-right" onClick={this.displaySubmitForm}><FontAwesomeIcon icon="edit"/> Edit</button> 
+                    <Link to={`/Internships`} className="btn btn-outline-danger btn-sm mb-4"><FontAwesomeIcon icon="caret-square-left"/> Go Back</Link>
                     <InternshipCard internshipItem={this.state.internshipData} displayFooter={false}/>
                 </div>                
 

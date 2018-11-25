@@ -65,7 +65,7 @@ class EventsCard extends React.Component{
                                 <div className="d-flex w-100 justify-content-between">
                                 {this.state.showDetails ? 
                                     <button className="btn badge badge-danger event-btn" onClick={this.showDetails}>Read more <FontAwesomeIcon icon="caret-square-down"/></button> :
-                                    <button className="btn badge badge-danger" onClick={this.showDetails}>Hide <FontAwesomeIcon icon="caret-square-up"/></button> 
+                                    <button className="btn badge badge-danger event-btn" onClick={this.showDetails}>Hide <FontAwesomeIcon icon="caret-square-up"/></button> 
                                     }
 
                                 {/* <button className="btn badge badge-danger" onClick={this.showDetails}>{this.state.showDetails ? "Read more..." : "Hide"}</button> */}
