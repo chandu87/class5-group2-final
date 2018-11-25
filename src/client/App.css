@@ -110,11 +110,7 @@ header #logo .icon {
 
 main {
   display: block;
-  /* margin: 0 auto;
-  margin-top: 5em;
-  margin-bottom: 5em; */
   margin: 4em 4em;
-  /* max-width: 50em; */
 }
 
 
@@ -370,11 +366,12 @@ main {
   margin: 0.3em;
 }
 main{
-  margin:1em;
+  margin:0em;
 }
 .search-bar{
   margin: 0 140px;
   padding: 15px;
+  margin-bottom: 20px;
 
 }
 #inputGroupSelect02{
