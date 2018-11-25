@@ -94,8 +94,13 @@ class EventsForm extends React.Component{
     render(){
         if(this.state.displaySubmitForm){
         return(
-            <div className="container">
-                <form onSubmit={this.submitForm}>
+            <div className="container form-container">
+                <form className="form-submit" onSubmit={this.submitForm}>
+                <h2 className="form-h2 text-center">
+                        {`${this.props.isEditing ? "Edit" : "Add"} Event`}
+                    </h2>
+                    <hr className="hr-style3"/>
+
                     <div className="form-group">
                         <label htmlFor="event_name">Event Name *</label>
                         <input type="text" name="event_name" value={this.state.eventsData.event_name} onChange={this.updateField} className="form-control" id="event_name" aria-describedby="nameHelp" placeholder="Enter Name" required/>
@@ -211,7 +216,7 @@ class EventsForm extends React.Component{
                     </div>
                     <div className="form-check">
                         <input type="checkbox" name="active" value={this.state.eventsData.active} onChange={this.updateField} className="form-check-input" id="checkActiveStatus" required/>
-                        <label className="form-check-label" htmlFor="checkActiveStatus">Agree to make data active</label>
+                        <label className="form-check-label" htmlFor="checkActiveStatus">Agree to Submit data</label>
                     </div>
                     <br/>
                     <button type="submit" className="btn btn-outline-danger btn-sm col-md-2">Submit</button>

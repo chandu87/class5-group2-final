@@ -77,12 +77,14 @@ class MentorForm extends React.Component {
     render() {
         if(this.state.displaySubmitForm) {
             return (
-                <div className="container">
-                <form onSubmit={this.submitForm}>
-                    <div className='form-group card px-lg-5'>
-                        <h2 className='mt-4'>
+                <div className="container form-container">
+                <form className="form-submit" onSubmit={this.submitForm}>
+                    <div className='form-group px-lg-5'>
+                        <h2 className='mt-4 form-h2 text-center'>
                             {`${this.props.isEditing ? "Edit" : "Add"} Mentor`}
                         </h2>
+                        <hr className="hr-style3"/>
+
                         <div className='row mt-4'>
 
                             <div className='col'>
@@ -196,9 +198,9 @@ class MentorForm extends React.Component {
                 <div className="container">
                     <h1>{`Successfully ${this.props.isEditing ? "Edited" : "Added"} Mentor`}</h1>
                     <br/>
-                    <button className="btn btn-outline-danger btn-sm mb-4" onClick={this.displaySubmitForm}><FontAwesomeIcon icon="edit"/> Edit</button> 
                     <Link to="/Mentors/add" className="btn btn-outline-danger btn-sm mb-4 pull-right"><FontAwesomeIcon icon="plus"/> Add New</Link>
-                    <Link to={`/Mentors`} className="btn btn-outline-danger btn-sm mb-4 pull-right"><FontAwesomeIcon icon="caret-square-left"/>  Go Back</Link>
+                    <button className="btn btn-outline-danger btn-sm mb-4 pull-right" onClick={this.displaySubmitForm}><FontAwesomeIcon icon="edit"/> Edit</button> 
+                    <Link to={`/Mentors`} className="btn btn-outline-danger btn-sm mb-4"><FontAwesomeIcon icon="caret-square-left"/>  Go Back</Link>
                     <MentorCard mentorItem={this.state.mentorData}/>
                 </div>                
 
