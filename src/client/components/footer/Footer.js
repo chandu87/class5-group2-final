@@ -47,7 +47,9 @@ class Footer extends React.Component {
                             <hr className="hr-style3"/>
 
                             <p>
-                                Group 2 for the Final Project Class at <br />
+                                Group 2 - Final Project<br />
+                                Chandrashekar Palle<br />
+                                Majid Khan<br />
                                 Hack Your Future - Copenhagen<br />
                                 Copyright © <a href="http://hackyourfuture.dk/">Hack Your Future</a>
                                 <br/>

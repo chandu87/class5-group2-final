@@ -542,3 +542,12 @@ footer{
     width: 100%;
   }
 }  
+.home-page-row{
+  margin-bottom: 20px;
+}
+.jumbotron{
+  padding: 50px;
+}
+.gallery-row{
+  height:auto;
+}
