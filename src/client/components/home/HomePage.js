@@ -56,7 +56,35 @@ class HomePage extends React.Component {
                 </div>
             </div>
             <hr className="hr-style3"/>
+            <h4>Contact</h4>
 
+            <div className="row">
+            <div className="col-md-4 col-sm-10">
+              <div class="scontact">
+                                <p>
+                                <strong>Jane Malcolm-Davies, Director</strong><br/>
+                                  Centre for Textile Research<br />
+                                  University of Copenhagen<br />
+                                  </p>
+                                <i class="fa fa-phone"></i> Phone<strong>:</strong>+45 26 20 22 09<br/>
+                                <i class="fa fa-envelope-o"></i> Email<strong>:</strong>jane@jmdandco.com<br/>
+                 </div>
+               </div>
+               <div className="col-md-4 col-sm-10">
+                <div class="scontact">
+                                <p>
+                                <strong>Egzona Haxha, Co-Director</strong><br />
+                                  Centre for Textile Research<br />
+                                  University of Copenhagen<br />
+                                  </p>
+                                <i class="fa fa-phone"></i> Phone<strong>:</strong>+45 60 86 32 17<br/>
+                                <i class="fa fa-envelope-o"></i> Email<strong>:</strong>egzona@hum.ku.dk<br/>
+               </div>
+               </div>
+            </div>
+            <hr className="hr-style3"/>
+
+                           
           </div>
         
       </div>
