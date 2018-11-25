@@ -11,6 +11,7 @@ class Footer extends React.Component {
                     <div className="row">
                         <div className="col-12 col-md-4 col-lg-4">
                             <h4>About Us</h4>
+                            <hr className="hr-style3"/>
                             <p>Textile Hub for Refugees' Empowerment, Employment 
                             and Entrepreneurship Advancement in Denmark - a 
                             new model</p>
@@ -21,6 +22,8 @@ class Footer extends React.Component {
 
                         <div className="col-12 col-md-4 col-lg-4">
                             <h4>Contact Us</h4>
+                            <hr className="hr-style3"/>
+
                             <p>
                                 <strong>Jane Malcolm-Davies, Director</strong><br />
                                 Centre for Textile Research<br />
@@ -41,13 +44,20 @@ class Footer extends React.Component {
 
                         
                             <h4>Developed By</h4>
+                            <hr className="hr-style3"/>
+
                             <p>
                                 Group 2 for the Final Project Class at <br />
                                 Hack Your Future - Copenhagen<br />
-                                http://hackyourfuture.dk/<br />
+                                Copyright © <a href="http://hackyourfuture.dk/">Hack Your Future</a>
+                                <br/>
                             </p>
                         </div>
+
                    </div>
+
+                   <hr className="hr-style3"/>
+
                </div>
             </div>
         );
