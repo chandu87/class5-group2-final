@@ -57,21 +57,28 @@
     margin: 0;
 }
 
+.dropdown-menu .btn-outline-danger:hover {
+    color: white;
+}
+
 @media only screen and (max-width: 767px) {
     .siteLogo {
         flex-direction: column;
         text-align: center;
-        float: none;
+        float: left;
         margin-bottom: 15px;
         margin-top: 15px;    
     }
     .menuLink {
         border-right: none;
-        border-bottom: 2px solid black;
-        margin-bottom: 20px;
-        padding-bottom: 20px !important;
+        border-bottom: 1px solid black;
+        margin-bottom: 0px;
+        padding-bottom: 10px !important;
     }
     .nav {
         flex-direction: column;
+    }
+    .nav-item span.icon {
+        display: none;
     }
 }   
