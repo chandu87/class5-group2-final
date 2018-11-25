@@ -551,3 +551,9 @@ footer{
 .gallery-row{
   height:auto;
 }
+.scontact {
+  background: #fff url('./header-back.png') repeat;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
