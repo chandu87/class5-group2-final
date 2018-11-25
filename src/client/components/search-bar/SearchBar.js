@@ -57,7 +57,7 @@ class SearchBar extends React.Component{
                     </div>
                     <div className="col-md-2">
                         <div className="input-group mb-3">
-                            <button className="btn btn-outline-danger"><FontAwesomeIcon icon="search"/> Search</button>
+                            <button className="btn btn-outline-danger btn-large-mobile no-gutters"><FontAwesomeIcon icon="search"/> Search</button>
                         </div>
                     </div>
                 </div>       
